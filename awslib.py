@@ -67,6 +67,38 @@ def getInstance(region='None', uid='None', tName='None'):
     return None
 
 
+from fabric.api import *
+from fabric.colors import green as _green, yellow as _yellow
+import boto
+import boto.ec2
+from config import *
+import time
+ 
+def create_server():
+    """
+    Creates EC2 Instance
+    """
+    print(_green("Started..."))
+    print(_yellow("...Creating EC2 instance..."))
+    
+ 
+    image = conn.get_all_images(ec2_amis)
+ 
+    reservation = image[0].run(1, 1, key_name=ec2_key_pair, security_groups=ec2_security,
+        instance_type=ec2_instancetype)
+ 
+    instance = reservation.instances[0]
+    conn.create_tags([instance.id], {"Name":config['INSTANCE_NAME_TAG']})
+    while instance.state == u'pending':
+        print(_yellow("Instance state: %s" % instance.state))
+        time.sleep(10)
+        instance.update()
+ 
+    print(_green("Instance state: %s" % instance.state))
+    print(_green("Public dns: %s" % instance.public_dns_name))
+ 
+    return instance.public_dns_name
+
 @task
 def startInstance(id='None', region='None'):
   '''start the AWS instance, supply id, i.e: fab startInstance:i-0000000  get uid from fab getAvailInstances'''
@@ -146,7 +178,7 @@ def getS3URL(bucket='None', fname='None'):
     try:  
      # conn = boto.connect_s3()
       from boto.s3.connection import S3Connection
-      conn = S3Connection('AKIAIRXBDH4OMJLSGB6A', 'ltwbWRxPuAkmUCLDLh2JapT0lZuEBrYdBFi/0Bx/')
+      conn = S3Connection(aws_id, aws_key)
       bucket = conn.get_bucket(bucket)
       key = bucket.get_key(fname)
       S3url = key.generate_url(36000)
