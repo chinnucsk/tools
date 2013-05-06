@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<lgc_topology xmlns="http://schemas.247realmedia.com/2010/02/lgc_topology">
+
+  
+  <producers name="remote_producers">  <!-- Remote Producers -->
+    <use compression_type="uncompressed">
+      <custom_provider port="6000"/>
+      <implicit_client pull_period="5" io_buf_size="8388608" />
+      <implicit_server store="false" />
+    </use>
+
+    <group name="matcher_logs">
+      <use file_pattern="(?:\.|^)asm_log\.(\d{10})(?:\.|$)">
+        <implicit_server base_path="/var/home/appmgr/zama/work/matcher"/>
+      </use>
+
+      <producer name="match_01">
+        <custom_provider address="10.65.48.31"/>
+      </producer>
+      <producer name="match_02">
+        <custom_provider address="10.65.48.32"/>
+      </producer>
+      <producer name="match_03">
+        <custom_provider address="10.65.48.115"/>
+      </producer>
+    </group>
+
+    <group name="remote_seg_producers">
+      <use>
+        <!--implicit_client base_path="/var/home/appmgr/esmeralda/work/lc" /-->
+        <implicit_server base_path="/var/home/appmgr/seg_data/lgc" source_name="violin_export"/>
+      </use>
+
+      <group name="remote_producers_ztseg">
+        <producer name="seggen1us2-qa1" file_pattern="(?:\.|^)violin_for_ZT_EU\.(\d+)\.dat(?:\.|$)">
+          <custom_provider address="10.73.48.116"/>
+        </producer>
+        <producer name="seggen1us2-qa1" file_pattern="(?:\.|^)violin_for_ZT_US\.(\d+)\.dat(?:\.|$)">
+          <custom_provider address="10.73.48.116"/>
+        </producer>
+
+      </group> <!-- remote_seg_producers_ztseg -->
+
+      <group name="remote_producers_oasseg">
+        <producer name="seggen2us2-qa1" file_pattern="(?:\.|^)snapshot(\d+)_(eu-n1|n4)\.tar(?:\.|$)">>
+          <custom_provider address="10.73.48.117"/>
+        </producer>
+      </group> <!-- remote_seg_producers_oasseg -->
+
+    </group> <!-- remote_seg_producers -->
+
+  </producers> <!-- remote_producers -->
+
+
+  <consumers>
+    <use compression_types="uncompressed"/>
+    <group name="ztseg_consumer">
+       <consumer name="ztseg_eu" initial_dir="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/mpseg/in" />
+       <consumer name="ztseg_us" initial_dir="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/mpseg/in" />
+    </group>
+    <group name="oasseg_consumer">
+       <consumer name="oasseg_eu" initial_dir="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/mpseg/in" />
+       <consumer name="oasseg_us" initial_dir="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/mpseg/in" />
+    </group>
+    <group name="asm_consumer">
+       <consumer name="rtbams_us" initial_dir="/var/home/appmgr/seg_data/lgc/asm_import/ZT_US" />
+    </group>
+
+
+  </consumers>
+
+
+  <bindings>
+      <group name="lc5_remote">
+        <use file_ownership="consumer" preserve_filenames="true" />
+         <binding name="b_lc5_rtx" preserve_filenames="false" filename_modifier="suffix"
+                                         producers="esmrtx1us2 esmrtx2us2 esmrtx3us2" consumers="c_lc_rtx_orig"/>
+         <binding name="b_lc4_2_lc5_rtx" producers="p_lc4_rtx_4_lc5"                  consumers="c_lc_rtx_orig" />
+         <binding name="b_lc5_de"        producers="p_lc4_de_4_lc5"                   consumers="c_lc_arcive c_lc_de_4_rtx c_lc_de_4_lp" />
+      </group> <!-- lc5_remote -->
+
+    <group name="oasseg">
+        <use file_ownership="consumer" preserve_filenames="true" />
+         <binding name="b_lc5_de_4_lp_1"  producers="p_lc5_de_4_lp_1"   consumers="c_lp_de"  />
+         <binding name="b_lc5_rtx_4_lp_1" producers="p_lc5_rtx_4_lp_1"  consumers="c_lp_rtx" />
+         <binding name="b_lc5_rtx_4_lp_2" producers="p_lc5_rtx_4_lp_2"  consumers="c_lp_rtx" />
+    </group> <!-- lp -->
+  </bindings>
+
+</lgc_topology>

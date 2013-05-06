@@ -1,0 +1,32 @@
+ZTUS =
+  (DESCRIPTION =
+    (ENABLE=BROKEN)
+    (ADDRESS = (PROTOCOL = TCP)(HOST = db1011-scan.dc.ash.247realmedia.com)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = P1ZAPLP)
+    )
+  )
+
+
+ZTEU =
+  (DESCRIPTION =
+    (ENABLE=BROKEN)
+    (ADDRESS = (PROTOCOL = TCP)(HOST = db-ams-scan.dc.ash.247realmedia.com)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = EUPZAPLP)
+    )
+  )
+
+
+
+ZapAdmin =
+        (DESCRIPTION =
+          (ADDRESS_LIST =
+            (ADDRESS = (PROTOCOL = TCP)(HOST = db1011-scan.dc.ash.247realmedia.com)(PORT = 1521))
+          )
+          (CONNECT_DATA =
+            (SID = P1ZEUS)
+          )
+        )

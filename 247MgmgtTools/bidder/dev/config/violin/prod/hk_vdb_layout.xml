@@ -1,0 +1,120 @@
+<vdb_layout_cfg xmlns="http://schemas.247realmedia.com/vdb_layout_cfg_2011_11">
+
+  <vdb_rules>
+    <exchange_id_mappings>
+      <exchange id="google"     db_id="1"/>
+      <exchange id="appnexus"   db_id="2"/>
+      <exchange id="contextweb" db_id="3"/>
+      <exchange id="rubicon"    db_id="4"/>
+      <exchange id="admeld"     db_id="5"/>
+      <exchange id="pubmatic"   db_id="6"/>
+      <exchange id="openx"      db_id="7"/>
+      <exchange id="facebook"   db_id="8"/>
+    </exchange_id_mappings>
+    <segment_source_id_mappings>
+      <source id="oas"      ext_id="1" />
+      <source id="zap"      ext_id="2" />
+      <source id="bluekai"  ext_id="3" />
+      <source id="omniture" ext_id="4" />
+      <source id="exelate"  ext_id="5" />
+      <source id="targad"   ext_id="6" />
+    </segment_source_id_mappings>
+  </vdb_rules>
+
+  <!-- It's assumed that each physical shard is capable of holding 2^26 buckets -->
+  <!-- min/max are bucket numbers within total (2^26) bucket space - just in case we'd like to create "overload" test -->
+
+  <violin_layout>
+    <up_db max_profiles="500000000" red_zone_upper_bound="95" red_zone_lower_bound="85"> <!-- red_zone expressed in % of max_profiles-->
+      <address_space log2_of_buckets_per_shard="26" /> <!-- corresponding data area sz = 2^26 * 2^12 B = 536,870,912 in 512B sectors-->
+      <header_config extended_area_sz="4194304" />     <!-- == 2 GiB expressed in 512B sectors -->
+                                                       <!-- Total phys shard size = 541,065,216 in 512B sectors -->
+      <phys_shard name="UPPS_01">
+        <phys_location dev_path="/dev/vtmsa1"/>
+        <shard_range lower_bound="0x0" upper_bound="0x0800000000"/>
+      </phys_shard>
+
+      <phys_shard name="UPPS_02">
+        <phys_location dev_path="/dev/vtmsa2"/>
+        <shard_range lower_bound="0x0800000000" upper_bound="0x1000000000"/>
+      </phys_shard>
+
+      <phys_shard name="UPPS_03">
+        <phys_location dev_path="/dev/vtmsa3"/>
+        <shard_range lower_bound="0x1000000000" upper_bound="0x1800000000"/>
+      </phys_shard>
+
+      <phys_shard name="UPPS_04">
+        <phys_location dev_path="/dev/vtmsa4"/>
+        <shard_range lower_bound="0x1800000000" upper_bound="0x2000000000"/>
+      </phys_shard>
+
+      <phys_shard name="UPPS_05">
+        <phys_location dev_path="/dev/vtmsa5"/>
+        <shard_range lower_bound="0x2000000000" upper_bound="0x2800000000"/>
+      </phys_shard>
+
+      <phys_shard name="UPPS_06">
+        <phys_location dev_path="/dev/vtmsa6"/>
+        <shard_range lower_bound="0x2800000000" upper_bound="0x3000000000"/>
+      </phys_shard>
+
+      <phys_shard name="UPPS_07">
+        <phys_location dev_path="/dev/vtmsa7"/>
+        <shard_range lower_bound="0x3000000000" upper_bound="0x3800000000"/>
+      </phys_shard>
+
+      <phys_shard name="UPPS_08">
+        <phys_location dev_path="/dev/vtmsa8"/>
+        <shard_range lower_bound="0x3800000000" upper_bound="0x4000000000"/>
+      </phys_shard>
+
+    </up_db>
+
+    <um_db max_profiles="350000000" red_zone_upper_bound="95" red_zone_lower_bound="85">
+      <address_space log2_of_buckets_per_shard="21" /> <!-- corresponding data area sz = 2^21 * 2^12 B = 16,777,216 in 512B sectors-->
+      <header_config extended_area_sz="1048576" />     <!-- == 512 MiB expressed in 512B sectors -->
+                                                       <!-- Total phys shard size = 17,825,792 in 512B sectors -->
+
+      <phys_shard name="UMPS_01" exchange_id="google">
+        <phys_location dev_path="/dev/vtmsa9">
+          <range lower_bound="0x0" upper_bound="0x1100000"/>
+        </phys_location>
+        <shard_range lower_bound="0x0" upper_bound="0x40000000000"/>
+      </phys_shard>
+
+      <phys_shard name="UMPS_02" exchange_id="google">
+        <phys_location dev_path="/dev/vtmsa9">
+          <range lower_bound="0x1100000" upper_bound="0x2200000"/>
+        </phys_location>
+        <shard_range lower_bound="0x40000000000" upper_bound="0x80000000000"/>
+      </phys_shard>
+
+      <phys_shard name="UMPS_03" exchange_id="appnexus">
+        <phys_location dev_path="/dev/vtmsa9">
+          <range lower_bound="0x2200000" upper_bound="0x3300000"/>
+        </phys_location>
+        <shard_range lower_bound="0x0" upper_bound="0x40000000000"/>
+      </phys_shard>
+
+      <phys_shard name="UMPS_04" exchange_id="appnexus">
+        <phys_location dev_path="/dev/vtmsa9">
+          <range lower_bound="0x3300000" upper_bound="0x4400000"/>
+        </phys_location>
+        <shard_range lower_bound="0x40000000000" upper_bound="0x80000000000"/>
+      </phys_shard>
+
+    </um_db>
+  </violin_layout>
+
+  <business_rules>
+    <expirations>
+      <segments days="45">
+        <segment id="30000124" days="730"/>
+      </segments>
+      <user_mappings days="45"/>
+      <user_profile  days="45"/>
+    </expirations>
+  </business_rules>
+
+</vdb_layout_cfg>

@@ -1,0 +1,155 @@
+<objects 
+    xmlns="http://www.spicefactory.org/parsley"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.spicefactory.org/parsley 
+        http://www.spicefactory.org/parsley/schema/2.2/parsley-core.xsd"
+    >
+    
+    <!-- Java API -->
+    <variable name="javaAPIUrl" value="https://zaptrader.themig.com/"/>
+
+   	<object type="mx.messaging.ChannelSet" id="dnaChannelSet">
+    	<property name="channels">
+    		<array>
+    			<object type="mx.messaging.channels.SecureAMFChannel">
+                                        <property name="uri" value="${javaAPIUrl}messagebroker/amf"/>				                                   <property name="id" value="myAmf"/>
+				</object>
+    		</array>
+    	</property>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="targetingService">
+    	<property name="destination" value="targetingService" />
+    	<property name="channelSet" id-ref="dnaChannelSet" />
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="publisherService">
+    	<property name="destination" value="publisherService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="accountService">
+    	<property name="destination" value="accountService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="localisationService">
+    	<property name="destination" value="localisationService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="referenceService">
+    	<property name="destination" value="referenceService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="reportingService">
+    	<property name="destination" value="reportingService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="conversionTrackingService">
+    	<property name="destination" value="conversionTrackingService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="userService">
+    	<property name="destination" value="userService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="financeService">
+    	<property name="destination" value="financeService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="searchEngineService">
+    	<property name="destination" value="searchEngineService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+
+    <object type="mx.rpc.remoting.RemoteObject" id="auditService">
+	<property name="destination" value="auditService"/>
+	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+ 
+
+<!--NO LONGER USED AS OF SPRINT11 -->
+	<!-- Bidder -->
+	<variable name="bidderMatcherUrl" value="http://rtbmatch1us1-qa1.dc.ash.247realmedia.com/zap"/>
+	<variable name="conversionTagUrl" value="http://rtbcvtrk1us1-qa1.dc.ash.247realmedia.com/tr-conv"/>
+
+	<!-- OBIEE -->
+	<variable name="obieeRootUrl" value="https://ztrpt1-qa1.dc.ash.247realmedia.com" />
+	<variable name="obieeNodeDashboardPath" value="/analytics/saw.dll?Dashboard" />
+ 
+
+        <!--Dashboard-->
+	<variable name="includeDashBoard" value="true"/>
+	<variable name="isDashboardNewWindow" value="false"/>
+	<variable name="loginURL" value="https://rtbflex1us1-qa1.dc.ash.247realmedia.com/dashboard/api/login.htm"/>
+	<variable name="dashboardURL" value="https://rtbflex1us1-qa1.dc.ash.247realmedia.com/dashboard/"/>
+	<variable name="dashboardNeededDomain" value="rtbflex1us1-qa1.dc.ash.247realmedia.com"/>
+   
+    <object type="com.realmedia.dna.application.model.ApplicationModel" id="applicationModel">
+    	<property name="applicationName" value="ZAP Trader" />
+    	<property name="useZones" value="false" />
+    	<property name="bidderMatcherUrl" value="${bidderMatcherUrl}" />	
+	<property name="conversionTagUrl" value="${conversionTagUrl}" />
+        <property name="verificationBidderUrl" value="${verificationBidderUrl}" />
+        <property name="verificationServletUrl" value="${verificationServletUrl}" />
+    </object>
+    
+    <object id="obieeModel" type="com.realmedia.dna.reporting.obiee.model.ObieeModel">
+		<property name="obieeRoot" value="${obieeRootUrl}"/>
+		<property name="obieeNodeDashboardPath" value="${obieeNodeDashboardPath}"/>
+	</object>
+ 
+
+   
+    <object type="mx.rpc.soap.mxml.WebService" id="trafficServiceAP"></object>
+    
+    <object type="mx.rpc.soap.mxml.WebService" id="trafficServiceNA"></object>
+    
+    <object type="mx.rpc.soap.mxml.WebService" id="trafficServiceEU"></object>
+
+    <variable name="helpUrl" value="http://resourcecenter.themig.com/resourcecenter/zap_trader/product.html"/>
+   
+    <object id="helpModel" type="com.realmedia.dna.presentation.helperTools.HelpPM">
+	<property name="helpUrl" value="${helpUrl}"/>
+    </object>
+ 
+
+    <object type="com.realmedia.dna.application.model.DashboardModel" id="dashboardModel">
+      <property name="includeDashBoard" value="${includeDashBoard}" />
+      <property name="isDashboardNewWindow" value="${isDashboardNewWindow}" />     
+      <property name="dashboardURL" value="${dashboardURL}" />
+      <property name="domainName" value="${dashboardNeededDomain}" />              
+    </object>
+ 
+    <object type="mx.rpc.http.HTTPService" id="RMXHttpService">
+      <property name="url" value="${loginURL}"/>
+      <property name="method" value="post"/>
+      <property name="resultFormat" value="text"/>
+      <property name="contentType" value="application/json" />
+    </object>
+
+<!--  Creative Verification New Variables added -->
+<!--      <variable name="verificationBidderUrl" value="http://10.65.48.158/api?ex=9"/> -->
+      <variable name="verificationBidderUrl" value="https://rtbbidapi1us1-qa1.dc.ash.247realmedia.com/api?ex=9"/> 
+     <variable name="verificationServletUrl" value="https://rtbui1us1-qa1.dc.ash.247realmedia.com/JAPI/crtesting.exchangeapi"/> 
+
+     <!--  Creative Verification New Services added -->
+      <object type="mx.rpc.http.HTTPService" id="CreativeTagVerificationHttpService">
+                 <property name="url" value="${verificationBidderUrl}"/>
+                 <property name="method" value="post"/>
+                 <property name="resultFormat" value="text"/>
+                 <property name="contentType" value="text/plain"/>
+      </object>
+      <object type="mx.rpc.http.HTTPService" id="CreativeVerificationHttpService">
+                 <property name="url" value="${verificationBidderUrl}"/>
+                 <property name="method" value="post"/>
+                 <property name="resultFormat" value="text"/>
+      </object>
+
+</objects>

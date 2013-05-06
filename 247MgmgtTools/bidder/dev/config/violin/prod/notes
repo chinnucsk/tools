@@ -1,0 +1,17 @@
+# Quick notes on violin layout format
+#
+# 1. range
+#    Format: range lower_bound="0x3300000" upper_bound="0x4400000"
+#    These numbers are expresed in sectors (512 bytes)
+#    In this example 0x4400000 equals 71303168 (decimal) => 36507222016 bytes => 34 GB
+#
+# 2. log2_of_buckets_per_shard
+#    Format:  log2_of_buckets_per_shard="21"
+#    2 power log2_of_buckets_per_shard is the number of buckets per shard. The size of each bucket is fixed at 4096 bytes
+#    In this example 2^21 equals 2097152. That gives the size of the shard in bytes as
+#    2097152 * 4096 = 8 GB
+#
+# 3. shard_range
+#    Format: shard_range lower_bound="0x80000000000" upper_bound="0x100000000000"
+#    upper_bound of the last shard is calculated as 2 ^ (64 - log2_of_buckets_per_shard) 
+

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfc_configuration xmlns="http://schemas.tfsm.com/wf/wfc"
+                   xmlns:wf="http://schemas.tfsm.com/wf/wfc"
+                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://schemas.tfsm.com/wf/wfc wfc.xsd"
+                   wf_id="urn:zama.lp"
+                  >
+   <steps default_port="6600">
+     <step id="parser">
+       <participant address="10.73.47.208" port="6601" />
+       <participant address="10.73.47.209" port="6601" />
+  	<participant address="10.73.47.210" port="6601" />
+  	<participant address="10.73.47.211" port="6601" />
+     </step>
+     <step id="mapper">
+       <participant address="10.73.47.208" port="6602" />
+       <participant address="10.73.47.209" port="6602" />
+  	<participant address="10.73.47.210" port="6602" />
+  	<participant address="10.73.47.211" port="6602" />
+     </step>
+     <step id="resolver">
+       <participant address="10.73.47.208" port="6603" />
+       <participant address="10.73.47.209" port="6603" />
+  	<participant address="10.73.47.210" port="6603" />
+  	<participant address="10.73.47.211" port="6603" />
+     </step>
+     <step id="delayed_resolver">
+       <participant address="10.73.47.208" port="6604" />
+       <participant address="10.73.47.209" port="6604" />
+  	<participant address="10.73.47.210" port="6604" />
+  	<participant address="10.73.47.211" port="6604" />
+     </step>
+     <step id="aggregator">
+       <participant address="10.73.47.208" port="6605" />
+       <participant address="10.73.47.209" port="6605" />
+  	<participant address="10.73.47.210" port="6605" />
+  	<participant address="10.73.47.211" port="6605" />
+     </step>
+     <step id="conversion_flusher">
+  	<participant address="10.73.47.208" port="6606" />
+  	<participant address="10.73.47.209" port="6606" />
+  	<participant address="10.73.47.210" port="6606" />
+  	<participant address="10.73.47.211" port="6606" />
+     </step>
+   </steps>
+</wfc_configuration>

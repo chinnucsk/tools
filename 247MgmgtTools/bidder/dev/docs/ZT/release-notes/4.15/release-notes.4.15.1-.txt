@@ -1,0 +1,318 @@
+These are instruction for :
+    update of ZT release 4.14.6 (aka Sprint-11)
+           to ZT release 4.15 builds 1 through 5 (aka Esmeralda v2)
+           in US (EC+WC) and EU (AMS)
+
+It is assumed that all system components (like Apache) and prerequisite
+packages are already installed and properly configured.
+
+Note: names of the packages below contain the most recent build number, but
+instructions are valid for all builds in the range specified above.
+
+Installation packages required for release 4.15.1-5:
+========================================================
+
+All packages named below are groupped by environment (East Coast - EC, West
+Coast - WC, Amsterdam - AMS) and functional type of the box.
+
+Order of packages in the lists corresponds to the order of installation.
+
+All of the boxes have to meet prerequisites requirements described on the
+"Zama RTB Bid Server..." wiki page
+(http://techwiki/doku.php?id=technology:engineering:projects:rtb:rtb_implementation#operational_instructions_and_packages)
+
+Also Boxes of types 1,2,3, and 5 has to have LGC v1.0 or above installed.
+LGC RPM location and install instructions available through the abovementioned
+wiki link.
+
+I. US-EC data center
+    1. "Bidder" box(s) (rtbbid[1-8]us2) must have the following packages
+       installed:
+        zama_mod_config-4.15-bld005.rh5
+        zama_vdb_config-4.15-bld005.rh5
+        zama_click_tracker-4.15-bld005.rh5
+        zama_conv_tracker-4.15-bld005.rh5
+        zama_matcher-4.15-bld005.rh5
+        zama_request_logger-4.15-bld005.rh5
+        zama_rtb_proxy_admeld-4.15-bld005.rh5
+        zama_rtb_proxy_appnexus-4.15-bld005.rh5
+        zama_rtb_proxy_bidder_api-4.15-bld005.rh5
+        zama_rtb_proxy_ctxweb-4.15-bld005.rh5
+        zama_rtb_proxy_esm-4.15-bld005.rh5
+        zama_rtb_proxy_google-4.15-bld005.rh5
+        zama_rtb_proxy_openx-4.15-bld005.rh5
+        zama_rtb_proxy_pubmatic-4.15-bld005.rh5
+        zama_rtb_proxy_rbc-4.15-bld005.rh5
+        zama_services-4.15-bld005.rh5
+        zama_tracker-4.15-bld005.rh5
+        zama_vdb_client-4.15-bld005.rh5
+
+    2. "Bidder" box(s) (rtbbid[9-20]us2) must have the following packages
+       installed:
+        zama_mod_config-4.15-bld005.rh5
+        zama_vdb_config-4.15-bld005.rh5
+        zama_request_logger-4.15-bld005.rh5
+        zama_rtb_proxy_admeld-4.15-bld005.rh5
+        zama_rtb_proxy_appnexus-4.15-bld005.rh5
+        zama_rtb_proxy_bidder_api-4.15-bld005.rh5
+        zama_rtb_proxy_ctxweb-4.15-bld005.rh5
+        zama_rtb_proxy_esm-4.15-bld005.rh5
+        zama_rtb_proxy_google-4.15-bld005.rh5
+        zama_rtb_proxy_openx-4.15-bld005.rh5
+        zama_rtb_proxy_pubmatic-4.15-bld005.rh5
+        zama_rtb_proxy_rbc-4.15-bld005.rh5
+        zama_services-4.15-bld005.rh5
+        zama_vdb_client-4.15-bld005.rh5
+
+    3. "Stat Collector" box(s) (rtbmem1us2) must have the following packages
+       installed:
+        zama_vdb_config-4.15-bld005.rh5
+        zama_services-4.15-bld005.rh5
+        zama_workflow-4.15-bld005.rh5
+
+    4. "ZWF initiator", aka sloop, box(s) (rtbsloop1us2) must have the
+       following packages installed:
+        zama_vdb_config-4.15-bld005.rh5
+        zama_bllistsync_publisher-4.15-bld005.rh5
+        zama_campaigns_publisher-4.15-bld005.rh5
+        zama_vdb_client-4.15-bld005.rh5
+        zama_workflow-4.15-bld005.rh5
+
+    5. "Violin gateway" box(s) (rtbvln[1-2]us2) must have the following
+       packages installed:
+        zama_vdb_config-4.15-bld005.rh5
+        zama_vdb_client-4.15-bld005.rh5
+        zama_vdb_service-4.15-bld005.rh5
+
+    6. "Violin caretaker" box(s) (rtbvln3us2) must have the following packages
+       installed:
+        zama_vdb_config-4.15-bld005.rh5
+        zama_vdb_client-4.15-bld005.rh5
+        zama_vdb_loader-4.15-bld005.rh5
+
+II. US-WC data center
+    1. "Bidder" box(s) (rtbbid[1-8]us3) must have the following packages
+       installed:
+        zama_mod_config-4.15-bld005.rh5
+        zama_vdb_config-4.15-bld005.rh5
+        zama_matcher-4.15-bld005.rh5
+        zama_request_logger-4.15-bld005.rh5
+        zama_rtb_proxy_appnexus-4.15-bld005.rh5
+        zama_rtb_proxy_google-4.15-bld005.rh5
+        zama_rtb_proxy_openx-4.15-bld005.rh5
+        zama_rtb_proxy_pubmatic-4.15-bld005.rh5
+        zama_rtb_proxy_rbc-4.15-bld005.rh5
+        zama_services-4.15-bld005.rh5
+        zama_vdb_client-4.15-bld005.rh5
+
+    2. "Stat Collector" box(s) (rtbmem[1-2]us3) must have the following
+       packages installed:
+        zama_vdb_config-4.15-bld005.rh5
+        zama_services-4.15-bld005.rh5
+        zama_workflow-4.15-bld005.rh5
+
+    3. "ZWF initiator", aka sloop, box(s) (rtbvln3us3) must have the following
+       packages installed:
+        zama_vdb_config-4.15-bld005.rh5
+        zama_vdb_client-4.15-bld005.rh5
+        zama_workflow-4.15-bld005.rh5
+
+    4. "Violin gateway" box(s) (rtbvln[1-2]us3) must have the following
+       packages installed:
+        zama_vdb_config-4.15-bld005.rh5
+        zama_vdb_client-4.15-bld005.rh5
+        zama_vdb_service-4.15-bld005.rh5
+
+    5. "Violin caretaker" box(s) (rtbvln3us3) must have the following packages
+       installed:
+        zama_vdb_config-4.15-bld005.rh5
+        zama_vdb_client-4.15-bld005.rh5
+        zama_vdb_loader-4.15-bld005.rh5
+
+III. EU-AMS data center
+    1. "Bidder" box(s) (rtbbid[1-4]eu1) must have the following packages
+       installed:
+        zama_mod_config-4.15-bld005.rh5
+        zama_vdb_config-4.15-bld005.rh5
+        zama_click_tracker-4.15-bld005.rh5
+        zama_conv_tracker-4.15-bld005.rh5
+        zama_matcher-4.15-bld005.rh5
+        zama_request_logger-4.15-bld005.rh5
+        zama_rtb_proxy_appnexus-4.15-bld005.rh5
+        zama_rtb_proxy_bidder_api-4.15-bld005.rh5
+        zama_rtb_proxy_esm-4.15-bld005.rh5
+        zama_rtb_proxy_google-4.15-bld005.rh5
+        zama_rtb_proxy_pubmatic-4.15-bld005.rh5
+        zama_rtb_proxy_rbc-4.15-bld005.rh5
+        zama_services-4.15-bld005.rh5
+        zama_tracker-4.15-bld005.rh5
+        zama_vdb_client-4.15-bld005.rh5
+
+    2. "Stat Collector" box(s) (rtbmem[1-2]eu1) must have the following
+       packages installed:
+        zama_vdb_config-4.15-bld005.rh5
+        zama_services-4.15-bld005.rh5
+        zama_workflow-4.15-bld005.rh5
+
+    3. "ZWF initiator", aka "sloop", box(s) (rtbsloop1eu1) must have the
+       following packages installed:
+        zama_vdb_config-4.15-bld005.rh5
+        zama_bllistsync_publisher-4.15-bld005.rh5
+        zama_campaigns_publisher-4.15-bld005.rh5
+        zama_vdb_client-4.15-bld005.rh5
+        zama_workflow-4.15-bld005.rh5
+
+    4. "Violin gateway" box(s) (rtbvln[1-2]eu1) must have the following
+       packages installed:
+        zama_vdb_config-4.15-bld005.rh5
+        zama_vdb_client-4.15-bld005.rh5
+        zama_vdb_service-4.15-bld005.rh5
+
+    5. "Violin caretaker" box(s) (rtbsloop2eu1) must have the following
+       packages installed:
+        zama_vdb_config-4.15-bld005.rh5
+        zama_vdb_client-4.15-bld005.rh5
+        zama_vdb_loader-4.15-bld005.rh5
+
+
+
+
+Recommended order of update inside one environment :
+====================================================
+
+1. Update "Violin gateway" boxes and restart VDB services there as described in
+   "General" and/or "Specifics..." sections below..
+
+2. Stop DPP and Presses on "ZWF initiator/sloop" box
+
+3. Update all ZT components on "ZWF initiator/sloop" box
+
+4. Update all ZT components and restart Stat Collector and DPP on "Stat
+   Collector" boxes
+
+5. Start DPP and Presses on "ZWF initiator/sloop" box
+
+6. Updating/restart ZT components on all "Bidder" boxes
+
+7. Update "Violin caretaker" box and start Violin LoaDeR (VLDR).
+   This step could be executed at any time (in parallel with any of other steps)
+   Violi
+
+Steps 2-5 constitute interruption in a flow of win info to the Stat Collector
+and, as result, interruption of bidding. Therefore they must be executed as
+quickly as possible.
+
+
+
+
+General update procedure for single or set of RPMs:
+===================================================
+
+Installation of each RPM follows the same basic procedure:
+
+1. obtain the latest environment file from the SVN for a given environment
+   (EC/DC/AMS/QA...):
+     svn://ny-devlab-builder.realads.com/TFSM/zama_ops/main/dev/config/environments
+
+2. "export" following environment variables
+
+     TFSM_TOPOLOGY_DEFINED=<path-to-environment-file-to-use>
+     ZAMA_APACHE_CONF=<apache-config-dir>/conf
+     ZAMA_APACHE_MODULES=<apache-modules-dir>
+
+    Usually:
+      <apache-config-dir>=/etc/httpd
+      <apache-modules-dir>=/usr/lib64/httpd/modules
+
+3. run appropriate RPM:
+
+     rpm -Uvh --prefix=<prefix-dir> <RPM-file>
+
+   Usually:
+     <prefix-dir>=/var/home/appmgr
+
+
+
+
+General update procedure for "Violin gateway":
+===================================================
+
+Installation of each RPM follows the same basic procedure:
+
+  1. BEFORE installation retrieve the most recent version of VDB layout and
+     service configuration files for the targeted environment from the SVN
+     (svn://ny-devlab-builder.realads.com/TFSM/zama_ops/main/dev/config/violin)
+
+  2. Stop VDB service on one of the gateway boxes
+       sudo /etc/init.d/vdbd stop
+
+  3. Update software
+
+  4. Put VDB layout and service configuration files obtained on step 1 into
+     "<prefix-dir>/zama/conf" directory
+
+  5. Start VDB service:
+       sudo /etc/init.d/vdbd start
+
+  6. Repeat steps 2-5 on another gateway box.
+
+
+
+
+
+Specifics for release 4.15.1-5:
+===============================
+
+I. Reconfigure Apache's access log format on ALL boxes hosting trackers in ALL
+environments BEFORE any installation:
+
+  1. substitute in httpd.conf
+
+      LogFormat "%{MIG_IP}i %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %D" combined
+
+    with:
+
+      LogFormat "%{MIG_IP}i %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\" %D \"%{PROXY_BAIL_OUT}n\"" combined
+
+II. Update of the "ZWF initiator", aka "sloop", in US-EC environment requires
+    following steps:
+
+  NOTE - this IS NOT A REQUIREMENT from the development, the procedure below is
+         result of hardware configuration created in US-EC environment by
+         necessity long time ago and not yet fixed.
+
+  1. After "general update procedure" will be completed and BEFORE starting DPP
+     retrieve "zama_wf{d,c}.xml" files from the
+     "<prefix-dir>/zama/conf/workflow/bkp.zama_workflow-4.15-bld005.rh5.<timestamp>"
+     directory.
+
+  2. Verify that "zama_wfd.xml" has following 2 lines at the end of the
+     definition of the "RTB Winning Bid for Statistics" message type
+     ("urn:rtb.wbs")
+
+       <field name="fd" type="uint32" optional="true" /> <!-- STR_ZWF_WIN_BID_FLD_FEE_PER_DOLLAR     -->
+       <field name="fi" type="uint32" optional="true" /> <!-- STR_ZWF_WIN_BID_FLD_FEE_PER_IMPRESSION -->
+
+  3. Verify that destination for items of "urn:rtb.wbs" type is set to
+     "sc_feeder_01 sc_feeder_03 sc_feeder_04" steps and no other "sc_..." steps
+     are defined in "zama_wf{d,c}.xml" files.
+
+  4. Replace "zama_wf{d,c}.xml" files created by install in
+       "<prefix-dir>/zama/conf" directory with versions obtained on step 1.
+
+
+Notes for release 4.15.1-5:
+===========================
+
+I. Starting from the build 4.15.4 matcher installation package will
+   automatically configure matcher for proper (controlled by environment files)
+   communication with OpenX CM service.
+
+   ZAMA_MATCHER_OPENX_CM_URI macro specifying proper OpenX URI was added to US
+   EC & WC production environment files (check SVN):
+
+       ZAMA_MATCHER_OPENX_CM_URI="{protocol}://r.openx.net/set?pid=c63efebc-c767-c810-6d13-67f0191ec590\&rtb={mookie}"
+
+   Currently there is no need to communicate with OpenX CM service from the
+   all other environments.
+

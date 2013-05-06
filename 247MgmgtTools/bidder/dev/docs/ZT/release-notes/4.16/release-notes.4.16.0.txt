@@ -1,0 +1,4 @@
+Performance counters in bidder, Eugene Gurevich:
+- before installation set var ZAMA_GRTB_PERF_PORT to 8805
+- when bidder is running, perf data can be collected using prf_client.exe -ip <bidder_ip> -p 8805 (prf_client is part of Common/perf/perfnet)
+- after the build is deployed, need ot advise TechOps to remove ZAMA_GRTB_PERF_COUNTERS_FILE var. from their config files (for the sake of cleanup; no operational necessity)

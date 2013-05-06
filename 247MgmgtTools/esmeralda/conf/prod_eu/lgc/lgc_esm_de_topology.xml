@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<lgc_topology xmlns="http://schemas.247realmedia.com/2010/02/lgc_topology">
+
+  <producers name="remote_producers">
+    <use compression_type="uncompressed" file_pattern="(?:\.|^)esm_win\.log\.(\d+)(?:\.|$)">
+      <custom_provider port="6001"/>
+      <implicit_client pull_period="5" base_path="/var/home/appmgr/esmeralda/work/de" />
+      <implicit_server store="false" base_path="/home/central/RealMedia/ads/OpenAd/Logs" source_name="esm" />
+    </use>
+
+    <group name="remote_de_producers">
+
+      <producer name="eu1en1del01" >
+        <custom_provider address="10.1.128.101"/> <!-- EUN1 -->
+      </producer>
+
+      <producer name="eu1en1del02" >
+        <custom_provider address="10.1.128.102"/> <!-- EUN1 -->
+      </producer>
+
+      <producer name="eu1en1del03" >
+        <custom_provider address="10.1.128.103"/> <!-- EUN1 -->
+      </producer>
+
+      <producer name="eu1en1del04" >
+        <custom_provider address="10.1.128.104"/> <!-- EUN1 -->
+      </producer>
+
+      <producer name="eu1en1del05" >
+        <custom_provider address="10.1.128.105"/> <!-- EUN1 -->
+      </producer>
+
+      <producer name="eu1en1del06" >
+        <custom_provider address="10.1.128.106"/> <!-- EUN1 -->
+      </producer>
+
+      <producer name="eu1en1del07" >
+        <custom_provider address="10.1.128.107"/> <!-- EUN1 -->
+      </producer>
+
+      <producer name="eu1en1del08" >
+        <custom_provider address="10.1.128.108"/> <!-- EUN1 -->
+      </producer>
+
+      <producer name="eu1en1del09" >
+        <custom_provider address="10.1.128.109"/> <!-- EUN1 -->
+      </producer>
+
+      <producer name="eu1en1del10" >
+        <custom_provider address="10.1.128.110"/> <!-- EUN1 -->
+      </producer>
+
+      <producer name="eu1ec1del01" >
+        <custom_provider address="10.1.128.201"/> <!-- EUC1 -->
+      </producer>
+
+      <producer name="eu1ec1del02" >
+        <custom_provider address="10.1.128.202"/> <!-- EUC1 -->
+      </producer>
+
+      <producer name="eu1ec1del03" >
+        <custom_provider address="10.1.128.203"/> <!-- EUC1 -->
+      </producer>
+
+      <producer name="eu1ec1del04" >
+        <custom_provider address="10.1.128.204"/> <!-- EUC1 -->
+      </producer>
+
+      <producer name="eu1ec1del05" >
+        <custom_provider address="10.1.128.205"/> <!-- EUC1 -->
+      </producer>
+
+      <producer name="eu1ec1del06" >
+        <custom_provider address="10.1.128.206"/> <!-- EUC1 -->
+      </producer>
+
+      <producer name="eu1ec1del07" >
+        <custom_provider address="10.1.128.207"/> <!-- EUC1 -->
+      </producer>
+
+      <producer name="eu1ec1del08" >
+        <custom_provider address="10.1.128.208"/> <!-- EUC1 -->
+      </producer>
+
+      <producer name="eu1ec1del09" >
+        <custom_provider address="10.1.128.209"/> <!-- EUC1 -->
+      </producer>
+
+      <producer name="eu1ec1del10" >
+        <custom_provider address="10.1.128.210"/> <!-- EUC1 -->
+      </producer>
+
+
+    </group> <!-- remote_de_producers -->
+
+  </producers> <!-- remote_producers -->
+
+  <consumers>
+    <use compression_types="uncompressed" initial_dir="/var/home/appmgr/esmeralda/de/orig" />
+    <consumer name="esmlgc1eu1" /> <!-- Log Concentrator EU1 -->
+  </consumers>
+
+  <bindings>
+    <use file_ownership="consumer" preserve_filenames="false" filename_modifier="suffix" />
+    <binding name="b_de_eu1_wb_logs" producers="eu1en1del01 eu1en1del02 eu1en1del03 eu1en1del04 eu1en1del05 eu1en1del06 eu1en1del07 eu1en1del08 eu1en1del09 eu1en1del10 eu1ec1del01 eu1ec1del02 eu1ec1del03 eu1ec1del04 eu1ec1del05 eu1ec1del06 eu1ec1del07 eu1ec1del08 eu1ec1del09 eu1ec1del10" consumers="esmlgc1eu1" />
+  </bindings>
+
+</lgc_topology>
+

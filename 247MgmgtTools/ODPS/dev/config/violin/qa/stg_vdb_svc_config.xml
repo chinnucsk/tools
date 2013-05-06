@@ -1,0 +1,80 @@
+<vdb_svc_cfg xmlns="http://schemas.247realmedia.com/vdb_svc_cfg_2011_11"
+             xmlns:cc="http://schemas.247realmedia.com/rtb_svc_cfg_common"
+             xmlns:xs="http://www.w3.org/2001/XMLSchema"
+             instance_name="vdb-qa"
+             reader_threads="1"
+             writer_threads="1"
+             combined_threads="0"
+             comm_threads="1"
+             db_layout_config="/var/home/appmgr/zama/conf/stg_vdb_layout-01.xml" 
+	     perf_file="/var/home/appmgr/zama/perf_counts/vdb_counts.cnt" >
+
+  <cc:file_logging directory="/var/home/appmgr/zama/logs" filename="vdb_"
+                   rotation="daily" level="trace"/>
+
+  <directories base="/var/home/appmgr/zama/work/vdbsvc"
+               input="in"
+               current="work"
+               failed="error"/>
+
+  <perf_counters_settings port="8801" />
+
+  <communication_settings>
+    <service iface_addr="10.73.47.146">
+      <port number="30210" handler_mode="handle_all"    />
+      <port number="30211" handler_mode="handle_all"    />
+      <port number="30212" handler_mode="handle_all"    />
+      <port number="30213" handler_mode="handle_all"    />
+      <port number="30214" handler_mode="handle_all"    />
+      <port number="30215" handler_mode="handle_all"    />
+      <port number="30216" handler_mode="handle_all"    />
+      <port number="30217" handler_mode="handle_all"    />
+      <port number="30218" handler_mode="handle_all"    />
+      <port number="30219" handler_mode="handle_all"    />
+      <port number="30220" handler_mode="handle_all"    />
+      <port number="30221" handler_mode="handle_all"    />
+      <port number="30222" handler_mode="handle_all"    />
+      <port number="30223" handler_mode="handle_all"    />
+      <port number="30224" handler_mode="handle_all"    />
+      <port number="30225" handler_mode="handle_all"    />
+      <port number="30226" handler_mode="handle_all"    />
+      <port number="30227" handler_mode="handle_all"    />
+      <port number="30228" handler_mode="handle_all"    />
+      <port number="30229" handler_mode="handle_all"    />
+      <port number="30230" handler_mode="handle_all"    />
+      <port number="30231" handler_mode="handle_all"    />
+      <port number="30232" handler_mode="handle_all"    />
+      <port number="30233" handler_mode="handle_all"    />
+      <port number="30234" handler_mode="handle_all"    />
+      <port number="30235" handler_mode="handle_all"    />
+      <port number="30236" handler_mode="handle_all"    />
+      <port number="30237" handler_mode="handle_all"    />
+      <port number="30238" handler_mode="handle_all"    />
+      <port number="30239" handler_mode="handle_all"    />
+    </service>
+    <corosync group_name=""/>
+  </communication_settings>
+
+<!-- List of physical shards THIS servicefor Range of shards handled by THIS phys_shard (min/max are logical numbers of shard handled...) -->
+  <shards_own>
+
+    <shard name="up_shard_1" />
+    <shard name="up_shard_2" />
+    <shard name="up_shard_3" />
+    <shard name="up_shard_4" />
+
+    <shard name="um_shard_1" />
+    <shard name="um_shard_2" />
+    <shard name="um_shard_3" />
+    <shard name="um_shard_4" />
+
+  </shards_own>
+
+  <worker_settings max_concurrent_aio="64"/>
+
+  <communicator_settings log2_of_work_buffer_size="12"/>
+
+  <campaign_file_management file_mask="(?:\.|^)__ZAMA_REF_CAMP_DEF_FILE_NAME__\.(\d{8}T\d{6}Z)\.xml(?:\.|$)"
+                            description="campaigns definition"
+                            polling_interval_ms="10000"/>
+</vdb_svc_cfg>

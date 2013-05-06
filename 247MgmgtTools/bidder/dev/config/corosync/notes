@@ -1,0 +1,37 @@
+#!/bin/cat
+exit
+
+
+=============================================================================
+Corosync config files
+=============================================================================
+
+=== install corosync membership file ===
+
+uidgid.d-appmgr: corosync membership file for appmgr user
+	copy it to /opt/corosync/etc/corosync/uidgid.d/appmgr
+
+
+=== install corosync config files for each environment ===
+
+copy COMPUTERNAME-corosync.conf file to COMPUTERNAME:/opt/corosync/etc/corosync/corosync.conf
+
+ec:
+	rtbvln1us2-corosync.conf
+	rtbvln2us2-corosync.conf
+
+wc:
+	rtbvln1us3-corosync.conf
+	rtbvln1ap1-corosync.conf
+
+asm:
+	rtbvln1eu1-corosync.conf
+	rtbvln2us3-corosync.conf
+
+hk:
+	rtbvln2ap1-corosync.conf
+	rtbvln2eu1-corosync.conf
+
+dev:
+	ash-devlab-01-corosync.conf
+	ash-devlab-02-corosync.conf

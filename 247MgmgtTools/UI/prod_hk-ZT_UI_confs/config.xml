@@ -1,0 +1,77 @@
+<objects 
+    xmlns="http://www.spicefactory.org/parsley"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.spicefactory.org/parsley 
+        http://www.spicefactory.org/parsley/schema/2.2/parsley-core.xsd"
+    >
+    
+    <!-- Java API -->
+    <variable name="javaAPIUrl" value="https://ap-zaptrader.themig.com/"/>
+
+   	<object type="mx.messaging.ChannelSet" id="dnaChannelSet">
+    	<property name="channels">
+    		<array>
+    			<object type="mx.messaging.channels.SecureAMFChannel">
+                                        <property name="uri" value="${javaAPIUrl}messagebroker/amf"/>				                                   <property name="id" value="myAmf"/>
+				</object>
+    		</array>
+    	</property>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="targetingService">
+    	<property name="destination" value="targetingService" />
+    	<property name="channelSet" id-ref="dnaChannelSet" />
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="publisherService">
+    	<property name="destination" value="publisherService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="accountService">
+    	<property name="destination" value="accountService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="localisationService">
+    	<property name="destination" value="localisationService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="referenceService">
+    	<property name="destination" value="referenceService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="reportingService">
+    	<property name="destination" value="reportingService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="conversionTrackingService">
+    	<property name="destination" value="conversionTrackingService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="userService">
+    	<property name="destination" value="userService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="financeService">
+    	<property name="destination" value="financeService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+    
+    <object type="mx.rpc.remoting.RemoteObject" id="searchEngineService">
+    	<property name="destination" value="searchEngineService"/>
+    	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+
+    <object type="mx.rpc.remoting.RemoteObject" id="auditService">
+	<property name="destination" value="auditService"/>
+	<property name="channelSet" id-ref="dnaChannelSet"/>
+    </object>
+ 
+
+

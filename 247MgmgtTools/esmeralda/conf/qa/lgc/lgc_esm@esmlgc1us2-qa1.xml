@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<lgc_environment xmlns="http://schemas.247realmedia.com/2010/02/lgc_environment" xmlns:log="http://schemas.247realmedia.com/2010/02/log_config">
+
+  <settings bindings="de_logs_2_lgc rtx_logs_2_lgc" work_path="/var/home/appmgr/lgc/work">
+    <log:file_logging directory="/var/home/appmgr/lgc/logs" filename="lgc_"/>
+  </settings>
+
+</lgc_environment>

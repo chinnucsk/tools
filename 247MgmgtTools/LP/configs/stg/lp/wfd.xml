@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wf_definition xmlns="http://schemas.tfsm.com/wf/wfd"
+               xmlns:wf="http://schemas.tfsm.com/wf/wfd"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://schemas.tfsm.com/wf/wfd wfd.xsd"
+               wf_id="urn:zama.lp"
+               >
+   <description>zama lp workflow</description>
+   <types>
+
+      <type type="urn:zama.logobject">
+        <content>
+          <field name="translated"         type="byte" />
+          <field name="resolved"           type="byte" />
+          <field name="type"               type="astring" />
+          <field name="data"               type="astring" />
+         </content>
+      </type>
+
+   </types>
+   <steps>
+
+      <initial_step wf_id="parser">
+         <description>parser step</description>
+         <rules>
+           <rule destination="mapper" />
+         </rules>
+      </initial_step>
+
+      <step wf_id="mapper">
+        <description>mapper step</description>
+        <rules>
+          <rule destination="resolver">
+            <condition item_types="urn:zama.logobject">
+              <boolean_exp op="and">
+                <left>
+                  <logical_exp op="eq" modifier="not">
+                    <var>item.type</var>
+                    <value>conversion</value>
+                  </logical_exp>  
+                </left>
+                <right>
+                  <logical_exp op="eq" modifier="not">
+                    <var>item.type</var>
+                    <value>asm</value>
+                  </logical_exp>  
+                </right>
+              </boolean_exp>
+            </condition>
+          </rule>
+          <rule destination="conversion_flusher">
+            <condition item_types="urn:zama.logobject">
+              <logical_exp op="eq">
+                <var>item.type</var>
+                <value>conversion</value>
+              </logical_exp>  
+            </condition>
+          </rule>
+          <rule destination="aggregator">
+            <condition item_types="urn:zama.logobject">
+              <boolean_exp op="or">
+                <left>
+                  <logical_exp op="eq">
+                    <var>item.type</var>
+                    <value>asm</value>
+                  </logical_exp>
+                </left>
+                <right>
+                  <logical_exp op="eq">
+                    <var>item.type</var>
+                    <value>conversion</value>
+                  </logical_exp>
+                </right>
+              </boolean_exp>
+            </condition>
+          </rule>
+        </rules>
+      </step>
+
+      <step wf_id="resolver">
+        <description>resolver step</description>
+        <rules>
+          <rule destination="delayed_resolver">
+            <condition item_types="urn:zama.logobject">
+              <logical_exp op="eq">
+                <var>item.resolved</var>
+                <value>0</value>
+              </logical_exp>
+            </condition>
+          </rule>
+          <rule destination="aggregator">
+            <condition item_types="urn:zama.logobject">
+              <logical_exp op="eq" modifier="not">
+                <var>item.resolved</var>
+                <value>0</value>
+              </logical_exp>
+            </condition>
+          </rule>
+          <rule destination="conversion_flusher">
+            <condition item_types="urn:zama.logobject">
+              <boolean_exp op="and">
+                <left>
+                  <logical_exp op="eq" modifier="not">
+                    <var>item.resolved</var>
+                    <value>0</value>
+                  </logical_exp>
+                </left>
+                <right>
+                  <boolean_exp op="or">
+                    <left>
+                      <logical_exp op="eq">
+                        <var>item.type</var>
+                        <value>win</value>
+                      </logical_exp>
+                    </left>
+                    <right>
+                      <logical_exp op="eq">
+                        <var>item.type</var>
+                        <value>click</value>
+                      </logical_exp>
+                    </right>
+                  </boolean_exp>
+                </right>
+              </boolean_exp>
+            </condition>
+          </rule>
+        </rules>
+      </step>
+
+      <step wf_id="delayed_resolver">
+        <description>delayed resolver step</description>
+        <rules>
+          <rule destination="aggregator" />
+          <rule destination="conversion_flusher" />
+        </rules>
+      </step>
+
+      <terminal_step wf_id="aggregator">
+        <description>aggregator step</description>
+      </terminal_step>
+
+      <terminal_step wf_id="conversion_flusher">
+        <description>conversion flusher step</description>
+      </terminal_step>
+
+   </steps>
+</wf_definition>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration>
+
+	<!-- Console Appender -->
+	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%d{yyyy-MM-dd HH:mm:ss:SSS},%t,%m%n" />			
+		</layout>
+	</appender>
+	
+	<!-- Appender necessary to log incoming requests for ads. -->
+    <appender name="apiLogAppender" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="/opt/tomcat/logs/dashboard-api.log"/>
+        <param name="maxBackupIndex" value="10"/>
+        <param name="maxFileSize" value="15MB"/>
+        <param name="immediateFlush" value="true"/>
+        <param name="threshold" value="INFO"/>                
+        <param name="encoding" value="UTF-8"/>        
+        <layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d] [%t] %-5p %C{6} (%F:%L) - %m%n" />
+		</layout>
+    </appender>
+    
+    <!-- Appender necessary to log exception in dashboard. -->
+    <appender name="apiExceptionHandler" class="org.apache.log4j.RollingFileAppender">
+        <param name="file" value="/opt/tomcat/logs/dashboard-api-exception.log"/>
+        <param name="maxBackupIndex" value="10"/>
+        <param name="maxFileSize" value="15MB"/>
+        <param name="immediateFlush" value="true"/>
+        <param name="threshold" value="INFO"/>                
+        <param name="encoding" value="UTF-8"/>        
+        <layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d] [%t] %-5p %C{6} (%F:%L) - %m%n" />
+		</layout>
+    </appender>
+    
+    <!-- Logger config -->
+	<logger name="logAppender">
+        <level value="INFO" />
+        <appender-ref ref="apiLogAppender" />
+    </logger>
+    
+    <!-- Exception Logger config -->
+	<logger name="logException">
+        <level value="INFO" />
+        <appender-ref ref="apiExceptionHandler" />
+    </logger>     
+	
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="apiLogAppender" />
+	</root>
+
+</log4j:configuration>

@@ -1,0 +1,47 @@
+##QA2 Simulating US##
+ZTUS =
+  (DESCRIPTION =
+    (ENABLE=BROKEN)
+    (ADDRESS = (PROTOCOL = TCP)(HOST = ztdb-qa-scan.dc.ash.247realmedia.com)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = S1ZAPLP)
+    )
+  )
+
+
+
+##QA1 Simulating EU##
+ZTEU =
+  (DESCRIPTION =
+    (ENABLE=BROKEN)
+    (ADDRESS = (PROTOCOL = TCP)(HOST = ztdb-qa-scan.dc.ash.247realmedia.com)(PORT = 1521))
+    (CONNECT_DATA =
+      (SERVER = DEDICATED)
+      (SERVICE_NAME = S2ZAPLP)
+    )
+  )
+
+
+
+MIGQA =
+        (DESCRIPTION =
+          (ADDRESS_LIST =
+            (ADDRESS = (PROTOCOL = TCP)(HOST = 172.16.16.46)(PORT = 1521))
+          )
+          (CONNECT_DATA =
+            (SID = MIGQA)
+          )
+        )
+
+
+#ZapAdmin =
+#  (DESCRIPTION =
+#    (ENABLE=BROKEN)
+#    (ADDRESS = (PROTOCOL = TCP)(HOST = ztdb-qa-scan.dc.ash.247realmedia.com)(PORT = 1521))
+#    (CONNECT_DATA =
+#      (SERVER = DEDICATED)
+#      (SID = S10ZEUS1)
+#    )
+#  )
+

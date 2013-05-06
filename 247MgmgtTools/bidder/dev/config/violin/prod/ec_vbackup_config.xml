@@ -1,0 +1,62 @@
+<vdb_backup_cfg
+    xmlns="http://schemas.247realmedia.com/vdb_backup_cfg_2012_03"
+    xmlns:com="http://schemas.247realmedia.com/rtb_svc_cfg_common"
+    worker_threads="1"
+    comm_threads="1">
+    <com:file_logging directory="/var/home/appmgr/zama/logs"
+            filename="vbackup_"
+            rotation="daily"
+            level="info" />
+
+    <directories base="/var/home/appmgr/zama/work/vbackup"
+                input="in"
+                backup="backup"
+                current="work"
+                failed="error" />
+
+    <perf_counters_settings port="8804" />
+
+    <communication_settings>
+      <service iface_addr="10.73.43.100" mcast_addr="239.192.25.10" >
+        <port number="30210" />
+        <port number="30211" />
+        <port number="30212" />
+        <port number="30213" />
+        <port number="30214" />
+        <port number="30215" />
+        <port number="30216" />
+        <port number="30217" />
+        <port number="30218" />
+        <port number="30219" />
+        <port number="30220" />
+        <port number="30221" />
+        <port number="30222" />
+        <port number="30223" />
+        <port number="30224" />
+        <port number="30225" />
+        <port number="30226" />
+        <port number="30227" />
+        <port number="30228" />
+        <port number="30229" />
+        <port number="30230" />
+        <port number="30231" />
+        <port number="30232" />
+        <port number="30233" />
+        <port number="30234" />
+        <port number="30235" />
+        <port number="30236" />
+        <port number="30237" />
+        <port number="30238" />
+        <port number="30239" />
+      </service>
+    </communication_settings>
+
+    <worker_settings/>
+    <communicator_settings/>
+
+    <ring_size base="1k" multiplier="256" />
+    <backup_rotation size_mb="256" period_minutes_from_midnight_utc="60" />
+
+</vdb_backup_cfg>
+
+

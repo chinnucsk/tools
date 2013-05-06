@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<vdb_layout_cfg xmlns="http://schemas.247realmedia.com/vdb_layout_cfg_2011_11">
+
+  <vdb_rules>
+    <exchange_id_mappings>
+      <exchange id="google"     db_id="1"/>
+      <exchange id="appnexus"   db_id="2"/>
+      <exchange id="contextweb" db_id="3"/>
+      <exchange id="rubicon"    db_id="4"/>
+      <exchange id="admeld"     db_id="5"/>
+      <exchange id="pubmatic"   db_id="6"/>
+    </exchange_id_mappings>
+  </vdb_rules>
+
+
+  <violin_layout>
+    <up_db max_profiles="4096" red_zone_lower_bound="85" red_zone_upper_bound="90">
+      <address_space log2_of_buckets_per_shard="10"/>
+      <header_config extended_area_sz="40"/>
+      <phys_shard name="up_shard_1">
+        <phys_location dev_path="/var/home/appmgr/zama/work/vdbsvc/work/UP0">
+          <range lower_bound="0x0" upper_bound="0x2028"/>
+        </phys_location>
+        <shard_range lower_bound="0x0" upper_bound="0x40000000000000"/>
+      </phys_shard>
+      <phys_shard name="up_shard_2">
+        <phys_location dev_path="/var/home/appmgr/zama/work/vdbsvc/work/UP1">
+          <range lower_bound="0x0" upper_bound="0x2028"/>
+        </phys_location>
+        <shard_range lower_bound="0x40000000000000" upper_bound="0x80000000000000"/>
+      </phys_shard>
+      <phys_shard name="up_shard_3">
+        <phys_location dev_path="/var/home/appmgr/zama/work/vdbsvc/work/UP0">
+          <range lower_bound="0x2028" upper_bound="0x4050"/>
+        </phys_location>
+        <shard_range lower_bound="0x80000000000000" upper_bound="0xc0000000000000"/>
+      </phys_shard>
+      <phys_shard name="up_shard_4">
+        <phys_location dev_path="/var/home/appmgr/zama/work/vdbsvc/work/UP1">
+          <range lower_bound="0x2028" upper_bound="0x4050"/>
+        </phys_location>
+        <shard_range lower_bound="0xc0000000000000" upper_bound="0x100000000000000"/>
+      </phys_shard>
+    </up_db>
+
+
+    <um_db max_profiles="512" red_zone_lower_bound="85" red_zone_upper_bound="90">
+      <address_space log2_of_buckets_per_shard="8"/>
+      <header_config extended_area_sz="40"/>
+      <phys_shard exchange_id="google" name="um_shard_1">
+        <phys_location dev_path="/var/home/appmgr/zama/work/vdbsvc/work/UM0">
+          <range lower_bound="0x0" upper_bound="0x828"/>
+        </phys_location>
+        <shard_range lower_bound="0x0" upper_bound="0x100000000000000"/>
+      </phys_shard>
+      <phys_shard exchange_id="appnexus" name="um_shard_2">
+        <phys_location dev_path="/var/home/appmgr/zama/work/vdbsvc/work/UM1">
+          <range lower_bound="0x0" upper_bound="0x828"/>
+        </phys_location>
+        <shard_range lower_bound="0x0" upper_bound="0x100000000000000"/>
+      </phys_shard>
+    </um_db>
+  </violin_layout>
+
+
+  <business_rules>
+    <expirations>
+      <segments days="45"/>
+      <user_mappings days="45"/>
+      <user_profile days="45"/>
+    </expirations>
+  </business_rules>
+
+</vdb_layout_cfg>
+

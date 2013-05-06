@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<lgcd_environment xmlns="http://schemas.247realmedia.com/2010/02/lgc_environment" xmlns:log="http://schemas.247realmedia.com/2010/02/log_config">
+
+  <settings producers="e6uat1del1"
+            work_path="/home/central/RealMedia/ads/OpenAd/lgc/work/" >
+    <log:file_logging level="info" directory="/home/central/RealMedia/ads/OpenAd/lgc/logs" filename="lgcd_" />
+  </settings>
+
+</lgcd_environment>

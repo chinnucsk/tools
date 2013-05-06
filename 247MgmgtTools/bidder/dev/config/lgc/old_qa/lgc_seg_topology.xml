@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<lgc_topology xmlns="http://schemas.247realmedia.com/2010/02/lgc_topology">
+
+
+  <producers name="remote_producers">  <!-- Remote Producers -->
+    <use compression_type="uncompressed">
+      <custom_provider port="6000"/>
+      <implicit_client base_path="/var/home/appmgr/zama/work/lgc" pull_period="7" io_buf_size="8388608" />
+      <implicit_server store="false" />
+    </use>
+
+
+
+
+  </producers> <!-- remote_producers -->
+
+
+  <consumers>
+    <use compression_types="uncompressed"/>
+
+  </consumers>
+
+
+  <bindings>
+
+ </bindings>
+
+</lgc_topology>

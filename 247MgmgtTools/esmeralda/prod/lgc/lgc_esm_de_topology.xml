@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<lgc_topology xmlns="http://schemas.247realmedia.com/2010/02/lgc_topology">
+
+  <producers name="remote_producers">
+    <use compression_type="uncompressed" file_pattern="(?:\.|^)esm_win\.log\.(\d+)(?:\.|$)">
+      <custom_provider port="6001"/>
+      <implicit_client pull_period="5" base_path="/var/home/appmgr/esmeralda/work/de" />
+      <implicit_server store="false" base_path="/home/central/RealMedia/ads/OpenAd/Logs" source_name="esm" />
+    </use>
+
+    <group name="remote_de_producers_dc5">
+
+      <producer name="e6uat1del1" >
+        <custom_provider address="10.73.128.62"/> <!-- UAT -->
+      </producer>
+
+      <!-- add DEs as needed -->
+
+      <producer name="e6usn1del1" >
+        <custom_provider address="10.73.128.24"/>
+      </producer>
+      <producer name="e6usn1del2" >
+        <custom_provider address="10.73.128.25"/>
+      </producer>
+      <producer name="e6usn1del3" >
+        <custom_provider address="10.73.128.26"/>
+      </producer>
+      <producer name="e6usn1del4" >
+        <custom_provider address="10.73.128.28"/>
+      </producer>
+      <producer name="e6usn1del5" >
+        <custom_provider address="10.73.128.29"/>
+      </producer>
+      <producer name="e6usn1del6" >
+        <custom_provider address="10.73.128.30"/>
+      </producer>
+      <producer name="e6usn1del7" >
+        <custom_provider address="10.73.128.31"/>
+      </producer>
+      <producer name="e6usn1del8" >
+        <custom_provider address="10.73.128.32"/>
+      </producer>
+      <producer name="e6usn1del9" >
+        <custom_provider address="10.73.128.33"/>
+      </producer>
+ 
+      <producer name="e6cen10del11" >
+        <custom_provider address="10.73.128.90"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e6cen10del12" >
+        <custom_provider address="10.73.128.91"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e6cen10del13" >
+        <custom_provider address="10.73.128.92"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e6cen10del14" >
+        <custom_provider address="10.73.128.93"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e6cen10del15" >
+        <custom_provider address="10.73.128.94"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e6cen10del16" >
+        <custom_provider address="10.73.128.95"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e6cen10del17" >
+        <custom_provider address="10.73.128.98"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e6cen10del18" >
+        <custom_provider address="10.73.128.99"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e6cen10del19" >
+        <custom_provider address="10.73.128.116"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e6cen12del1" >
+        <custom_provider address="10.73.128.78"/> <!-- C12 -->
+      </producer>
+
+      <producer name="e6cen12del2" >
+        <custom_provider address="10.73.128.79"/> <!-- C12 -->
+      </producer>
+
+      <producer name="e6cen12del3" >
+        <custom_provider address="10.73.128.80"/> <!-- C12 -->
+      </producer>
+
+      <producer name="e6cen12del4" >
+        <custom_provider address="10.73.128.81"/> <!-- C12 -->
+      </producer>
+
+      <producer name="e6cen12del5" >
+        <custom_provider address="10.73.128.85"/> <!-- C12 -->
+      </producer>
+
+
+      <producer name="e6cen18del1" >
+        <custom_provider address="10.73.128.120"/> <!-- C18 -->
+      </producer>
+
+      <producer name="e6cen18del2" >
+        <custom_provider address="10.73.128.121"/> <!-- C18 -->
+      </producer>
+
+      <producer name="e6cen18del3" >
+        <custom_provider address="10.73.128.122"/> <!-- C18 -->
+      </producer>
+
+      <producer name="e6cen18del4" >
+        <custom_provider address="10.73.128.123"/> <!-- C18 -->
+      </producer>
+
+      <producer name="e6cen18del5" >
+        <custom_provider address="10.73.128.124"/> <!-- C18 -->
+      </producer>
+
+
+
+
+
+      <producer name="e6cen14del1" >
+        <custom_provider address="10.73.128.72"/> <!-- C14 -->
+      </producer>
+
+      <producer name="e6cen14del2" >
+        <custom_provider address="10.73.128.73"/> <!-- C14 -->
+      </producer>
+
+      <producer name="e6cen14del3" >
+        <custom_provider address="10.73.128.74"/> <!-- C14 -->
+      </producer>
+
+      <producer name="e6cen15del2" >
+        <custom_provider address="10.73.128.87"/> <!-- C15 -->
+      </producer>
+
+      <producer name="e6cen15del3" >
+        <custom_provider address="10.73.128.88"/> <!-- C15 -->
+      </producer>
+
+      <producer name="e6cen15del4" >
+        <custom_provider address="10.73.128.89"/> <!-- C15 -->
+      </producer>
+
+
+      <producer name="e6cen17del1" >
+        <custom_provider address="10.73.128.41"/> <!-- C17 -->
+      </producer>
+
+      <producer name="e6cen17del2" >
+        <custom_provider address="10.73.128.42"/> <!-- C17 -->
+      </producer>
+
+      <producer name="e6cen17del3" >
+        <custom_provider address="10.73.128.43"/> <!-- C17 -->
+      </producer>
+
+      <producer name="e6cen17deljt1" >
+        <custom_provider address="10.73.128.82"/> <!-- C17 -->
+      </producer>
+
+      <producer name="e6cen17deljt2" >
+        <custom_provider address="10.73.128.83"/> <!-- C17 -->
+      </producer>
+
+      <producer name="e6cen17deljt3" >
+        <custom_provider address="10.73.128.84"/> <!-- C17 -->
+      </producer>
+ 
+      <producer name="e6cen18del1" >
+        <custom_provider address="10.73.128.120"/> <!-- C18 -->
+      </producer>
+
+      <producer name="e6cen18del2" >
+        <custom_provider address="10.73.128.121"/> <!-- C18 -->
+      </producer>
+
+      <producer name="e6cen18del3" >
+        <custom_provider address="10.73.128.122"/> <!-- C18 -->
+      </producer>
+
+      <producer name="e6cen18del4" >
+        <custom_provider address="10.73.128.123"/> <!-- C18 -->
+      </producer>
+
+      <producer name="e6cen18del5" >
+        <custom_provider address="10.73.128.124"/> <!-- C18 -->
+      </producer>
+
+
+      <producer name="e6oasn4del1" >
+        <custom_provider address="10.73.128.46"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e6oasn4del2" >
+        <custom_provider address="10.73.128.47"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e6oasn4del3" >
+        <custom_provider address="10.73.128.48"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e6oasn4del4" >
+        <custom_provider address="10.73.128.49"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e6oasn4del5" >
+        <custom_provider address="10.73.128.57"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e6oasn4del6" >
+        <custom_provider address="10.73.128.58"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e6oasn4del7" >
+        <custom_provider address="10.73.128.59"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e6oasn4del8" >
+        <custom_provider address="10.73.128.60"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e6oasn4del9" >
+        <custom_provider address="10.73.128.64"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e6oasn4del10" >
+        <custom_provider address="10.73.128.65"/> <!-- Z1 -->
+      </producer>
+
+       <producer name="e6oasn4del11" >
+        <custom_provider address="10.73.128.66"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e6oasn4del12" >
+        <custom_provider address="10.73.128.67"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e6oasn4del13" >
+        <custom_provider address="10.73.128.68"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e6oasn4del14" >
+        <custom_provider address="10.73.128.128"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e6oasn4del15" >
+        <custom_provider address="10.73.128.129"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e6oasn4del16" >
+        <custom_provider address="10.73.128.130"/> <!-- Z1 -->
+      </producer>
+
+    </group> <!-- remote_de_producers_dc5 -->
+
+    <group name="remote_de_producers_dc4">
+
+      <!-- add DEs as needed -->
+
+      <producer name="e5usn1del1" >
+        <custom_provider address="10.65.128.21"/>
+      </producer>
+      <producer name="e5usn1del2" >
+        <custom_provider address="10.65.128.22"/>
+      </producer>
+      <producer name="e5usn1del3" >
+        <custom_provider address="10.65.128.23"/>
+      </producer>
+      <producer name="e5usn1del4" >
+        <custom_provider address="10.65.128.27"/>
+      </producer>
+      <producer name="e5usn1del5" >
+        <custom_provider address="10.65.128.28"/>
+      </producer>
+      <producer name="e5usn1del6" >
+        <custom_provider address="10.65.128.29"/>
+      </producer>
+      <producer name="e5usn1del7" >
+        <custom_provider address="10.65.128.30"/>
+      </producer>
+      <producer name="e5usn1del8" >
+        <custom_provider address="10.65.128.31"/>
+      </producer>
+      <producer name="e5usn1del9" >
+        <custom_provider address="10.65.128.32"/>
+      </producer>
+ 
+
+      <producer name="e5cen10del1" >
+        <custom_provider address="10.65.128.62"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e5cen10del2" >
+        <custom_provider address="10.65.128.63"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e5cen10del3" >
+        <custom_provider address="10.65.128.64"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e5cen10del4" >
+        <custom_provider address="10.65.128.65"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e5cen10del5" >
+        <custom_provider address="10.65.128.66"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e5cen10del6" >
+        <custom_provider address="10.65.128.67"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e5cen10del7" >
+        <custom_provider address="10.65.128.86"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e5cen10del8" >
+        <custom_provider address="10.65.128.87"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e5cen10del9" >
+        <custom_provider address="10.65.128.94"/> <!-- C10 -->
+      </producer>
+
+      <producer name="e5cen12del2" >
+        <custom_provider address="10.65.128.58"/> <!-- C12 -->
+      </producer>
+
+      <producer name="e5cen12del3" >
+        <custom_provider address="10.65.128.78"/> <!-- C12 -->
+      </producer>
+
+      <producer name="e5cen12del4" >
+        <custom_provider address="10.65.128.79"/> <!-- C12 -->
+      </producer>
+
+      <producer name="e5cen12del5" >
+        <custom_provider address="10.65.128.80"/> <!-- C12 -->
+      </producer>
+
+      <producer name="e5cen12del6" >
+        <custom_provider address="10.65.128.81"/> <!-- C12 -->
+      </producer>
+
+
+      <producer name="e5cen14del1" >
+        <custom_provider address="10.65.128.72"/> <!-- C14 -->
+      </producer>
+
+      <producer name="e5cen14del2" >
+        <custom_provider address="10.65.128.73"/> <!-- C14 -->
+      </producer>
+
+      <producer name="e5cen14del3" >
+        <custom_provider address="10.65.128.74"/> <!-- C14 -->
+      </producer>
+
+      <producer name="e5cen15del1" >
+        <custom_provider address="10.65.128.68"/> <!-- C15 -->
+      </producer>
+
+      <producer name="e5cen15del2" >
+        <custom_provider address="10.65.128.69"/> <!-- C15 -->
+      </producer>
+
+      <producer name="e5cen15del3" >
+        <custom_provider address="10.65.128.70"/> <!-- C15 -->
+      </producer>
+
+      <producer name="e5cen15del4" >
+        <custom_provider address="10.65.128.71"/> <!-- C15 -->
+      </producer>
+
+      <producer name="e5cen17del1" >
+        <custom_provider address="10.65.128.41"/> <!-- C17 -->
+      </producer>
+
+      <producer name="e5cen17del2" >
+        <custom_provider address="10.65.128.42"/> <!-- C17 -->
+      </producer>
+
+      <producer name="e5cen17del3" >
+        <custom_provider address="10.65.128.43"/> <!-- C17 -->
+      </producer>
+
+      <producer name="e5cen17del5" >
+        <custom_provider address="10.65.128.45"/> <!-- C17 -->
+      </producer>
+
+      <producer name="e5cen17deljt1" >
+        <custom_provider address="10.65.128.59"/> <!-- C17 -->
+      </producer>
+
+      <producer name="e5cen17deljt2" >
+        <custom_provider address="10.65.128.60"/> <!-- C17 -->
+      </producer>
+
+      <producer name="e5cen17deljt3" >
+        <custom_provider address="10.65.128.61"/> <!-- C17 -->
+      </producer>
+
+     <producer name="e5cen18del1" >
+        <custom_provider address="10.65.128.120"/> <!-- C18 -->
+      </producer>
+
+      <producer name="e5cen18del2" >
+        <custom_provider address="10.65.128.121"/> <!-- C18 -->
+      </producer>
+
+      <producer name="e5cen18del3" >
+        <custom_provider address="10.65.128.122"/> <!-- C18 -->
+      </producer>
+
+      <producer name="e5cen18del4" >
+        <custom_provider address="10.65.128.123"/> <!-- C18 -->
+      </producer>
+
+      <producer name="e5cen18del5" >
+        <custom_provider address="10.65.128.124"/> <!-- C18 -->
+      </producer>
+
+
+      <producer name="e5oasn4del11" >
+        <custom_provider address="10.65.128.36"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e5oasn4del12" >
+        <custom_provider address="10.65.128.37"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e5oasn4del13" >
+        <custom_provider address="10.65.128.38"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e5oasn4del14" >
+        <custom_provider address="10.65.128.39"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e5oasn4del15" >
+        <custom_provider address="10.65.128.40"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e5oasn4del16" >
+        <custom_provider address="10.65.128.48"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e5oasn4del17" >
+        <custom_provider address="10.65.128.49"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e5oasn4del18" >
+        <custom_provider address="10.65.128.50"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e5oasn4del19" >
+        <custom_provider address="10.65.128.51"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e5oasn4del20" >
+        <custom_provider address="10.65.128.52"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e5oasn4del21" >
+        <custom_provider address="10.65.128.53"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e5oasn4del22" >
+        <custom_provider address="10.65.128.54"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e5oasn4del23" >
+        <custom_provider address="10.65.128.55"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e5oasn4del24" >
+        <custom_provider address="10.65.128.125"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e5oasn4del25" >
+        <custom_provider address="10.65.128.126"/> <!-- Z1 -->
+      </producer>
+
+      <producer name="e5oasn4del26" >
+        <custom_provider address="10.65.128.127"/> <!-- Z1 -->
+      </producer>
+
+    </group> <!-- remote_de_producers -->
+
+  </producers> <!-- remote_producers -->
+
+  <consumers>
+    <use compression_types="uncompressed" initial_dir="/var/home/appmgr/esmeralda/de/orig" />
+    <consumer name="esmlgc1us1" /> <!-- Log Concentrator DC4 -->
+    <consumer name="esmlgc1us2" /> <!-- Log Concentrator DC5 -->
+  </consumers>
+
+
+  <bindings>
+    <use file_ownership="consumer" preserve_filenames="false" filename_modifier="suffix" />
+
+    <binding name="b_de_dc5_wb_logs" producers="e6uat1del1 e6usn1del1 e6usn1del2 e6usn1del3 e6usn1del4 e6usn1del5 e6usn1del6 e6usn1del7 e6usn1del8 e6usn1del9 e6cen14del1 e6cen14del2 e6cen14del3 e6cen15del2 e6cen15del3 e6cen15del4 e6cen17del1 e6cen17del2 e6cen17del3 e6cen17deljt1 e6cen17deljt2 e6cen17deljt3  e6cen18del1 e6cen18del2 e6cen18del3 e6cen18del4 e6cen18del5 e6cen10del11 e6cen10del12 e6cen10del13 e6cen10del14 e6cen10del15 e6cen10del16 e6cen10del17 e6cen10del18 e6cen10del19 e6cen12del1 e6cen12del2 e6cen12del3 e6cen12del4 e6cen12del5 e6oasn4del1 e6oasn4del2 e6oasn4del3 e6oasn4del4 e6oasn4del5 e6oasn4del6 e6oasn4del7 e6oasn4del8 e6oasn4del9 e6oasn4del10 e6oasn4del11 e6oasn4del12 e6oasn4del13 e6oasn4del14 e6oasn4del15 e6oasn4del16" consumers="esmlgc1us2" />
+    <binding name="b_de_dc4_wb_logs" producers="e5usn1del1 e5usn1del2 e5usn1del3 e5usn1del4 e5usn1del5 e5usn1del6 e5usn1del7 e5usn1del8 e5usn1del9 e5cen14del1 e5cen14del2 e5cen14del3 e5cen15del1 e5cen15del2 e5cen15del3 e5cen15del4 e5cen17del1 e5cen17del2 e5cen17del3 e5cen17del5 e5cen17deljt1 e5cen17deljt2 e5cen17deljt3  e5cen18del1 e5cen18del2 e5cen18del3 e5cen18del4 e5cen18del5 e5cen10del1 e5cen10del2 e5cen10del3 e5cen10del4 e5cen10del5 e5cen10del6 e5cen10del7 e5cen10del8 e5cen10del9 e5cen12del2 e5cen12del3 e5cen12del4 e5cen12del5 e5cen12del6 e5oasn4del11 e5oasn4del12 e5oasn4del13 e5oasn4del14 e5oasn4del15 e5oasn4del16 e5oasn4del17 e5oasn4del18 e5oasn4del19 e5oasn4del20 e5oasn4del21 e5oasn4del22 e5oasn4del23 e5oasn4del24 e5oasn4del25 e5oasn4del26  " consumers="esmlgc1us1" />
+  </bindings>
+
+
+</lgc_topology>
+

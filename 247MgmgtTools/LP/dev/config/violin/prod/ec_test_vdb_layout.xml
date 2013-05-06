@@ -1,0 +1,96 @@
+<vdb_layout_cfg xmlns="http://schemas.247realmedia.com/vdb_layout_cfg_2011_11">
+
+  <vdb_rules>
+    <exchange_id_mappings>
+      <exchange id="google"     db_id="1"/>
+      <exchange id="appnexus"   db_id="2"/>
+      <exchange id="contextweb" db_id="3"/>
+      <exchange id="rubicon"    db_id="4"/>
+      <exchange id="admeld"     db_id="5"/>
+      <exchange id="pubmatic"   db_id="6"/>
+      <exchange id="openx"      db_id="7"/>
+    </exchange_id_mappings>
+  </vdb_rules>
+
+  <!-- It's assumed that each physical shard is capable of holding 2^26 buckets -->
+  <!-- min/max are bucket numbers within total (2^26) bucket space - just in case we'd like to create "overload" test -->
+
+  <violin_layout>
+    <up_db max_profiles="1000000" red_zone_upper_bound="95" red_zone_lower_bound="85"> <!-- red_zone expressed in % of max_profiles-->
+      <address_space log2_of_buckets_per_shard="16" /> <!-- corresponding data area sz = 2^16 * 2^12 B = 524,288 in 512B sectors-->
+      <header_config extended_area_sz="4096" />        <!-- == 2 MiB expressed in 512B sectors -->
+                                                       <!-- Total phys shard size = 528,384 (0x081000) in 512B sectors -->
+      <phys_shard name="UPPS_01">
+        <phys_location dev_path="/dev/vtmsa10">
+          <range lower_bound="0x0" upper_bound="0x081000"/>
+        </phys_location>
+        <shard_range lower_bound="0x0" upper_bound="0x0400000000000"/>
+      </phys_shard>
+
+      <phys_shard name="UPPS_02">
+        <phys_location dev_path="/dev/vtmsa10">
+          <range lower_bound="0x081000" upper_bound="0x102000"/>
+        </phys_location>
+        <shard_range lower_bound="0x0400000000000" upper_bound="0x0800000000000"/>
+      </phys_shard>
+
+      <phys_shard name="UPPS_03">
+        <phys_location dev_path="/dev/vtmsb10">
+          <range lower_bound="0x0" upper_bound="0x081000"/>
+        </phys_location>
+        <shard_range lower_bound="0x0800000000000" upper_bound="0x0c00000000000"/>
+      </phys_shard>
+
+      <phys_shard name="UPPS_04">
+        <phys_location dev_path="/dev/vtmsb10">
+          <range lower_bound="0x081000" upper_bound="0x102000"/>
+        </phys_location>
+        <shard_range lower_bound="0x0c00000000000" upper_bound="0x1000000000000"/>
+      </phys_shard>
+    </up_db>
+
+    <um_db max_profiles="1300000" red_zone_upper_bound="95" red_zone_lower_bound="85">
+      <address_space log2_of_buckets_per_shard="12" />  <!-- corresponding data area sz = 2^12 * 2^12 B = 32,768 in 512B sectors-->
+      <header_config extended_area_sz="2048" />         <!-- == 1 MiB expressed in 512B sectors -->
+                                                        <!-- Total phys shard size = 34,816 (0x8800) in 512B sectors -->
+
+      <phys_shard name="UMPS_01" exchange_id="google">
+        <phys_location dev_path="/dev/vtmsa10">
+          <range lower_bound="0x102000" upper_bound="0x10a800"/>
+        </phys_location>
+        <shard_range lower_bound="0x0" upper_bound="0x08000000000000"/>
+      </phys_shard>
+
+      <phys_shard name="UMPS_02" exchange_id="google">
+        <phys_location dev_path="/dev/vtmsb10">
+          <range lower_bound="0x102000" upper_bound="0x10a800"/>
+        </phys_location>
+        <shard_range lower_bound="0x08000000000000" upper_bound="0x10000000000000"/>
+      </phys_shard>
+
+      <phys_shard name="UMPS_03" exchange_id="appnexus">
+        <phys_location dev_path="/dev/vtmsa10">
+          <range lower_bound="0x10a800" upper_bound="0x113000"/>
+        </phys_location>
+        <shard_range lower_bound="0x0" upper_bound="0x08000000000000"/>
+      </phys_shard>
+
+      <phys_shard name="UMPS_04" exchange_id="appnexus">
+        <phys_location dev_path="/dev/vtmsb10">
+          <range lower_bound="0x10a800" upper_bound="0x113000"/>
+        </phys_location>
+        <shard_range lower_bound="0x08000000000000" upper_bound="0x10000000000000"/>
+      </phys_shard>
+
+    </um_db>
+  </violin_layout>
+
+  <business_rules>
+    <expirations>
+      <segments      days="45"/>
+      <user_mappings days="45"/>
+      <user_profile  days="45"/>
+    </expirations>
+  </business_rules>
+
+</vdb_layout_cfg>

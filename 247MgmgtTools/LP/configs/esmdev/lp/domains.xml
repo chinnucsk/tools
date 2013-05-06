@@ -1,0 +1,2241 @@
+<top_level_domain domain="ac" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="ad" domain_levels="mixed">
+  <second_level_domain domain="nom"/>
+</top_level_domain>
+
+<top_level_domain domain="ae" domain_levels="mixed">
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="sch"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="pro"/>
+  <second_level_domain domain="name"/>
+</top_level_domain>
+
+<top_level_domain domain="aero" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="af" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="com"/>
+</top_level_domain>
+
+<top_level_domain domain="ag" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="nom"/>
+</top_level_domain>
+
+<top_level_domain domain="ai" domain_levels="mixed">
+  <second_level_domain domain="off"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="al" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="uniti"/>
+  <second_level_domain domain="tirana"/>
+  <second_level_domain domain="soros"/>
+  <second_level_domain domain="upt"/>
+  <second_level_domain domain="inima"/>
+</top_level_domain>
+
+<top_level_domain domain="am" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="an" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+</top_level_domain>
+
+<top_level_domain domain="ao" domain_levels="three_level">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="ed"/>
+  <second_level_domain domain="gv"/>
+  <second_level_domain domain="it"/>
+  <second_level_domain domain="og"/>
+  <second_level_domain domain="pb"/>
+</top_level_domain>
+
+<top_level_domain domain="ar" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="int"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="arpa" domain_levels="three_level">
+  <second_level_domain domain="e164"/>
+  <second_level_domain domain="in-addr"/>
+  <second_level_domain domain="iris"/>
+  <second_level_domain domain="ip6"/>
+  <second_level_domain domain="uri"/>
+  <second_level_domain domain="urn"/>
+</top_level_domain>
+
+<top_level_domain domain="as" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="at" domain_levels="mixed">
+  <second_level_domain domain="gv"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="or"/>
+  <second_level_domain domain="priv"/>
+</top_level_domain>
+
+<top_level_domain domain="au" domain_levels="special">
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="asn"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="id"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="csiro"/>
+  <second_level_domain domain="oz"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="conf"/>
+  <second_level_domain domain="act"/>
+  <second_level_domain domain="nsw"/>
+  <second_level_domain domain="nt"/>
+  <second_level_domain domain="qld"/>
+  <second_level_domain domain="sa"/>
+  <second_level_domain domain="tas"/>
+  <second_level_domain domain="vic"/>
+  <second_level_domain domain="wa"/>
+</top_level_domain>
+
+<top_level_domain domain="aw" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+</top_level_domain>
+
+<top_level_domain domain="ax" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="az" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="int"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="pp"/>
+  <second_level_domain domain="name"/>
+  <second_level_domain domain="info"/>
+</top_level_domain>
+
+<top_level_domain domain="ba" domain_levels="mixed">
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="unsa"/>
+  <second_level_domain domain="untz"/>
+  <second_level_domain domain="unmo"/>
+  <second_level_domain domain="unbi"/>
+  <second_level_domain domain="unze"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="rs"/>
+</top_level_domain>
+
+<top_level_domain domain="bb" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="bd" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="be" domain_levels="mixed">
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="fgov"/>
+</top_level_domain>
+
+<top_level_domain domain="bf" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="bg" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="bh" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="cc"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="bi" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="biz" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="bj" domain_levels="mixed">
+  <second_level_domain domain="gouv"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="asso"/>
+  <second_level_domain domain="barreau"/>
+  <second_level_domain domain="com"/>
+</top_level_domain>
+
+<top_level_domain domain="bm" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="bn" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="bo" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="gob"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="tv"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="int"/>
+</top_level_domain>
+
+<top_level_domain domain="br" domain_levels="three_level">
+  <second_level_domain domain="agr"/>
+  <second_level_domain domain="am"/>
+  <second_level_domain domain="art"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="coop"/>
+  <second_level_domain domain="esp"/>
+  <second_level_domain domain="far"/>
+  <second_level_domain domain="fm"/>
+  <second_level_domain domain="g12"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="imb"/>
+  <second_level_domain domain="ind"/>
+  <second_level_domain domain="inf"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="psi"/>
+  <second_level_domain domain="rec"/>
+  <second_level_domain domain="srv"/>
+  <second_level_domain domain="tmp"/>
+  <second_level_domain domain="tur"/>
+  <second_level_domain domain="tv"/>
+  <second_level_domain domain="etc"/>
+  <second_level_domain domain="adm"/>
+  <second_level_domain domain="adv"/>
+  <second_level_domain domain="arq"/>
+  <second_level_domain domain="ato"/>
+  <second_level_domain domain="bio"/>
+  <second_level_domain domain="bmd"/>
+  <second_level_domain domain="cim"/>
+  <second_level_domain domain="cng"/>
+  <second_level_domain domain="cnt"/>
+  <second_level_domain domain="ecn"/>
+  <second_level_domain domain="eng"/>
+  <second_level_domain domain="eti"/>
+  <second_level_domain domain="fnd"/>
+  <second_level_domain domain="fot"/>
+  <second_level_domain domain="fst"/>
+  <second_level_domain domain="ggf"/>
+  <second_level_domain domain="jor"/>
+  <second_level_domain domain="lel"/>
+  <second_level_domain domain="mat"/>
+  <second_level_domain domain="med"/>
+  <second_level_domain domain="mus"/>
+  <second_level_domain domain="not"/>
+  <second_level_domain domain="ntr"/>
+  <second_level_domain domain="odo"/>
+  <second_level_domain domain="ppg"/>
+  <second_level_domain domain="pro"/>
+  <second_level_domain domain="psc"/>
+  <second_level_domain domain="qsl"/>
+  <second_level_domain domain="slg"/>
+  <second_level_domain domain="trd"/>
+  <second_level_domain domain="vet"/>
+  <second_level_domain domain="zlg"/>
+  <second_level_domain domain="dpn"/>
+  <second_level_domain domain="nom"/>
+</top_level_domain>
+
+<top_level_domain domain="bs" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="bt" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="bw" domain_levels="mixed">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="by" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="bz" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="ca" domain_levels="mixed">
+  <second_level_domain domain="ab"/>
+  <second_level_domain domain="bc"/>
+  <second_level_domain domain="mb"/>
+  <second_level_domain domain="nb"/>
+  <second_level_domain domain="nf"/>
+  <second_level_domain domain="nl"/>
+  <second_level_domain domain="ns"/>
+  <second_level_domain domain="nt"/>
+  <second_level_domain domain="nu"/>
+  <second_level_domain domain="on"/>
+  <second_level_domain domain="pe"/>
+  <second_level_domain domain="qc"/>
+  <second_level_domain domain="sk"/>
+  <second_level_domain domain="yk"/>
+</top_level_domain>
+
+<top_level_domain domain="cat" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="cc" domain_levels="mixed">
+  <second_level_domain domain="co"/>
+</top_level_domain>
+
+<top_level_domain domain="cd" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="cf" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="ch" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="ck" domain_levels="mixed">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="gen"/>
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="info"/>
+</top_level_domain>
+
+<top_level_domain domain="cl" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="cn" domain_levels="mixed">
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="ah"/>
+  <second_level_domain domain="bj"/>
+  <second_level_domain domain="cq"/>
+  <second_level_domain domain="fj"/>
+  <second_level_domain domain="gd"/>
+  <second_level_domain domain="gs"/>
+  <second_level_domain domain="gz"/>
+  <second_level_domain domain="gx"/>
+  <second_level_domain domain="ha"/>
+  <second_level_domain domain="hb"/>
+  <second_level_domain domain="he"/>
+  <second_level_domain domain="hi"/>
+  <second_level_domain domain="hl"/>
+  <second_level_domain domain="hn"/>
+  <second_level_domain domain="jl"/>
+  <second_level_domain domain="js"/>
+  <second_level_domain domain="jx"/>
+  <second_level_domain domain="ln"/>
+  <second_level_domain domain="nm"/>
+  <second_level_domain domain="nx"/>
+  <second_level_domain domain="qh"/>
+  <second_level_domain domain="sc"/>
+  <second_level_domain domain="sd"/>
+  <second_level_domain domain="sh"/>
+  <second_level_domain domain="sn"/>
+  <second_level_domain domain="sx"/>
+  <second_level_domain domain="tj"/>
+  <second_level_domain domain="xj"/>
+  <second_level_domain domain="xz"/>
+  <second_level_domain domain="yn"/>
+  <second_level_domain domain="zj"/>
+</top_level_domain>
+
+<top_level_domain domain="co" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="nom"/>
+</top_level_domain>
+
+<top_level_domain domain="com" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="coop" domain_levels="mixed">
+</top_level_domain>
+
+<top_level_domain domain="cr" domain_levels="three_level">
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="ed"/>
+  <second_level_domain domain="fi"/>
+  <second_level_domain domain="go"/>
+  <second_level_domain domain="or"/>
+  <second_level_domain domain="sa"/>
+</top_level_domain>
+
+<top_level_domain domain="cu" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="inf"/>
+</top_level_domain>
+
+<top_level_domain domain="cx" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="cy" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="ltd"/>
+  <second_level_domain domain="pro"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="name"/>
+  <second_level_domain domain="tm"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="ekloges"/>
+  <second_level_domain domain="press"/>
+  <second_level_domain domain="parliament"/>
+</top_level_domain>
+
+<top_level_domain domain="cz" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="de" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="dj" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="dk" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="dm" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="do" domain_levels="three_level">
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="gob"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="sld"/>
+  <second_level_domain domain="web"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="art"/>
+</top_level_domain>
+
+<top_level_domain domain="dz" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="asso"/>
+  <second_level_domain domain="pol"/>
+  <second_level_domain domain="art"/>
+</top_level_domain>
+
+<top_level_domain domain="ec" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="fin"/>
+  <second_level_domain domain="med"/>
+  <second_level_domain domain="pro"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="edu" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="ee" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="fie"/>
+  <second_level_domain domain="pri"/>
+</top_level_domain>
+
+<top_level_domain domain="eg" domain_levels="three_level">
+  <second_level_domain domain="eun"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="sci"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="es" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="nom"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gob"/>
+  <second_level_domain domain="edu"/>
+</top_level_domain>
+
+<top_level_domain domain="et" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="name"/>
+  <second_level_domain domain="info"/>
+</top_level_domain>
+
+<top_level_domain domain="eu" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="fi" domain_levels="mixed">
+  <second_level_domain domain="aland"/>
+</top_level_domain>
+
+<top_level_domain domain="fj" domain_levels="three_level">
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="name"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="pro"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="school"/>
+</top_level_domain>
+
+<top_level_domain domain="fk" domain_levels="three_level">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="nom"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="fm" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="fo" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="fr" domain_levels="mixed">
+  <second_level_domain domain="tm"/>
+  <second_level_domain domain="asso"/>
+  <second_level_domain domain="nom"/>
+  <second_level_domain domain="prd"/>
+  <second_level_domain domain="presse"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="gouv"/>
+</top_level_domain>
+
+<top_level_domain domain="ga" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="gb" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="gd" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="ge" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="pvt"/>
+</top_level_domain>
+
+<top_level_domain domain="gf" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="gg" domain_levels="mixed">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="gh" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="gi" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="ltd"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mod"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="gl" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="gm" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="gn" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="gov" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="gp" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="asso"/>
+  <second_level_domain domain="or"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="gq" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="gr" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="gs" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="gt" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="gu" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+</top_level_domain>
+
+<top_level_domain domain="gw" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="gy" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="hk" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="idv"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="hm" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="hn" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="gob"/>
+</top_level_domain>
+
+<top_level_domain domain="hr" domain_levels="mixed">
+  <second_level_domain domain="iz"/>
+  <second_level_domain domain="from"/>
+  <second_level_domain domain="name"/>
+  <second_level_domain domain="com"/>
+</top_level_domain>
+
+<top_level_domain domain="ht" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="firm"/>
+  <second_level_domain domain="shop"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="pro"/>
+  <second_level_domain domain="adult"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="art"/>
+  <second_level_domain domain="pol"/>
+  <second_level_domain domain="rel"/>
+  <second_level_domain domain="asso"/>
+  <second_level_domain domain="perso"/>
+  <second_level_domain domain="coop"/>
+  <second_level_domain domain="med"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gouv"/>
+</top_level_domain>
+
+<top_level_domain domain="hu" domain_levels="mixed">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="priv"/>
+  <second_level_domain domain="sport"/>
+  <second_level_domain domain="tm"/>
+  <second_level_domain domain="2000"/>
+  <second_level_domain domain="agrar"/>
+  <second_level_domain domain="bolt"/>
+  <second_level_domain domain="casino"/>
+  <second_level_domain domain="city"/>
+  <second_level_domain domain="erotica"/>
+  <second_level_domain domain="erotika"/>
+  <second_level_domain domain="film"/>
+  <second_level_domain domain="forum"/>
+  <second_level_domain domain="games"/>
+  <second_level_domain domain="hotel"/>
+  <second_level_domain domain="ingatlan"/>
+  <second_level_domain domain="jogasz"/>
+  <second_level_domain domain="konyvelo"/>
+  <second_level_domain domain="lakas"/>
+  <second_level_domain domain="media"/>
+  <second_level_domain domain="news"/>
+  <second_level_domain domain="reklam"/>
+  <second_level_domain domain="sex"/>
+  <second_level_domain domain="shop"/>
+  <second_level_domain domain="suli"/>
+  <second_level_domain domain="szex"/>
+  <second_level_domain domain="tozsde"/>
+  <second_level_domain domain="utazas"/>
+  <second_level_domain domain="video"/>
+</top_level_domain>
+
+<top_level_domain domain="id" domain_levels="three_level">
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="or"/>
+  <second_level_domain domain="go"/>
+</top_level_domain>
+
+<top_level_domain domain="ie" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="il" domain_levels="three_level">
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="k12"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="muni"/>
+  <second_level_domain domain="idf"/>
+</top_level_domain>
+
+<top_level_domain domain="im" domain_levels="special">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="ltd.co"/>
+  <second_level_domain domain="plc.co"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="nic"/>
+  <second_level_domain domain="ac"/>
+</top_level_domain>
+
+<top_level_domain domain="in" domain_levels="mixed">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="firm"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gen"/>
+  <second_level_domain domain="ind"/>
+  <second_level_domain domain="nic"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="res"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="info" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="int" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="io" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="ir" domain_levels="mixed">
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="sch"/>
+</top_level_domain>
+
+<top_level_domain domain="is" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="it" domain_levels="special">
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+</top_level_domain>
+
+<top_level_domain domain="je" domain_levels="mixed">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="jm" domain_levels="three_level">
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="jo" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="jobs" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="jp" domain_levels="special">
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="ad"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="ed"/>
+  <second_level_domain domain="go"/>
+  <second_level_domain domain="gr"/>
+  <second_level_domain domain="lg"/>
+  <second_level_domain domain="ne"/>
+  <second_level_domain domain="or"/>
+  <second_level_domain domain="hokkaido"/>
+  <second_level_domain domain="aomori"/>
+  <second_level_domain domain="iwate"/>
+  <second_level_domain domain="miyagi"/>
+  <second_level_domain domain="akita"/>
+  <second_level_domain domain="yamagata"/>
+  <second_level_domain domain="fukushima"/>
+  <second_level_domain domain="ibaraki"/>
+  <second_level_domain domain="tochigi"/>
+  <second_level_domain domain="gunma"/>
+  <second_level_domain domain="saitama"/>
+  <second_level_domain domain="chiba"/>
+  <second_level_domain domain="tokyo"/>
+  <second_level_domain domain="kanagawa"/>
+  <second_level_domain domain="niigata"/>
+  <second_level_domain domain="toyama"/>
+  <second_level_domain domain="ishikawa"/>
+  <second_level_domain domain="fukui"/>
+  <second_level_domain domain="yamanashi"/>
+  <second_level_domain domain="nagano"/>
+  <second_level_domain domain="gifu"/>
+  <second_level_domain domain="shizuoka"/>
+  <second_level_domain domain="aichi"/>
+  <second_level_domain domain="mie"/>
+  <second_level_domain domain="shiga"/>
+  <second_level_domain domain="kyoto"/>
+  <second_level_domain domain="osaka"/>
+  <second_level_domain domain="hyogo"/>
+  <second_level_domain domain="nara"/>
+  <second_level_domain domain="wakayama"/>
+  <second_level_domain domain="tottori"/>
+  <second_level_domain domain="shimane"/>
+  <second_level_domain domain="okayama"/>
+  <second_level_domain domain="hiroshima"/>
+  <second_level_domain domain="yamaguchi"/>
+  <second_level_domain domain="tokushima"/>
+  <second_level_domain domain="kagawa"/>
+  <second_level_domain domain="ehime"/>
+  <second_level_domain domain="kochi"/>
+  <second_level_domain domain="fukuoka"/>
+  <second_level_domain domain="saga"/>
+  <second_level_domain domain="nagasaki"/>
+  <second_level_domain domain="kumamoto"/>
+  <second_level_domain domain="oita"/>
+  <second_level_domain domain="miyazaki"/>
+  <second_level_domain domain="kagoshima"/>
+  <second_level_domain domain="okinawa"/>
+  <second_level_domain domain="sapporo"/>
+  <second_level_domain domain="sendai"/>
+  <second_level_domain domain="yokohama"/>
+  <second_level_domain domain="kawasaki"/>
+  <second_level_domain domain="nagoya"/>
+  <second_level_domain domain="kobe"/>
+  <second_level_domain domain="kitakyushu"/>
+</top_level_domain>
+
+<top_level_domain domain="ke" domain_levels="three_level">
+</top_level_domain>
+
+<top_level_domain domain="kg" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="kh" domain_levels="three_level">
+  <second_level_domain domain="per"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="ki" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="mob"/>
+  <second_level_domain domain="tel"/>
+</top_level_domain>
+
+<top_level_domain domain="km" domain_levels="mixed">
+  <second_level_domain domain="c"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="coop"/>
+  <second_level_domain domain="asso"/>
+  <second_level_domain domain="nom"/>
+  <second_level_domain domain="presse"/>
+  <second_level_domain domain="tm.mk"/>
+  <second_level_domain domain="medecin"/>
+  <second_level_domain domain="notalres"/>
+  <second_level_domain domain="pharmaciens"/>
+  <second_level_domain domain="veterinaire"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gouv"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="kn" domain_levels="mixed">
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="kr" domain_levels="mixed">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="or"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="ne"/>
+  <second_level_domain domain="re"/>
+  <second_level_domain domain="pe"/>
+  <second_level_domain domain="go"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="hs"/>
+  <second_level_domain domain="ms"/>
+  <second_level_domain domain="es"/>
+  <second_level_domain domain="sc"/>
+  <second_level_domain domain="kg"/>
+  <second_level_domain domain="seoul"/>
+  <second_level_domain domain="busan"/>
+  <second_level_domain domain="daegu"/>
+  <second_level_domain domain="incheon"/>
+  <second_level_domain domain="gwangju"/>
+  <second_level_domain domain="daejeon"/>
+  <second_level_domain domain="ulsan"/>
+  <second_level_domain domain="gyeonggi"/>
+  <second_level_domain domain="gangwon"/>
+  <second_level_domain domain="chungbuk"/>
+  <second_level_domain domain="chungnam"/>
+  <second_level_domain domain="jeonbuk"/>
+  <second_level_domain domain="jeonnam"/>
+  <second_level_domain domain="gyeongbuk"/>
+  <second_level_domain domain="gyeongnam"/>
+  <second_level_domain domain="jeju"/>
+</top_level_domain>
+
+<top_level_domain domain="kw" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="ky" domain_levels="mixed">
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="kz" domain_levels="three_level">
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="com"/>
+</top_level_domain>
+
+<top_level_domain domain="la" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="lb" domain_levels="three_level">
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="com"/>
+</top_level_domain>
+
+<top_level_domain domain="lc" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="li" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="lk" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="sch"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="int"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="ngo"/>
+  <second_level_domain domain="soc"/>
+  <second_level_domain domain="web"/>
+  <second_level_domain domain="ltd"/>
+  <second_level_domain domain="assn"/>
+  <second_level_domain domain="grp"/>
+  <second_level_domain domain="hotel"/>
+</top_level_domain>
+
+<top_level_domain domain="lr" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="ls" domain_levels="three_level">
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="co"/>
+</top_level_domain>
+
+<top_level_domain domain="lt" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="lu" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="lv" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="id"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="asn"/>
+  <second_level_domain domain="conf"/>
+</top_level_domain>
+
+<top_level_domain domain="ly" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="plc"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="sch"/>
+  <second_level_domain domain="med"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="id"/>
+</top_level_domain>
+
+<top_level_domain domain="ma" domain_levels="mixed">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="press"/>
+</top_level_domain>
+
+<top_level_domain domain="mc" domain_levels="mixed">
+  <second_level_domain domain="tm"/>
+  <second_level_domain domain="asso"/>
+</top_level_domain>
+
+<top_level_domain domain="md" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="mg" domain_levels="mixed">
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="nom"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="prd"/>
+  <second_level_domain domain="tm"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="mh" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="mil" domain_levels="mixed">
+  <second_level_domain domain="army"/>
+  <second_level_domain domain="navy"/>
+  <second_level_domain domain="marines"/>
+  <second_level_domain domain="af"/>
+</top_level_domain>
+
+<top_level_domain domain="mk" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="inf"/>
+  <second_level_domain domain="name"/>
+  <second_level_domain domain="pro"/>
+</top_level_domain>
+
+<top_level_domain domain="ml" domain_levels="three_level">
+</top_level_domain>
+
+<top_level_domain domain="mm" domain_levels="three_level">
+</top_level_domain>
+
+<top_level_domain domain="mn" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="mo" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="mobi" domain_levels="mixed">
+  <second_level_domain domain="weather"/>
+  <second_level_domain domain="music"/>
+</top_level_domain>
+
+<top_level_domain domain="mp" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="mq" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="mr" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="ms" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="mt" domain_levels="mixed">
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="mu" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="ac"/>
+</top_level_domain>
+
+<top_level_domain domain="museum" domain_levels="mixed">
+</top_level_domain>
+
+<top_level_domain domain="mv" domain_levels="three_level">
+  <second_level_domain domain="aero"/>
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="coop"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="int"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="museum"/>
+  <second_level_domain domain="name"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="pro"/>
+</top_level_domain>
+
+<top_level_domain domain="mw" domain_levels="three_level">
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="coop"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="int"/>
+  <second_level_domain domain="museum"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="mx" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gob"/>
+</top_level_domain>
+
+<top_level_domain domain="my" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="name"/>
+</top_level_domain>
+
+<top_level_domain domain="mz" domain_levels="mixed">
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+</top_level_domain>
+
+<top_level_domain domain="na" domain_levels="mixed">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="com"/>
+</top_level_domain>
+
+<top_level_domain domain="name" domain_levels="mixed">
+</top_level_domain>
+
+<top_level_domain domain="nc" domain_levels="mixed">
+  <second_level_domain domain="asso"/>
+</top_level_domain>
+
+<top_level_domain domain="ne" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="net" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="nf" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="arts"/>
+  <second_level_domain domain="store"/>
+  <second_level_domain domain="web"/>
+  <second_level_domain domain="firm"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="other"/>
+  <second_level_domain domain="per"/>
+  <second_level_domain domain="rec"/>
+</top_level_domain>
+
+<top_level_domain domain="ng" domain_levels="three_level">
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="ni" domain_levels="three_level">
+  <second_level_domain domain="gob"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="nom"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="nl" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="no" domain_levels="mixed">
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="stat"/>
+  <second_level_domain domain="kommune"/>
+  <second_level_domain domain="herad"/>
+  <second_level_domain domain="priv"/>
+  <second_level_domain domain="vgs"/>
+  <second_level_domain domain="fhs"/>
+  <second_level_domain domain="museum"/>
+  <second_level_domain domain="fylkesbibl"/>
+  <second_level_domain domain="folkebibl"/>
+  <second_level_domain domain="idrett"/>
+</top_level_domain>
+
+<top_level_domain domain="np" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="nr" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="nu" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="nz" domain_levels="three_level">
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="cri"/>
+  <second_level_domain domain="gen"/>
+  <second_level_domain domain="geek"/>
+  <second_level_domain domain="govt"/>
+  <second_level_domain domain="iwi"/>
+  <second_level_domain domain="maori"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="school"/>
+</top_level_domain>
+
+<top_level_domain domain="om" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="ac.com"/>
+  <second_level_domain domain="sch"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="museum"/>
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="pro"/>
+  <second_level_domain domain="med"/>
+</top_level_domain>
+
+<top_level_domain domain="org" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="pa" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="sld"/>
+  <second_level_domain domain="gob"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="abo"/>
+  <second_level_domain domain="ing"/>
+  <second_level_domain domain="med"/>
+  <second_level_domain domain="nom"/>
+</top_level_domain>
+
+<top_level_domain domain="pe" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="gob"/>
+  <second_level_domain domain="nom"/>
+</top_level_domain>
+
+<top_level_domain domain="pf" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+</top_level_domain>
+
+<top_level_domain domain="pg" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="ph" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="ngo"/>
+  <second_level_domain domain="i"/>
+  <second_level_domain domain="edu"/>
+</top_level_domain>
+
+<top_level_domain domain="pk" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="fam"/>
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="web"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="gob"/>
+  <second_level_domain domain="gok"/>
+  <second_level_domain domain="gon"/>
+  <second_level_domain domain="gop"/>
+  <second_level_domain domain="gos"/>
+</top_level_domain>
+
+<top_level_domain domain="pl" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="art"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="ngo"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="waw"/>
+  <second_level_domain domain="warszawa"/>
+  <second_level_domain domain="wroc"/>
+  <second_level_domain domain="wroclaw"/>
+  <second_level_domain domain="krakow"/>
+  <second_level_domain domain="poznan"/>
+  <second_level_domain domain="lodz"/>
+  <second_level_domain domain="gda"/>
+  <second_level_domain domain="gdansk"/>
+  <second_level_domain domain="slupsk"/>
+  <second_level_domain domain="szczecin"/>
+  <second_level_domain domain="lublin"/>
+  <second_level_domain domain="bialystok"/>
+  <second_level_domain domain="olsztyn"/>
+  <second_level_domain domain="torun"/>
+</top_level_domain>
+
+<top_level_domain domain="pm" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="pn" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="pr" domain_levels="mixed">
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="isla"/>
+  <second_level_domain domain="name"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="pro"/>
+</top_level_domain>
+
+<top_level_domain domain="pro" domain_levels="mixed">
+  <second_level_domain domain="law"/>
+  <second_level_domain domain="med"/>
+  <second_level_domain domain="cpa"/>
+  <second_level_domain domain="avocat"/>
+  <second_level_domain domain="bar"/>
+  <second_level_domain domain="jur"/>
+  <second_level_domain domain="aaa"/>
+  <second_level_domain domain="aca"/>
+  <second_level_domain domain="acct"/>
+  <second_level_domain domain="eng"/>
+</top_level_domain>
+
+<top_level_domain domain="ps" domain_levels="mixed">
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="sec"/>
+  <second_level_domain domain="plo"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="pt" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="int"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="nome"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="publ"/>
+</top_level_domain>
+
+<top_level_domain domain="pw" domain_levels="mixed">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="ne"/>
+  <second_level_domain domain="or"/>
+  <second_level_domain domain="ed"/>
+  <second_level_domain domain="go"/>
+  <second_level_domain domain="belau"/>
+</top_level_domain>
+
+<top_level_domain domain="py" domain_levels="three_level">
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="com"/>
+</top_level_domain>
+
+<top_level_domain domain="qa" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="re" domain_levels="mixed">
+  <second_level_domain domain="asso"/>
+  <second_level_domain domain="nom"/>
+  <second_level_domain domain="com"/>
+</top_level_domain>
+
+<top_level_domain domain="ro" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="tm"/>
+  <second_level_domain domain="nt"/>
+  <second_level_domain domain="nom"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="rec"/>
+  <second_level_domain domain="arts"/>
+  <second_level_domain domain="firm"/>
+  <second_level_domain domain="store"/>
+  <second_level_domain domain="www"/>
+  <second_level_domain domain="www"/>
+</top_level_domain>
+
+<top_level_domain domain="ru" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="pp"/>
+  <second_level_domain domain="msk"/>
+  <second_level_domain domain="int"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="rw" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="int"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="gouv"/>
+</top_level_domain>
+
+<top_level_domain domain="sa" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="sch"/>
+  <second_level_domain domain="med"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="pub"/>
+</top_level_domain>
+
+<top_level_domain domain="sb" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="sc" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+</top_level_domain>
+
+<top_level_domain domain="sd" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="med"/>
+  <second_level_domain domain="tv"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="info"/>
+</top_level_domain>
+
+<top_level_domain domain="se" domain_levels="mixed">
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="pp"/>
+  <second_level_domain domain="tm"/>
+  <second_level_domain domain="brand"/>
+  <second_level_domain domain="parti"/>
+  <second_level_domain domain="press"/>
+  <second_level_domain domain="komforb"/>
+  <second_level_domain domain="kommunalforbund"/>
+  <second_level_domain domain="komvux"/>
+  <second_level_domain domain="lanarb"/>
+  <second_level_domain domain="lanbib"/>
+  <second_level_domain domain="naturbruksgymn"/>
+  <second_level_domain domain="sshn"/>
+  <second_level_domain domain="fhv"/>
+  <second_level_domain domain="fhsk"/>
+  <second_level_domain domain="fh"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="ab"/>
+  <second_level_domain domain="c"/>
+  <second_level_domain domain="d"/>
+  <second_level_domain domain="e"/>
+  <second_level_domain domain="f"/>
+  <second_level_domain domain="g"/>
+  <second_level_domain domain="h"/>
+  <second_level_domain domain="i"/>
+  <second_level_domain domain="k"/>
+  <second_level_domain domain="m"/>
+  <second_level_domain domain="n"/>
+  <second_level_domain domain="o"/>
+  <second_level_domain domain="s"/>
+  <second_level_domain domain="t"/>
+  <second_level_domain domain="u"/>
+  <second_level_domain domain="w"/>
+  <second_level_domain domain="x"/>
+  <second_level_domain domain="y"/>
+  <second_level_domain domain="z"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="bd"/>
+</top_level_domain>
+
+<top_level_domain domain="sg" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="per"/>
+  <second_level_domain domain="idn"/>
+</top_level_domain>
+
+<top_level_domain domain="sh" domain_levels="mixed">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="nom"/>
+</top_level_domain>
+
+<top_level_domain domain="si" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="sk" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="sl" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="sm" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="sn" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="sr" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="st" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="saotome"/>
+  <second_level_domain domain="principe"/>
+  <second_level_domain domain="consulado"/>
+  <second_level_domain domain="embaixada"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="store"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="co"/>
+</top_level_domain>
+
+<top_level_domain domain="su" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="sv" domain_levels="three_level">
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="gob"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="red"/>
+</top_level_domain>
+
+<top_level_domain domain="sy" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="news"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="sz" domain_levels="mixed">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="tc" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="td" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="tf" domain_levels="mixed">
+  <second_level_domain domain="eu"/>
+  <second_level_domain domain="us"/>
+  <second_level_domain domain="edu"/>
+</top_level_domain>
+
+<top_level_domain domain="tg" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="th" domain_levels="three_level">
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="in"/>
+  <second_level_domain domain="go"/>
+  <second_level_domain domain="mi"/>
+  <second_level_domain domain="or"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="tj" domain_levels="mixed">
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="int"/>
+  <second_level_domain domain="name"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="web"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="go"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="tk" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="tl" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="tm" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="tn" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="intl"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="ind"/>
+  <second_level_domain domain="nat"/>
+  <second_level_domain domain="tourism"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="ens"/>
+  <second_level_domain domain="fin"/>
+  <second_level_domain domain="net"/>
+</top_level_domain>
+
+<top_level_domain domain="to" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="edu"/>
+</top_level_domain>
+
+<top_level_domain domain="tp" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="tr" domain_levels="special">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="web"/>
+  <second_level_domain domain="gen"/>
+  <second_level_domain domain="av"/>
+  <second_level_domain domain="dr"/>
+  <second_level_domain domain="bbs"/>
+  <second_level_domain domain="name"/>
+  <second_level_domain domain="tel"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="bel"/>
+  <second_level_domain domain="pol"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="k12"/>
+  <second_level_domain domain="edu"/>
+</top_level_domain>
+
+<top_level_domain domain="travel" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="tt" domain_levels="mixed">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="pro"/>
+  <second_level_domain domain="name"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="tv" domain_levels="mixed">
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="org"/>
+</top_level_domain>
+
+<top_level_domain domain="tw" domain_levels="mixed">
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="idv"/>
+  <second_level_domain domain="game"/>
+  <second_level_domain domain="ebiz"/>
+  <second_level_domain domain="club"/>
+</top_level_domain>
+
+<top_level_domain domain="tz" domain_levels="three_level">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="go"/>
+  <second_level_domain domain="or"/>
+  <second_level_domain domain="ne"/>
+</top_level_domain>
+
+<top_level_domain domain="ua" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="cherkassy"/>
+  <second_level_domain domain="ck"/>
+  <second_level_domain domain="chernigov"/>
+  <second_level_domain domain="cn"/>
+  <second_level_domain domain="chernovtsy"/>
+  <second_level_domain domain="cv"/>
+  <second_level_domain domain="crimea"/>
+  <second_level_domain domain="dnepropetrovsk"/>
+  <second_level_domain domain="dp"/>
+  <second_level_domain domain="donetsk"/>
+  <second_level_domain domain="dn"/>
+  <second_level_domain domain="ivano-frankivsk"/>
+  <second_level_domain domain="if"/>
+  <second_level_domain domain="kharkov"/>
+  <second_level_domain domain="kh"/>
+  <second_level_domain domain="kherson"/>
+  <second_level_domain domain="ks"/>
+  <second_level_domain domain="khmelnitskiy"/>
+  <second_level_domain domain="km"/>
+  <second_level_domain domain="kiev"/>
+  <second_level_domain domain="kv"/>
+  <second_level_domain domain="kirovograd"/>
+  <second_level_domain domain="kr"/>
+  <second_level_domain domain="lugansk"/>
+  <second_level_domain domain="lg"/>
+  <second_level_domain domain="lutsk"/>
+  <second_level_domain domain="lviv"/>
+  <second_level_domain domain="nikolaev"/>
+  <second_level_domain domain="mk"/>
+  <second_level_domain domain="odessa"/>
+  <second_level_domain domain="od"/>
+  <second_level_domain domain="poltava"/>
+  <second_level_domain domain="pl"/>
+  <second_level_domain domain="rovno"/>
+  <second_level_domain domain="rv"/>
+  <second_level_domain domain="sebastopol"/>
+  <second_level_domain domain="sumy"/>
+  <second_level_domain domain="ternopil"/>
+  <second_level_domain domain="te"/>
+  <second_level_domain domain="uzhgorod"/>
+  <second_level_domain domain="vinnica"/>
+  <second_level_domain domain="vn"/>
+  <second_level_domain domain="zaporizhzhe"/>
+  <second_level_domain domain="zp"/>
+  <second_level_domain domain="zhitomir"/>
+  <second_level_domain domain="zt"/>
+</top_level_domain>
+
+<top_level_domain domain="ug" domain_levels="mixed">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="sc"/>
+  <second_level_domain domain="go"/>
+  <second_level_domain domain="ne"/>
+  <second_level_domain domain="or"/>
+</top_level_domain>
+
+<top_level_domain domain="uk" domain_levels="mixed">
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="ltd"/>
+  <second_level_domain domain="me"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="mod"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="nic"/>
+  <second_level_domain domain="nhs"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="plc"/>
+  <second_level_domain domain="police"/>
+  <second_level_domain domain="sch"/>
+</top_level_domain>
+
+<top_level_domain domain="um" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="us" domain_levels="mixed">
+  <second_level_domain domain="ak"/>
+  <second_level_domain domain="al"/>
+  <second_level_domain domain="ar"/>
+  <second_level_domain domain="az"/>
+  <second_level_domain domain="ca"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="ct"/>
+  <second_level_domain domain="dc"/>
+  <second_level_domain domain="de"/>
+  <second_level_domain domain="dni"/>
+  <second_level_domain domain="fed"/>
+  <second_level_domain domain="fl"/>
+  <second_level_domain domain="ga"/>
+  <second_level_domain domain="hi"/>
+  <second_level_domain domain="ia"/>
+  <second_level_domain domain="id"/>
+  <second_level_domain domain="il"/>
+  <second_level_domain domain="in"/>
+  <second_level_domain domain="isa"/>
+  <second_level_domain domain="kids"/>
+  <second_level_domain domain="ks"/>
+  <second_level_domain domain="ky"/>
+  <second_level_domain domain="la"/>
+  <second_level_domain domain="ma"/>
+  <second_level_domain domain="md"/>
+  <second_level_domain domain="me"/>
+  <second_level_domain domain="mi"/>
+  <second_level_domain domain="mn"/>
+  <second_level_domain domain="mo"/>
+  <second_level_domain domain="ms"/>
+  <second_level_domain domain="mt"/>
+  <second_level_domain domain="nc"/>
+  <second_level_domain domain="nd"/>
+  <second_level_domain domain="ne"/>
+  <second_level_domain domain="nh"/>
+  <second_level_domain domain="nj"/>
+  <second_level_domain domain="nm"/>
+  <second_level_domain domain="nsn"/>
+  <second_level_domain domain="nv"/>
+  <second_level_domain domain="ny"/>
+  <second_level_domain domain="oh"/>
+  <second_level_domain domain="ok"/>
+  <second_level_domain domain="or"/>
+  <second_level_domain domain="pa"/>
+  <second_level_domain domain="ri"/>
+  <second_level_domain domain="sc"/>
+  <second_level_domain domain="sd"/>
+  <second_level_domain domain="tn"/>
+  <second_level_domain domain="tx"/>
+  <second_level_domain domain="ut"/>
+  <second_level_domain domain="vt"/>
+  <second_level_domain domain="va"/>
+  <second_level_domain domain="wa"/>
+  <second_level_domain domain="wi"/>
+  <second_level_domain domain="wv"/>
+  <second_level_domain domain="wy"/>
+  <third_level_domain domain="state"/>
+  <third_level_domain domain="k12"/>
+</top_level_domain>
+
+<top_level_domain domain="uy" domain_levels="three_level">
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gub"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="mil"/>
+</top_level_domain>
+
+<top_level_domain domain="uz" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="va" domain_levels="two_level">
+  <second_level_domain domain="vatican"/>
+</top_level_domain>
+
+<top_level_domain domain="vc" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="ve" domain_levels="three_level">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="web"/>
+</top_level_domain>
+
+<top_level_domain domain="vg" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="vi" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="vn" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="int"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="biz"/>
+  <second_level_domain domain="info"/>
+  <second_level_domain domain="name"/>
+  <second_level_domain domain="pro"/>
+  <second_level_domain domain="health"/>
+</top_level_domain>
+
+<top_level_domain domain="vu" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="wf" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="ws" domain_levels="two_level">
+</top_level_domain>
+
+<top_level_domain domain="ye" domain_levels="mixed">
+  <second_level_domain domain="com"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="ltd"/>
+  <second_level_domain domain="me"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="plc"/>
+  <second_level_domain domain="gov"/>
+</top_level_domain>
+
+<top_level_domain domain="za" domain_levels="three_level">
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="city"/>
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="edu"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="law"/>
+  <second_level_domain domain="mil"/>
+  <second_level_domain domain="nom"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="school"/>
+  <second_level_domain domain="alt"/>
+  <second_level_domain domain="net"/>
+  <second_level_domain domain="ngo"/>
+  <second_level_domain domain="tm"/>
+  <second_level_domain domain="web"/>
+</top_level_domain>
+
+<top_level_domain domain="zm" domain_levels="three_level">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="sch"/>
+  <second_level_domain domain="ac"/>
+</top_level_domain>
+
+<top_level_domain domain="zw" domain_levels="three_level">
+  <second_level_domain domain="co"/>
+  <second_level_domain domain="org"/>
+  <second_level_domain domain="gov"/>
+  <second_level_domain domain="ac"/>
+  <second_level_domain domain="ac"/>
+</top_level_domain>
+

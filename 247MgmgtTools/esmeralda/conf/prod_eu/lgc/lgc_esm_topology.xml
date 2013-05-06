@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<lgc_topology xmlns="http://schemas.247realmedia.com/2010/02/lgc_topology">
+
+  <producers name="local_producers">
+    <use compression_type="uncompressed" >
+      <filesystem_provider/>
+      <implicit_client base_path="/var/home/appmgr/esmeralda/work/lc" pull_period="5" />
+      <implicit_server store="false" base_path="/var/home/appmgr/esmeralda" />
+    </use>
+
+    <producer name="p_lc_de_wb_logs" file_pattern="(?:\.|^)esm_win\.log\.(\d+)(?:\.|$)" >
+      <implicit_server source_name="de/orig" />
+    </producer>
+
+    <producer name="p_lc_rtx_logs" file_pattern="(?:\.|^)esm(\d{8})-(\d{6})\.tlog(?:\.|$)" >
+      <implicit_server source_name="rtx/orig" />
+    </producer>
+
+  </producers> <!-- local_producers -->
+
+  <producers name="remote_producers">
+    <use compression_type="uncompressed">
+      <custom_provider port="6000"/>
+      <implicit_client pull_period="5" io_buf_size="8388608" />
+      <implicit_server store="false" />
+    </use>
+
+    <group name="remote_rtx_producers">
+      <use file_pattern="(?:\.|^)esm(\d{8})-(\d{6})\.tlog(?:\.|$)">
+        <implicit_client base_path="/var/home/appmgr/esmeralda/work/lc" />
+        <implicit_server base_path="/var/home/appmgr/tfsm/esmeralda/rtx/trlog/" source_name="completed"/>
+      </use>
+
+        <producer name="eu1esmrtx1">
+          <custom_provider address="10.1.128.161"/>
+        </producer>
+        <producer name="eu1esmrtx2">
+          <custom_provider address="10.1.128.162"/>
+        </producer>
+
+    </group> <!-- remote_rtx_producers -->
+
+
+    <group name="remote_lc_producers"> <!-- producers for moving files between data centers and to LP -->
+
+      <use compression_type="uncompressed" >
+        <implicit_client base_path="/var/home/appmgr/esmeralda/work/lc" pull_period="5" />
+        <implicit_server store="false" base_path="/var/home/appmgr/esmeralda" />
+      </use>
+       <group name="lc_de_producers_4_lp">
+          <use>
+            <implicit_client base_path="/var/home/appmgr/lgc/work"/>
+            <implicit_server source_name="de/lp" />
+          </use>
+
+          <producer name="p_lc_de_4_lp_1" file_pattern="(?:\.|^)esm_win\.log\.(\d+)(?:\.|$)" >
+           <custom_provider address="10.1.128.163"/>
+          </producer>
+        </group> <!-- lc_de_producers_4_lp -->
+
+        <group name="lc_rtx_producer_4_lp">
+          <use>
+            <implicit_client base_path="/var/home/appmgr/lgc/work"/>
+            <implicit_server source_name="rtx/lp" />
+          </use>
+
+          <producer name="p_lc_rtx_4_lp_1" file_pattern="(?:\.|^)esm(\d{8})-(\d{6})\.(.+)eu1esmrtx[13]$" >
+           <custom_provider address="10.1.128.163"/>
+          </producer>
+
+         <producer name="p_lc_rtx_4_lp_2" file_pattern="(?:\.|^)esm(\d{8})-(\d{6})\.(.+)eu1esmrtx[2]$" >
+           <custom_provider address="10.1.128.163"/>
+         </producer>
+
+        </group> <!-- lc_rtx_producers_4_lp -->
+
+    </group> <!-- remote_lc_producers -->
+  </producers> <!-- remote_producers -->
+
+
+  <consumers>
+    <use compression_types="uncompressed"/>
+    <group name="archive_consumers">
+       <consumer name="c_lc_arcive" initial_dir="/var/home/appmgr/esmeralda/archive" />
+    </group>
+
+    <group name="lc_consumers">
+       <consumer name="c_lc_rtx_orig"    initial_dir="/var/home/appmgr/esmeralda/rtx/orig"  />
+       <consumer name="c_lc_rtx_4_lp"    initial_dir="/var/home/appmgr/esmeralda/rtx/lp"    />
+       <consumer name="c_lc_de_4_rtx"    initial_dir="/var/home/appmgr/esmeralda/de/rtx"    />
+       <consumer name="c_lc_de_4_lp"     initial_dir="/var/home/appmgr/esmeralda/de/lp"     />
+    </group>
+
+    <group name="lp_consumers">
+       <consumer name="c_lp_rtx"         initial_dir="/var/home/appmgr/esmeralda/lp/data/lgc/esm_files"/>
+       <consumer name="c_lp_de"          initial_dir="/var/home/appmgr/esmeralda/lp/data/de_files/in"  />
+    </group>
+  </consumers>
+
+
+  <bindings>
+    <group name="lc">
+      <use file_ownership="consumer" preserve_filenames="true" />
+
+      <group name="lc_local">
+        <binding name="b_lc_local_rtx" producers="p_lc_rtx_logs"
+                                       consumers="c_lc_arcive c_lc_rtx_4_lp" />
+        <binding name="b_lc_local_de"  producers="p_lc_de_wb_logs"
+                                       consumers="c_lc_arcive c_lc_de_4_rtx c_lc_de_4_lp" />
+
+      </group> <!-- lc_local -->
+
+      <group name="lc_remote">
+         <binding name="b_lc_rtx" preserve_filenames="false" filename_modifier="suffix"
+                                  producers="eu1esmrtx1 eu1esmrtx2" consumers="c_lc_rtx_orig"/>
+      </group> <!-- lc_remote -->
+
+    </group> <!-- <group name="lc"> -->
+
+
+    <group name="lp">
+      <use file_ownership="consumer" preserve_filenames="true" />
+
+      <group name="lc_4_lp">
+         <binding name="b_lc_de_4_lp_1"  producers="p_lc_de_4_lp_1"   consumers="c_lp_de"  />
+         <binding name="b_lc_rtx_4_lp_1" producers="p_lc_rtx_4_lp_1"  consumers="c_lp_rtx" />
+         <binding name="b_lc_rtx_4_lp_2" producers="p_lc_rtx_4_lp_2"  consumers="c_lp_rtx" />
+      </group> <!-- lc_4_lp -->
+    </group> <!-- lp -->
+  </bindings>
+
+</lgc_topology>

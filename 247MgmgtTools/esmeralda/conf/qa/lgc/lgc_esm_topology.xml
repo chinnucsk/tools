@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<lgc_topology xmlns="http://schemas.247realmedia.com/2010/02/lgc_topology">
+
+  <producers name="remote_producers">
+    <use compression_type="uncompressed">
+      <custom_provider port="6000"/>
+      <implicit_client base_path="/var/home/appmgr/lgc/work/" pull_period="5" io_buf_size="8388608" />
+      <implicit_server source_name="out" store="false"/>
+    </use>
+
+    <group name="de_logs">
+      <use file_pattern="(?:\.|^)esm_win\.log\.(\d{10})(?:\.|$)">
+        <implicit_server base_path="/home/central/RealMedia/ads/OpenAd/Logs" source_name="esm" />
+      </use>
+
+      <group name="esmqa_des">
+        <producer name="esmqade1">
+          <custom_provider address="10.73.47.21" port="6666"/>
+        </producer>
+        <producer name="esmqade2">
+          <custom_provider address="10.73.47.22" port="6666"/>
+        </producer>
+      </group>
+    </group>
+
+
+    <group name="esm_logs">
+      <use file_pattern="(?:\.|^)esm(\d{8})-(\d{6})\.tlog(?:\.|$)">
+        <implicit_server base_path="/var/home/appmgr/esmeralda/rtx/trlog/" source_name="completed"/>
+      </use>
+
+     <group name="rtx_dev">
+      <producer name="rtx_01">
+        <custom_provider address="10.73.47.121"/>
+      </producer>
+      <producer name="rtx_02">
+        <custom_provider address="10.73.47.122"/>
+      </producer>
+     </group>
+    </group>
+
+    <group name="de_logs_redistribute">
+      <use file_pattern="(?:\.|^)esm_win\.log\.(\d{10})(?:\.|$)">
+        <custom_provider address="10.73.47.94"/>
+        <implicit_server base_path="/var/home/appmgr/esmeralda/lp/data/de_files/" source_name="in"/>
+      </use>
+
+      <group name="de_clones">
+        <producer name="lgcde1" file_pattern="^(esm_win)\.(log)\.(\d{10})\.esmqade1$">
+        </producer>
+        <producer name="lgcde2" file_pattern="^(esm_win)\.(log)\.(\d{10})\.esmqade2$">
+        </producer>
+      </group>
+    </group>
+
+    <group name="rtx_logs_redistribute">
+      <use file_pattern="(?:\.|^)esm_win\.log\.(\d{10})(?:\.|$)">
+        <custom_provider address="10.73.47.94"/>
+        <implicit_server base_path="/var/home/appmgr/esmeralda/lp/data/esm_files/" source_name="in"/>
+      </use>
+
+      <group name="de_clones">
+        <producer name="lgcrtx1" file_pattern="^(esm)(\d{8})-(\d{6})\.(tlog)\.rtx_01$">
+        </producer>
+        <producer name="lgcrtx2" file_pattern="^(esm)(\d{8})-(\d{6})\.(tlog)\.rtx_02$">
+        </producer>
+      </group>
+    </group>
+
+
+
+
+
+
+  </producers>
+
+
+
+  <consumers>
+    <use compression_types="uncompressed"/>
+
+      <consumer name="de_win_logs_4_lp"     initial_dir="/var/home/appmgr/esmeralda/lp/data/de_files/in" />
+      <consumer name="de_win_logs_4_rtx"    initial_dir="/var/home/appmgr/esmeralda/rtx/data/de_files/in" />
+      <consumer name="rtx_logs"             initial_dir="/var/home/appmgr/esmeralda/lp/data/esm_files/in" />
+      <consumer name="de_win_logs_2_lp"     initial_dir="/var/home/appmgr/esmeralda/lp/data/de_files/in" />
+      <consumer name="rtx_logs_2_lp"        initial_dir="/var/home/appmgr/esmeralda/lp/data/lgc/esm_files/in" />
+  </consumers>
+
+
+  <bindings>
+
+    <group name="collect_logs">
+      <use file_ownership="consumer" preserve_filenames="false" filename_modifier="suffix" />
+
+      <binding name="de_logs_2_lgc"  producers="esmqade1 esmqade2" consumers="de_win_logs_4_lp de_win_logs_4_rtx" />
+      <binding name="rtx_logs_2_lgc" producers="rtx_01 rtx_02" consumers="rtx_logs" />
+    </group>
+
+
+    <group name="redistribute_logs">
+      <use file_ownership="consumer" preserve_filenames="false" filename_modifier="suffix"  />
+
+      <binding name="de_logs_2_lp"   producers="lgcde1 lgcde2" consumers="de_win_logs_2_lp" />
+      <binding name="rtx_logs_2_lp"  producers="lgcrtx1 lgcrtx2" consumers="rtx_logs_2_lp" />
+    </group>
+
+  </bindings>
+
+</lgc_topology>

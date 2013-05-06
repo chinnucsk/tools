@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<lgc_topology xmlns="http://schemas.247realmedia.com/2010/02/lgc_topology">
+
+  <producers name="local_producers">
+    <use compression_type="uncompressed" >
+      <filesystem_provider/>
+      <implicit_client base_path="/var/home/appmgr/esmeralda/work/lc" pull_period="5" />
+      <implicit_server store="false" base_path="/var/home/appmgr/esmeralda" />
+    </use>
+
+    <producer name="p_lc4_de_wb_logs" file_pattern="(?:\.|^)esm_win\.log\.(\d+)(?:\.|$)" >
+      <implicit_server source_name="de/orig" />
+    </producer>
+
+    <producer name="p_lc5_de_wb_logs" file_pattern="(?:\.|^)esm_win\.log\.(\d+)(?:\.|$)" >
+      <implicit_server source_name="de/orig" />
+    </producer>
+
+    <producer name="p_lc_rtx_logs" file_pattern="(?:\.|^)esm(\d{8})-(\d{6})\.tlog(?:\.|$)" >
+      <implicit_server source_name="rtx/orig" />
+    </producer>
+
+  </producers> <!-- local_producers -->
+
+  <producers name="remote_producers">
+    <use compression_type="uncompressed">
+      <custom_provider port="6000"/>
+      <implicit_client pull_period="5" io_buf_size="8388608" />
+      <implicit_server store="false" />
+    </use>
+
+    <group name="remote_rtx_producers">
+      <use file_pattern="(?:\.|^)esm(\d{8})-(\d{6})\.tlog(?:\.|$)">
+        <implicit_client base_path="/var/home/appmgr/esmeralda/work/lc" />
+        <implicit_server base_path="/var/home/appmgr/tfsm/esmeralda/rtx/trlog/" source_name="completed"/>
+      </use>
+
+      <group name="remote_rtx_producers_dc5">
+        <producer name="esmrtx1us2">
+          <custom_provider address="10.73.128.140"/>
+        </producer>
+        <producer name="esmrtx2us2">
+          <custom_provider address="10.73.128.141"/>
+        </producer>
+        <producer name="esmrtx3us2">
+          <custom_provider address="10.73.128.142"/>
+        </producer>
+      </group> <!-- remote_rtx_producers_dc4 -->
+
+      <group name="remote_rtx_producers_dc4">
+        <producer name="esmrtx1us1">
+          <custom_provider address="10.65.128.90"/>
+        </producer>
+        <producer name="esmrtx2us1">
+          <custom_provider address="10.65.128.91"/>
+        </producer>
+        <producer name="esmrtx3us1">
+          <custom_provider address="10.65.128.92"/>
+        </producer>
+      </group> <!-- remote_rtx_producers_dc4 -->
+    </group> <!-- remote_rtx_producers -->
+
+
+    <group name="remote_lc_producers"> <!-- producers for moving files between data centers and to LP -->
+
+      <use compression_type="uncompressed" >
+        <implicit_client base_path="/var/home/appmgr/esmeralda/work/lc" pull_period="5" />
+        <implicit_server store="false" base_path="/var/home/appmgr/esmeralda" />
+      </use>
+
+      <group name="remote_lc5_producers"> <!-- LC producers in DC5 for moving files between data centers and to LP -->
+        <use>
+          <custom_provider address="10.73.128.143"/> <!-- esmlgc1us2 -->
+        </use>
+
+        <producer name="p_lc5_de_4_lc4" file_pattern="(?:\.|^)esm_win\.log\.(\d+)(?:\.|$)"> <!-- DE logs on DC5 LC to DC4 LC -->
+          <implicit_server source_name="de/lc_dc4" />
+        </producer>
+
+        <group name="lc5_de_producers_4_lp">
+          <use>
+            <implicit_client base_path="/var/home/appmgr/lgc/work"/>
+            <implicit_server source_name="de/lp" />
+          </use>
+
+          <!-- DE logs on DC5 LC to LP - group them -->
+          <producer name="p_lc5_de_4_lp_1" file_pattern="(?:\.|^)esm_win\.log\.(\d+)(?:\.|$)" />
+        </group> <!-- lc5_de_producers_4_lp -->
+
+        <group name="lc5_rtx_producers_4_lp">
+          <use>
+            <implicit_client base_path="/var/home/appmgr/lgc/work"/>
+            <implicit_server source_name="rtx/lp" />
+          </use>
+
+          <!-- RTX logs on DC5 LC to LP - group them -->
+          <producer name="p_lc5_rtx_4_lp_1" file_pattern="(?:\.|^)esm(\d{8})-(\d{6})\.(.+)esmrtx[13]us\d$" />
+          <producer name="p_lc5_rtx_4_lp_2" file_pattern="(?:\.|^)esm(\d{8})-(\d{6})\.(.+)esmrtx[2]us\d$" />
+        </group> <!-- lc5_rtx_producers_4_lp -->
+
+      </group> <!-- remote_lc_producers_dc -->
+
+      <group name="remote_lc4_producers"> <!-- LC producers in DC4 for moving files to DC5 LP  -->
+        <use>
+          <custom_provider address="10.65.128.93"/> 
+        </use>
+
+        <producer name="p_lc4_de_4_lc5"
+                  file_pattern="(?:\.|^)esm_win\.log\.(\d+)(?:\.|$)" > <!-- DE logs on DC4 LC to DC5 LC -->
+          <implicit_server source_name="de/lc_dc5" />
+        </producer>
+
+        <producer name="p_lc4_rtx_4_lc5"
+                  file_pattern="(?:\.|^)esm(\d{8})-(\d{6})\.tlog(?:\.|$)"> <!-- RTX logs on DC4 LC to DC LC -->
+          <implicit_server source_name="rtx/orig" />
+        </producer>
+      </group> <!-- remote_lc_producers_dc -->
+
+    </group> <!-- remote_lc_producers -->
+  </producers> <!-- remote_producers -->
+
+
+  <consumers>
+    <use compression_types="uncompressed"/>
+    <group name="archive_consumers">
+       <consumer name="c_lc_arcive" initial_dir="/var/home/appmgr/esmeralda/archive" />
+    </group>
+
+    <group name="lc_consumers">
+       <consumer name="c_lc_rtx_orig"    initial_dir="/var/home/appmgr/esmeralda/rtx/orig"  />
+       <consumer name="c_lc_rtx_4_lp"    initial_dir="/var/home/appmgr/esmeralda/rtx/lp"    />
+       <consumer name="c_lc_de_orig"     initial_dir="/var/home/appmgr/esmeralda/de/orig"   />
+       <consumer name="c_lc_de_4_rtx"    initial_dir="/var/home/appmgr/esmeralda/de/rtx"    />
+       <consumer name="c_lc_de_4_lp"     initial_dir="/var/home/appmgr/esmeralda/de/lp"     />
+       <consumer name="c_lc_de_4_lc_dc4" initial_dir="/var/home/appmgr/esmeralda/de/lc_dc4" />
+       <consumer name="c_lc_de_4_lc_dc5" initial_dir="/var/home/appmgr/esmeralda/de/lc_dc5" />
+    </group>
+
+    <group name="lp_consumers">
+       <consumer name="c_lp_rtx"         initial_dir="/var/home/appmgr/esmeralda/lp/data/lgc/esm_files"/>
+       <consumer name="c_lp_de"          initial_dir="/var/home/appmgr/esmeralda/lp/data/de_files/in"  />
+    </group>
+  </consumers>
+
+
+  <bindings>
+    <group name="lc5">
+      <use file_ownership="consumer" preserve_filenames="true" />
+
+      <group name="lc5_local">
+        <binding name="b_lc5_local_rtx" producers="p_lc_rtx_logs"
+                                        consumers="c_lc_arcive c_lc_rtx_4_lp" />
+        <binding name="b_lc5_local_de"  producers="p_lc5_de_wb_logs"
+                                        consumers="c_lc_arcive c_lc_de_4_rtx c_lc_de_4_lp c_lc_de_4_lc_dc4" />
+
+      </group> <!-- lc5_local -->
+
+      <group name="lc5_remote">
+         <binding name="b_lc5_rtx" preserve_filenames="false" filename_modifier="suffix"
+                                         producers="esmrtx1us2 esmrtx2us2 esmrtx3us2" consumers="c_lc_rtx_orig"/>
+         <binding name="b_lc4_2_lc5_rtx" producers="p_lc4_rtx_4_lc5"                  consumers="c_lc_rtx_orig" />
+         <binding name="b_lc5_de"        producers="p_lc4_de_4_lc5"                   consumers="c_lc_arcive c_lc_de_4_rtx c_lc_de_4_lp" />
+      </group> <!-- lc5_remote -->
+
+    </group> <!-- <group name="lc5"> -->
+
+    <group name="lc4">
+      <use file_ownership="consumer" preserve_filenames="true" />
+      <group name="lc4_local">
+
+        <binding name="b_lc4_local_de"  producers="p_lc4_de_wb_logs"
+                                        consumers="c_lc_de_4_rtx c_lc_de_4_lc_dc5" />
+
+      </group> <!-- lc4_local -->
+
+      <group name="lc4_remote">
+         <binding name="b_lc4_rtx" preserve_filenames="false" filename_modifier="suffix"
+                                   producers="esmrtx1us1 esmrtx2us1 esmrtx3us1" consumers="c_lc_rtx_orig" />
+         <binding name="b_lc4_de"  producers="p_lc5_de_4_lc4"                   consumers="c_lc_de_4_rtx" />
+      </group> <!-- lc4_remote  -->
+    </group> <!-- lc4 -->
+
+    <group name="lp">
+      <use file_ownership="consumer" preserve_filenames="true" />
+
+      <group name="lc5_4_lp">
+         <binding name="b_lc5_de_4_lp_1"  producers="p_lc5_de_4_lp_1"   consumers="c_lp_de"  />
+         <binding name="b_lc5_rtx_4_lp_1" producers="p_lc5_rtx_4_lp_1"  consumers="c_lp_rtx" />
+         <binding name="b_lc5_rtx_4_lp_2" producers="p_lc5_rtx_4_lp_2"  consumers="c_lp_rtx" />
+      </group> <!-- lc5_4_lp -->
+    </group> <!-- lp -->
+  </bindings>
+
+</lgc_topology>

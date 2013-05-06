@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<lgc_topology xmlns="http://schemas.247realmedia.com/2010/02/lgc_topology">
+
+  <producers>
+    <use compression_type="uncompressed">
+      <implicit_client base_path="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/lgc"/>
+      <implicit_server source_name="out" store="false"/>
+    </use>
+    <producer file_pattern="(?:\.|^)zbs_[^\.]+\.dat\.(\d{8}T\d{6})(?:\.|$)" name="dgen_out">
+      <filesystem_provider/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/dgn"/>
+    </producer>
+    <producer file_pattern="(?:\.|^)zbs_[^\.]+\.dat\.(\d{8}T\d{6})(?:\.|$)" name="dgen_n4_out">
+      <filesystem_provider/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/dgn_split" source_name="n4"/>
+    </producer>
+    <producer file_pattern="(?:\.|^)zbs_snapshot_(\d{8}T\d{6}Z)_n4\.tar(?:\.|$)" name="ntz_n4_out">
+      <filesystem_provider/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/segextract" source_name="export"/>
+    </producer>
+    <producer file_pattern="(?:\.|^)zbs_seg_(?:full|delta)_(\d{8}T\d{6}Z)\.xml(?:\.|$)" name="mpseg_out">
+      <filesystem_provider/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/mpseg"/>
+    </producer>
+  </producers>
+
+  <producers>
+    <use compression_type="uncompressed">
+      <custom_provider port="6000"/>
+      <implicit_client base_path="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/lgc"/>
+      <implicit_server source_name="out" store="false"/>
+    </use>
+    <producer file_pattern="(?:\.|^)mig_to_oas_id_log\.\d{4,4}-\d{2,2}-\d{2,2}-\d{2,2}_\d{2,2}_\d+\.log(?:\.|$)" name="zeus01_out">
+      <custom_provider address="10.65.44.21"/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/tfsm/zeus/tracker/data/mig-to-oas-id" source_name="completed"/>
+    </producer>
+    <producer file_pattern="(?:\.|^)mig_to_oas_id_log\.\d{4,4}-\d{2,2}-\d{2,2}-\d{2,2}_\d{2,2}_\d+\.log(?:\.|$)" name="zeus02_out">
+      <custom_provider address="10.65.44.22"/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/tfsm/zeus/tracker/data/mig-to-oas-id" source_name="completed"/>
+    </producer>
+    <producer file_pattern="(?:\.|^)mig_to_oas_id_log\.\d{4,4}-\d{2,2}-\d{2,2}-\d{2,2}_\d{2,2}_\d+\.log(?:\.|$)" name="zeus03_out">
+      <custom_provider address="10.65.44.23"/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/tfsm/zeus/tracker/data/mig-to-oas-id" source_name="completed"/>
+    </producer>
+    <producer file_pattern="(?:\.|^)mig_to_oas_id_log\.\d{4,4}-\d{2,2}-\d{2,2}-\d{2,2}_\d{2,2}_\d+\.log(?:\.|$)" name="zeus04_out">
+      <custom_provider address="10.65.44.24"/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/tfsm/zeus/tracker/data/mig-to-oas-id" source_name="completed"/>
+    </producer>
+    <producer file_pattern="(?:\.|^)mig_to_oas_id_log\.\d{4,4}-\d{2,2}-\d{2,2}-\d{2,2}_\d{2,2}_\d+\.log(?:\.|$)" name="zeus05_out">
+      <custom_provider address="10.73.44.125"/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/tfsm/zeus/tracker/data/mig-to-oas-id" source_name="completed"/>
+    </producer>
+    <producer file_pattern="(?:\.|^)mig_to_oas_id_log\.\d{4,4}-\d{2,2}-\d{2,2}-\d{2,2}_\d{2,2}_\d+\.log(?:\.|$)" name="zeus06_out">
+      <custom_provider address="10.73.44.126"/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/tfsm/zeus/tracker/data/mig-to-oas-id" source_name="completed"/>
+    </producer>
+    <producer file_pattern="(?:\.|^)mig_to_oas_id_log\.\d{4,4}-\d{2,2}-\d{2,2}-\d{2,2}_\d{2,2}_\d+\.log(?:\.|$)" name="zeus08_out">
+      <custom_provider address="10.73.44.128"/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/tfsm/zeus/tracker/data/mig-to-oas-id" source_name="completed"/>
+    </producer>
+    <producer file_pattern="(?:\.|^)zbs_[^\.]+\.dat\.(\d{8}T\d{6})(?:\.|$)" name="dgen_eun1_out">
+      <custom_provider address="10.73.60.33"/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/dgn_split" source_name="eun1"/>
+    </producer>
+    <producer file_pattern="(?:\.|^)zbs_snapshot_(\d{8}T\d{6}Z)_eu-n1\.tar(?:\.|$)" name="ntz_eun1_out">
+      <custom_provider address="10.73.60.33"/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/segextract" source_name="export"/>
+    </producer>
+    <producer file_pattern="(?:\.|^)zbs_seg_(?:full|delta)_(\d{8}T\d{6}Z)\.xml(?:\.|$)" name="n4_split1_out">
+      <custom_provider address="10.73.60.33"/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/ldr_split" source_name="1"/>
+    </producer>
+    <producer file_pattern="(?:\.|^)zbs_seg_(?:full|delta)_(\d{8}T\d{6}Z)\.xml(?:\.|$)" name="n4_split2_out">
+      <custom_provider address="10.73.60.33"/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/ldr_split" source_name="2"/>
+    </producer>
+    <producer file_pattern="(?:\.|^)zbs_seg_(?:full|delta)_(\d{8}T\d{6}Z)\.xml(?:\.|$)" name="n4_split3_out">
+      <custom_provider address="10.73.60.33"/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/ldr_split" source_name="3"/>
+    </producer>
+    <producer file_pattern="(?:\.|^)zbs_seg_(?:full|delta)_(\d{8}T\d{6}Z)\.xml(?:\.|$)" name="n4_split4_out">
+      <custom_provider address="10.73.60.33"/>
+      <implicit_client/>
+      <implicit_server base_path="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/ldr_split" source_name="4"/>
+    </producer>
+
+   <group name="eu_n1_mcldr_producers">
+    <use>
+     <custom_provider address="10.73.60.30" >
+       <compression_explicit>
+         <gzip/>
+       </compression_explicit>
+     </custom_provider>
+     <implicit_client io_buf_size="524288" />
+     <implicit_server base_path="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/ldr_split" />
+    </use>
+
+    <producer file_pattern="(?:\.|^)zbs_seg_(delta|full)_(\d{8}T\d{6}Z)\.xml(?:\.|$)" name="eun1_split1_out">
+      <implicit_server source_name="1"/>
+    </producer>
+
+    <producer file_pattern="(?:\.|^)zbs_seg_(full|delta)_(\d{8}T\d{6}Z)\.xml(?:\.|$)" name="eun1_split2_out">
+      <implicit_server source_name="2"/>
+    </producer>
+   </group>
+
+      <group name="remote_producers_ztseg_4_OAS">
+      <use>
+        <custom_provider address="10.73.60.125"/>
+        <implicit_server base_path="/var/home/appmgr/seg_data/lgc"/>
+      </use>
+        <producer name="seg_OAS_N4_1" file_pattern="(?:\.|^)zbs_seg_(?:delta|full)_(\d{8}T\d{6}Z)(?:\.|$)">
+          <implicit_server source_name="oas_n4_split1" />
+        </producer>
+        <producer name="seg_OAS_N4_2" file_pattern="(?:\.|^)zbs_seg_(?:delta|full)_(\d{8}T\d{6}Z)(?:\.|$)">
+          <implicit_server source_name="oas_n4_split2" />
+        </producer>
+        <producer name="seg_OAS_EUN1_1" file_pattern="(?:\.|^)zbs_seg_(?:delta|full)_(\d{8}T\d{6}Z)(?:\.|$)">
+          <implicit_server source_name="oas_eun1_split1" />
+        </producer>
+        <producer name="seg_OAS_EUN1_2" file_pattern="(?:\.|^)zbs_seg_(?:delta|full)_(\d{8}T\d{6}Z)(?:\.|$)">
+          <implicit_server source_name="oas_eun1_split2" />
+        </producer>
+      </group> <!-- remote_seg_producers_ztseg -->
+
+
+
+
+  </producers>
+
+  <consumers>
+    <use compression_types="uncompressed"/>
+    <consumer initial_dir="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/dgn/in" name="dgen_in"/>
+    <consumer initial_dir="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/mpseg/in" name="mpseg_in"/>
+    <consumer initial_dir="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/ldr_split/1" name="split1_in"/>
+    <consumer initial_dir="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/ldr_split/2" name="split2_in"/>
+    <consumer initial_dir="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/ldr/in" name="mcldr_in"/>
+    <consumer initial_dir="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/dgn_split/n4" name="dgen_split_n4_in"/>
+    <consumer initial_dir="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/dgn_split/eun1" name="dgen_split_eun1_in"/>
+    <consumer name="mcloader" initial_dir="/var/home/appmgr/RealMedia/ads/OpenAd/zbs/work/ldr/in" />
+  </consumers>
+
+  <bindings>
+    <binding consumers="dgen_in" file_ownership="consumer" filename_modifier="suffix" name="zeus_dgen" preserve_filenames="false" producers="zeus01_out zeus02_out zeus03_out zeus04_out zeus05_out zeus06_out zeus08_out"/>
+    <binding consumers="dgen_split_n4_in dgen_split_eun1_in" file_ownership="consumer" filename_modifier="suffix" name="dgen_split" preserve_filenames="true" producers="dgen_out"/>
+    <binding consumers="mpseg_in" file_ownership="consumer" filename_modifier="suffix" name="dgen_n4_mpseg" preserve_filenames="true" producers="dgen_n4_out"/>
+    <binding consumers="mpseg_in" file_ownership="consumer" filename_modifier="suffix" name="dgen_eun1_mpseg" preserve_filenames="true" producers="dgen_eun1_out"/>
+    <binding consumers="mpseg_in" file_ownership="consumer" filename_modifier="suffix" name="ntz_n4_mpseg" preserve_filenames="true" producers="ntz_n4_out"/>
+    <binding consumers="mpseg_in" file_ownership="consumer" filename_modifier="suffix" name="ntz_eun1_mpseg" preserve_filenames="true" producers="ntz_eun1_out"/>
+    <binding consumers="split1_in split2_in" file_ownership="consumer" filename_modifier="suffix" name="mpseg_split" preserve_filenames="true" producers="mpseg_out"/>
+    <binding consumers="mcldr_in" file_ownership="consumer" filename_modifier="suffix" name="n4_split1_mcldr" preserve_filenames="true" producers="n4_split1_out"/>
+    <binding consumers="mcldr_in" file_ownership="consumer" filename_modifier="suffix" name="n4_split2_mcldr" preserve_filenames="true" producers="n4_split2_out"/>
+    <binding consumers="mcldr_in" file_ownership="consumer" filename_modifier="suffix" name="n4_split3_mcldr" preserve_filenames="true" producers="n4_split3_out"/>
+    <binding consumers="mcldr_in" file_ownership="consumer" filename_modifier="suffix" name="n4_split4_mcldr" preserve_filenames="true" producers="n4_split4_out"/>
+    <binding consumers="mcldr_in" file_ownership="consumer" filename_modifier="suffix" name="eun1_split1_mcldr" preserve_filenames="true" producers="eun1_split1_out"/>
+    <binding consumers="mcldr_in" file_ownership="consumer" filename_modifier="suffix" name="eun1_split2_mcldr" preserve_filenames="true" producers="eun1_split2_out"/>
+    <binding name="ZTSEG_4_OAS_US1"  producers="seg_OAS_N4_1" consumers="mcloader" />
+    <binding name="ZTSEG_4_OAS_US2"  producers="seg_OAS_N4_2" consumers="mcloader" />
+    <binding name="ZTSEG_4_OAS_EU1"  producers="seg_OAS_EUN1_1" consumers="mcloader" />
+    <binding name="ZTSEG_4_OAS_EU2"  producers="seg_OAS_EUN1_2" consumers="mcloader" />
+  </bindings>
+
+</lgc_topology>

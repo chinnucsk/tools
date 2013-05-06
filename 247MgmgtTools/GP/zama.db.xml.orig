@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+
+    <!-- DB  START -->
+    <property>
+        <name>zama.db.server_name</name>
+        <value>10.65.47.214</value>
+    </property>
+
+    <property>
+        <name>zama.db.port</name>
+        <value>1521</value>
+    </property>
+
+    <property>
+        <name>zama.db.sid</name>
+        <value>S1ZAPLP2</value>
+    </property>
+
+    <property>
+        <name>zama.db.user_name</name>
+        <value>zap_rtb_gp</value>
+    </property>
+
+    <property>
+        <name>zama.db.password</name>
+        <value>zappw</value>
+    </property>
+
+	<property>
+        <name>zama.db.attempt_interval</name>
+        <value>120</value>
+    </property>
+
+</configuration>
+

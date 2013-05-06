@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<lgc_topology xmlns="http://schemas.247realmedia.com/2010/02/lgc_topology">
+
+  <producers name="remote_producers">
+    <use compression_type="uncompressed">
+      <custom_provider port="6000"/>
+      <implicit_client base_path="/var/home/appmgr/zama/work/lgc" pull_period="7" io_buf_size="8388608" />
+      <implicit_server source_name="out" store="false"/>
+    </use>
+
+    <group name="bidder_logs">
+      <use file_pattern="(?:\.|^)rtb_log\.(\d{10})(?:\.|$)">
+        <implicit_server base_path="/var/home/appmgr/zama/work/grtb" />
+      </use>
+
+      <group name="east_coast_bidders">
+        <producer name="grtb_01">
+          <custom_provider address="10.73.48.135">
+            <compression_explicit>
+              <gzip/>
+            </compression_explicit>
+          </custom_provider>
+        </producer>
+        <producer name="grtb_02">
+          <custom_provider address="10.73.48.136">
+<!--
+            <encryption_panama endianness="little"
+                               key="394358254659464E79243C66407A2A356131674E563529317436702B37795F37"
+                               iv="7A563E3759683472786C36492B5D7475755F495930372621303B562A4A353851"/>
+-->
+          </custom_provider>
+        </producer>
+      </group>
+    </group>
+
+    <group name="tracker_logs">
+      <use file_pattern="(?:\.|^)wb_log\.(\d{10})(?:\.|$)">
+        <implicit_server base_path="/var/home/appmgr/zama/work/wbtrk"/>
+      </use>
+
+      <producer name="gtrk_01">
+        <custom_provider address="10.73.48.135"/>
+      </producer>
+      <producer name="gtrk_02">
+        <custom_provider address="10.73.48.136"/>
+      </producer>
+    </group>
+
+    <group name="matcher_logs">
+      <use file_pattern="(?:\.|^)asm_log\.(\d{10})(?:\.|$)">
+        <implicit_server base_path="/var/home/appmgr/zama/work/matcher"/>
+      </use>
+
+      <producer name="match_01">
+        <custom_provider address="10.73.48.135"/>
+      </producer>
+      <producer name="match_02">
+        <custom_provider address="10.73.48.136"/>
+      </producer>
+    </group>
+
+    <group name="click_logs">
+      <use file_pattern="(?:\.|^)clk_log\.(\d{10})(?:\.|$)">
+        <implicit_server base_path="/var/home/appmgr/zama/work/cltrk"/>
+      </use>
+
+      <producer name="click_01">
+        <custom_provider address="10.73.48.135"/>
+      </producer>
+      <producer name="click_02">
+        <custom_provider address="10.73.48.136"/>
+      </producer>
+    </group>
+
+    <group name="conversion_logs">
+      <use file_pattern="(?:\.|^)cnv_log\.(\d{10})(?:\.|$)">
+        <implicit_server base_path="/var/home/appmgr/zama/work/cvtrk"/>
+      </use>
+
+      <producer name="conversion_01">
+        <custom_provider address="10.73.48.135"/>
+      </producer>
+      <producer name="conversion_02">
+        <custom_provider address="10.73.48.136"/>
+      </producer>
+    </group>
+
+    <group name="all_logs_4_redistribution">
+      <use>
+        <custom_provider address="10.73.48.101" />
+        <implicit_server base_path="/var/home/appmgr/zama/work/lp" source_name="raw_logs" />
+      </use>
+
+      <producer name="lp_src_01" file_pattern="^(?:rtb_log|wb_log)\.(\d{10})\.(?:grtb|gtrk)_\d+[13579]$" />
+      <producer name="lp_src_02" file_pattern="^(?:rtb_log|wb_log)\.(\d{10})\.(?:grtb|gtrk)_\d+[02468]$" />
+<!--      <producer name="lp_src_01" file_pattern="^(?:rtb_log|wb_log|asm_log)\.(\d{10})\.(?:grtb|gtrk|match)_\d+[13579]$" />-->
+<!--      <producer name="lp_src_02" file_pattern="^(?:rtb_log|wb_log|asm_log)\.(\d{10})\.(?:grtb|gtrk|match)_\d+[02468]$" />-->
+
+      <group name="to_odps">
+        <!-- Logs for bidder optimization reader -->
+        <use>
+          <implicit_server base_path="/var/home/appmgr/zama/work/odps"/>
+        </use>
+
+        <group name="for_rtb_logs_reader_01">
+          <use>
+            <implicit_server source_name="raw_logs_1"/>
+          </use>
+
+          <producer name="odps_rtb_src_01" file_pattern="^(?:rtb_log|wb_log)\.(\d{10})\.(?:grtb|gtrk)_\d+[13579]$"/>
+          <producer name="odps_rtb_src_02" file_pattern="^(?:rtb_log|wb_log)\.(\d{10})\.(?:grtb|gtrk)_\d+[02468]$"/>
+        </group>
+
+        <!-- hot backup -->
+        <group name="for_rtb_logs_reader_02">
+          <use>
+            <implicit_server source_name="raw_logs_2"/>
+          </use>
+
+          <producer name="odps_rtb_src_2_01" file_pattern="^(?:rtb_log|wb_log)\.(\d{10})\.(?:grtb|gtrk)_\d+[13579]$"/>
+          <producer name="odps_rtb_src_2_02" file_pattern="^(?:rtb_log|wb_log)\.(\d{10})\.(?:grtb|gtrk)_\d+[02468]$"/>
+        </group>
+      <!-- end of "to_odps" -->
+      </group>
+    </group>
+
+    <group name="refinfo_data">
+      <use>
+        <custom_provider address="10.73.48.101" />
+        <implicit_client pull_period="15" />
+        <implicit_server base_path="/var/home/appmgr/zama/work/campaigns/clones" />
+      </use>
+
+      <group name="campaign_definitions">
+        <use file_pattern="(?:\.|^)zama_campaigns\.(\d{8}T\d{6}Z)\.xml(?:\.|$)" />
+
+        <producer name="clone_01">
+          <implicit_server source_name="1"/>
+        </producer>
+        <producer name="clone_02">
+          <implicit_server source_name="2"/>
+        </producer>
+        <producer name="clone_04">
+          <implicit_server source_name="4"/>
+        </producer>
+        <producer name="stcol_01">
+          <implicit_server source_name="stcol_01"/>
+        </producer>
+        <producer name="stcol_02">
+          <implicit_server source_name="stcol_02"/>
+        </producer>
+        <producer name="fqcap_01">
+          <implicit_server source_name="fqcap_01"/>
+        </producer>
+        <producer name="lgrdr_01">
+          <implicit_server source_name="lgrdr_01"/>
+        </producer>
+      </group>
+
+      <group name="geo_definitions">
+        <use file_pattern="^EDITION_(?:IPv4_Media|IPv6_Silver)_(.*)\.oas$" />
+
+        <producer  name="gclone_01">
+          <implicit_server source_name="1"/>
+        </producer>
+        <producer  name="gclone_02">
+          <implicit_server source_name="2"/>
+        </producer>
+      </group>
+
+    <group name="redis_audience_seg_files">
+      <use file_pattern="^segments\.(\d{8}).rtbmdb1us1-qa1_(\d{4})$">
+        <implicit_server base_path="/var/home/appmgr/zama/work/redis/2_lp"/>
+      </use>
+      <producer name="aud_seg_01">
+           <custom_provider address="10.65.48.252" />
+      </producer>
+    </group>
+
+
+      <group name="admeld_blocklist">
+        <use file_pattern="(?:\.|^)(?:admeld|pubmatic)_blocklist\.(\d{8}T\d{6}Z)\.xml(?:\.|$)" >
+            <implicit_server base_path="/var/home/appmgr/zama/work/refinfo/rtb" />
+        </use>
+
+          <producer name="abl_rtb_01">
+            <implicit_server source_name="1"/>
+          </producer>
+          <producer name="abl_rtb_02">
+            <implicit_server source_name="2"/>
+          </producer>
+      </group>
+
+
+      <group name="obe_data">
+        <use file_pattern="(?:\.|^)obe_(?:ctr|cvr|pwb|visits|totals)_data\.(\d{8}T\d{6}Z)\.csv(?:\.|$)" >
+            <implicit_server base_path="/var/home/appmgr/zama/work/refinfo/rtb" />
+        </use>
+
+          <producer name="o_rtb_01">
+            <implicit_server source_name="1"/>
+          </producer>
+          <producer name="o_rtb_02">
+            <implicit_server source_name="2"/>
+          </producer>
+
+       </group>
+
+    <group name="all_logs_4_backup">
+      <use>
+        <custom_provider address="10.73.48.101"/>
+        <implicit_client io_buf_size="8388608" pull_period="900" />
+        <implicit_server base_path="/var/home/appmgr/zama_bkp" store="false" />
+      </use>
+
+      <producer name="bkp_out"  file_pattern="(?:\.|^)(?:google_|rtb|wb).*_log\.(\d{10})\..*[13579]\.bz2(?:\.|$)"/>
+      <producer name="bkp_out2" file_pattern="(?:\.|^)(?:google_|rtb|wb).*_log\.(\d{10})\..*[02468]\.bz2(?:\.|$)"/>
+    </group>
+
+    <group name="state_req_data">
+      <!-- exports results of "state_req" processing (Alex Zlatsin) -->
+      <use file_pattern="^state_req\.(\d{10})$" >
+        <implicit_client pull_period="15" />
+        <implicit_server base_path="/var/home/appmgr/zama_tools/state_req" />
+      </use>
+
+      <producer name="statereq_src_01">
+        <custom_provider address="10.73.48.206"/>
+      </producer>
+      <producer name="statereq_src_02">
+        <custom_provider address="10.73.48.164"/>
+      </producer>
+    </group>
+
+      <group name="totals">
+        <use file_pattern="(?:\.|^)obe_totals_data\.(\d{8}T\d{6}Z)\.csv(?:\.|$)">
+          <implicit_server base_path="/var/home/appmgr/rtb_odps/work/mapper"/>
+        </use>
+
+        <producer name="obe_ttl_src_01">
+          <custom_provider address="10.65.48.103"/>
+        </producer>
+        <!-- hot backup -->
+        <producer name="obe_ttl_src_02">
+          <custom_provider address="10.73.47.73"/>
+        </producer>
+      </group>
+      <!-- end of "obe_data" -->
+    </group>
+  </producers>
+
+
+  <producers name="local_producers">
+    <use compression_type="uncompressed">
+      <filesystem_provider/>
+      <implicit_client base_path="/var/home/appmgr/zama/work/lgc"/>
+      <implicit_server source_name="out" store="false"/>
+    </use>
+
+    <group name="refinfo_data">
+      <use>
+        <implicit_client pull_period="15" />
+        <implicit_server base_path="/var/home/appmgr/zama/work/campaigns" />
+      </use>
+
+      <group name="campaign_definitions">
+        <use file_pattern="(?:\.|^)zama_campaigns\.(\d{8}T\d{6}Z)\.xml(?:\.|$)" />
+
+        <producer name="campaigns_src">
+          <implicit_server store="true" stored_name="published" />
+        </producer>
+        <producer name="clone_05">
+          <implicit_server source_name="clones/5"/>
+        </producer>
+        <producer name="clone_06">
+          <implicit_server source_name="clones/6"/>
+        </producer>
+      </group>
+
+      <group name="geo_definitions">
+        <use file_pattern="^EDITION_(?:IPv4_Media|IPv6_Silver)_(.*)\.oas$" />
+
+        <producer name="geo_src">
+          <implicit_server store="true" stored_name="published" />
+        </producer>
+      </group>
+
+      <group name="admeld_blocklist">
+        <use file_pattern="(?:\.|^)admeld_blocklist\.(\d{8}T\d{6}Z)\.xml(?:\.|$)" />
+
+        <producer name="admeld_bl_src">
+          <implicit_server base_path="/var/home/appmgr/zama/work/admeld_blocklist"
+                           store="true" stored_name="published" />
+        </producer>
+      </group>
+
+      <group name="pubmatic_blocklist">
+        <use file_pattern="(?:\.|^)pubmatic_blocklist\.(\d{8}T\d{6}Z)\.xml(?:\.|$)" />
+
+        <producer name="pubmatic_bl_src">
+          <implicit_server base_path="/var/home/appmgr/zama/work/pubmatic_blocklist"
+                           store="true" stored_name="published" />
+        </producer>
+      </group>
+
+      <group name="obe_data">
+        <producer name="obe_src" file_pattern="(?:\.|^)obe_(?:ctr|cvr|pwb|visits|totals)_data\.(\d{8}T\d{6}Z)\.csv(?:\.|$)">
+          <implicit_server base_path="/var/home/appmgr/zama/work/obe"/>
+        </producer>
+        <!-- end of "obe_data" -->
+      </group>
+
+
+    </group>
+  </producers>
+
+
+  <consumers>
+    <use compression_types="uncompressed"/>
+
+    <group name="raw_logs_consumers">
+      <consumer name="lgcol"      initial_dir="/var/home/appmgr/zama/work/zwf/log_reader/in" />
+      <consumer name="lp_pool"    initial_dir="/var/home/appmgr/zama/work/lp/raw_logs" />
+      <consumer name="lp_parser"  initial_dir="/var/home/appmgr/zama/lp/data/in" />
+      <consumer name="lp_optim" initial_dir="/var/home/appmgr/RealMedia/ads/OpenAd/zama_tools/optimumlp/in" />
+      <consumer name="odps_pool_1"  initial_dir="/var/home/appmgr/zama/work/odps/raw_logs_1"   />
+      <consumer name="zama_tools" initial_dir="/var/home/appmgr/zama_tools/work/in" />
+      <consumer name="odps_logs"    initial_dir="/var/home/appmgr/rtb_odps/work/rtb_logs/in/" />
+      <consumer name="odps_data"    initial_dir="/var/home/appmgr/rtb_odps/work/rtb_data/in/" />
+      <consumer name="obe_src"      initial_dir="/var/home/appmgr/zama/work/obe/out"           />
+      <consumer name="monitor_logs" initial_dir="/var/home/appmgr/zama_tools/work/in"/>
+    </group>
+
+    <group name="refinfo_consumers">
+      <consumer name="clone_01" initial_dir="/var/home/appmgr/zama/work/campaigns/clones/1"  />
+      <consumer name="clone_02" initial_dir="/var/home/appmgr/zama/work/campaigns/clones/2"  />
+      <consumer name="clone_03" initial_dir="/var/home/appmgr/zama/work/campaigns/clones/3"  />
+      <consumer name="clone_04" initial_dir="/var/home/appmgr/zama/work/campaigns/clones/4"  />
+      <consumer name="stcol_01" initial_dir="/var/home/appmgr/zama/work/campaigns/clones/stcol_01"  />
+      <consumer name="stcol_02" initial_dir="/var/home/appmgr/zama/work/campaigns/clones/stcol_02"  />
+      <consumer name="lgrdr_01" initial_dir="/var/home/appmgr/zama/work/campaigns/clones/lgrdr_01"  />
+      <consumer name="fqcap_01" initial_dir="/var/home/appmgr/zama/work/campaigns/clones/fqcap_01"  />
+
+      <consumer name="ri_rtb_01" initial_dir="/var/home/appmgr/zama/work/refinfo/rtb/1"  />
+      <consumer name="ri_rtb_02" initial_dir="/var/home/appmgr/zama/work/refinfo/rtb/2"  />
+
+
+      <consumer name="grtb"     initial_dir="/var/home/appmgr/zama/work/grtb/in" />
+      <consumer name="fcfdr"    initial_dir="/var/home/appmgr/zama/work/zwf/fc_feeder/in" />
+      <consumer name="stcol"    initial_dir="/var/home/appmgr/zama/work/stcol/in" />
+    </group>
+
+    <group name="redis_files_consumers">
+      <consumer name="lp_aud_seg"    initial_dir="/var/home/appmgr/zama/lp/data/segments" />
+    </group>
+
+
+  </consumers>
+
+
+  <bindings>
+    <group name="collect_rtb_log_files">
+      <use file_ownership="shared" preserve_filenames="false" filename_modifier="suffix" />
+
+      <binding name="grtb_2_lgcol" producers="grtb_01 grtb_02 " consumers="lgcol lp_pool odps_pool_1" />
+      <binding name="gtrk_2_lgcol" producers="gtrk_01 gtrk_02 " consumers="lgcol lp_pool odps_pool_1" />
+    </group>
+
+    <group name="redidtribute_rtb_log">
+      <use file_ownership="consumer" preserve_filenames="true" />
+
+      <!-- To enable state_req" processing (Alex Zlatsin) add "zama_tools" to the lists of consumers of logs_2_lp_parser_xx bindings: -->
+
+      <binding name="logs_2_lp_parser_01" producers="lp_src_01" consumers="lp_parser monitor_logs" />
+      <binding name="logs_2_lp_parser_02" producers="lp_src_02" consumers="lp_parser monitor_logs" />
+
+      <binding name="lp_2_sitescope" producers="statereq_src_01 statereq_src_02" consumers="zama_tools"
+                                     preserve_filenames="false" filename_modifier="suffix" />
+    </group>
+
+    <group name="collect_click-conversion_info">
+      <use file_ownership="consumer" preserve_filenames="false" filename_modifier="suffix" />
+
+      <binding name="click_2_lp_parser_01" producers="click_01 " consumers="lp_parser" />
+      <binding name="click_2_lp_parser_02" producers="click_02" consumers="lp_parser" />
+
+      <binding name="conversion_2_lp_parser_01" producers="conversion_01 " consumers="lp_parser" />
+      <binding name="conversion_2_lp_parser_02" producers="conversion_02" consumers="lp_parser" />
+    </group>
+
+    <group name="collect_segment_membersip_info">
+      <use file_ownership="consumer" preserve_filenames="false" filename_modifier="suffix" />
+
+      <binding name="match_2_lp_parser_01" producers="match_01 " consumers="lp_parser" />
+      <binding name="match_2_lp_parser_02" producers="match_02" consumers="lp_parser" />
+    </group>
+
+    <group name="redis_audience_segments">
+      <use file_ownership="consumer" preserve_filenames="false" filename_modifier="suffix" />
+      <binding name="aud_seg_2_lp" producers="aud_seg_01" consumers="lp_aud_seg" />
+    </group>
+
+
+     <group name="to_odps">
+        <use preserve_filenames="false" filename_modifier="suffix"/>
+        <!-- Distribute RTB logs to ODBS readers -->
+        <binding name="logs_2_odps_reader_01" producers="odps_rtb_src_01 odps_rtb_src_02" consumers="odps_logs" />
+        <binding name="campaigns_2_odps_reader_01" producers="clone_04" consumers="odps_data" />
+        <!-- hot backup -->
+        <binding name="logs_2_odps_reader_02" producers="odps_rtb_src_2_01 odps_rtb_src_2_02" consumers="odps_logs" />
+      </group>
+
+    <group name="campaign_definition_distribution">
+      <use file_ownership="consumer" preserve_filenames="true"/>
+
+      <binding name="clone_campaigns" producers="campaigns_src"
+                                      consumers="clone_01 clone_02 clone_03 clone_04 stcol_01 stcol_02 lgrdr_01 fqcap_01" />
+
+      <binding name="clone_admeld_bl" producers="admeld_bl_src"
+                                        consumers="ri_rtb_01 ri_rtb_02" />
+
+      <binding name="clone_pubmatic_bl" producers="pubmatic_bl_src"
+                                        consumers="ri_rtb_01 ri_rtb_02" />
+
+      <binding name="clone_obe_refinfo" producers="obe_src"
+                                        consumers="ri_rtb_01 ri_rtb_02" />
+
+      <binding name="campaigns_2_grtb_01"   producers="clone_01 abl_rtb_01 o_rtb_01" consumers="grtb"
+					preserve_filenames="false" filename_modifier="suffix" />
+      <binding name="campaigns_2_grtb_02"   producers="clone_02 abl_rtb_02 o_rtb_02" consumers="grtb"
+					preserve_filenames="false" filename_modifier="suffix" />
+      <binding name="campaigns_2_stcol_01"  producers="stcol_01" consumers="stcol" />
+      <binding name="campaigns_2_stcol_02"  producers="stcol_02" consumers="stcol" />
+      <binding name="campaigns_2_lgrdr_01"  producers="lgrdr_01" consumers="lgcol" />
+      <binding name="campaigns_2_fqcap_01"  producers="fqcap_01" consumers="fcfdr" />
+    </group>
+
+    <group name="geo_definition_distribution">
+      <use file_ownership="consumer" preserve_filenames="true" />
+
+      <binding name="clone_geo"      producers="geo_src"   consumers="clone_01 clone_02" />
+      <binding name="geo_2_grtb_01"  producers="gclone_01" consumers="grtb" />
+      <binding name="geo_2_grtb_02"  producers="gclone_02" consumers="grtb" />
+
+    </group>
+
+    <group name="odps_collector_distr">
+      <use file_ownership="consumer" preserve_filenames="true" />
+      <binding name="obe_totals_data_2_sloop" producers="obe_ttl_src_01" consumers="obe_src" />
+    </group>
+
+  </bindings>
+
+</lgc_topology>

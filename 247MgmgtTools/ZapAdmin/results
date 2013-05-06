@@ -1,0 +1,445 @@
+[logproc1-ash] Executing task 'checkHostname'
+[logproc1-ash] run: /bin/hostname
+[logproc1-ash] out: /etc/profile: line 51: TMOUT: readonly variable
+[logproc1-ash] out: logproc1-ash
+
+[logproc1-ash] run: /bin/df
+[logproc1-ash] out: /etc/profile: line 51: TMOUT: readonly variable
+[logproc1-ash] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[logproc1-ash] out: /dev/mapper/vg0-root   8256952   1015212   6822312  13% /
+[logproc1-ash] out: /dev/sda1               256666     55781    187633  23% /boot
+[logproc1-ash] out: none                   4084368         0   4084368   0% /dev/shm
+[logproc1-ash] out: /dev/mapper/vg0-usr    8256952   1943464   5894060  25% /usr
+[logproc1-ash] out: /dev/mapper/vg0-var  397689024 253363156 124130104  68% /var
+[logproc1-ash] out: autofs-ash:/nethome/pkatsovich
+[logproc1-ash] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[logproc1-ash] run: /usr/bin/host autofs-ash
+[logproc1-ash] out: /etc/profile: line 51: TMOUT: readonly variable
+[logproc1-ash] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[logproc1-ash] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[logproc2-ash] Executing task 'checkHostname'
+[logproc2-ash] run: /bin/hostname
+[logproc2-ash] out: /etc/profile: line 51: TMOUT: readonly variable
+[logproc2-ash] out: logproc2-ash
+
+[logproc2-ash] run: /bin/df
+[logproc2-ash] out: /etc/profile: line 51: TMOUT: readonly variable
+[logproc2-ash] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[logproc2-ash] out: /dev/mapper/vg0-root   8256952   1006700   6830824  13% /
+[logproc2-ash] out: /dev/sda1               256666     55771    187643  23% /boot
+[logproc2-ash] out: none                   3056308         0   3056308   0% /dev/shm
+[logproc2-ash] out: /dev/mapper/vg0-usr    8256952   1943400   5894124  25% /usr
+[logproc2-ash] out: /dev/mapper/vg0-var  397689024 254165364 123327896  68% /var
+[logproc2-ash] out: autofs-ash:/nethome/pkatsovich
+[logproc2-ash] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[logproc2-ash] run: /usr/bin/host autofs-ash
+[logproc2-ash] out: /etc/profile: line 51: TMOUT: readonly variable
+[logproc2-ash] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[logproc2-ash] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[logproc3-ash] Executing task 'checkHostname'
+[logproc3-ash] run: /bin/hostname
+[logproc3-ash] out: logproc3-ash.dc.ash.247realmedia.com
+
+[logproc3-ash] run: /bin/df
+[logproc3-ash] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[logproc3-ash] out: /dev/mapper/vg0-root   8256952    878944   6958580  12% /
+[logproc3-ash] out: /dev/sda1               256666     55067    188347  23% /boot
+[logproc3-ash] out: none                   4084408         0   4084408   0% /dev/shm
+[logproc3-ash] out: /dev/mapper/vg0-usr    8256952   1145844   6691680  15% /usr
+[logproc3-ash] out: /dev/mapper/vg0-var  201585632  70083612 121262020  37% /var
+[logproc3-ash] out: /dev/mapper/vg0-data 196103540    191224 185950844   1% /var/home/appmgr/tfsm/zeus/lp/data/tmp
+[logproc3-ash] out: autofs-ash:/nethome/pkatsovich
+[logproc3-ash] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[logproc3-ash] run: /usr/bin/host autofs-ash
+[logproc3-ash] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[logproc3-ash] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[logproc4-ash] Executing task 'checkHostname'
+[logproc4-ash] run: /bin/hostname
+[logproc4-ash] out: /etc/profile: line 51: TMOUT: readonly variable
+[logproc4-ash] out: logproc4-ash
+
+[logproc4-ash] run: /bin/df
+[logproc4-ash] out: /etc/profile: line 51: TMOUT: readonly variable
+[logproc4-ash] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[logproc4-ash] out: /dev/mapper/vg0-root   8256952   1688900   6148624  22% /
+[logproc4-ash] out: /dev/sda1               256666     55775    187639  23% /boot
+[logproc4-ash] out: none                   4084368         0   4084368   0% /dev/shm
+[logproc4-ash] out: /dev/mapper/vg0-usr    8256952   1935368   5902156  25% /usr
+[logproc4-ash] out: /dev/mapper/vg0-var  201585632  98005696  93339936  52% /var
+[logproc4-ash] out: /dev/mapper/vg0-data 196103540    165052 185977016   1% /var/home/appmgr/tfsm/zeus/lp/data/tmp
+[logproc4-ash] out: autofs-ash:/nethome/pkatsovich
+[logproc4-ash] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[logproc4-ash] run: /usr/bin/host autofs-ash
+[logproc4-ash] out: /etc/profile: line 51: TMOUT: readonly variable
+[logproc4-ash] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[logproc4-ash] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[logproc5-ash] Executing task 'checkHostname'
+[logproc5-ash] run: /bin/hostname
+[logproc5-ash] out: logproc5-ash.dc.ash.247realmedia.com
+
+[logproc5-ash] run: /bin/df
+[logproc5-ash] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[logproc5-ash] out: /dev/cciss/c0d0p3    286008284   2089628 269390276   1% /
+[logproc5-ash] out: /dev/cciss/c0d0p1       256666     32903    210511  14% /boot
+[logproc5-ash] out: none                  32999792         0  32999792   0% /dev/shm
+[logproc5-ash] out: /dev/mapper/data-appmgr
+[logproc5-ash] out:                      309637120  26189684 267718796   9% /var/home/appmgr
+[logproc5-ash] out: /dev/mapper/data-uploadTMP
+[logproc5-ash] out:                      1585341236    184576 1504626024   1% /var/home/appmgr/tfsm/zeus/lp/data/tmp
+[logproc5-ash] out: autofs-ash:/nethome/pkatsovich
+[logproc5-ash] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[logproc5-ash] run: /usr/bin/host autofs-ash
+[logproc5-ash] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[logproc5-ash] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[logproc6-ash] Executing task 'checkHostname'
+[logproc6-ash] run: /bin/hostname
+[logproc6-ash] out: logproc6-ash.dc.ash.247realmedia.com
+
+[logproc6-ash] run: /bin/df
+[logproc6-ash] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[logproc6-ash] out: /dev/cciss/c0d0p3    286008284   1808128 269671776   1% /
+[logproc6-ash] out: /dev/cciss/c0d0p1       256666     32905    210509  14% /boot
+[logproc6-ash] out: none                  32999792         0  32999792   0% /dev/shm
+[logproc6-ash] out: /dev/mapper/data-appmgr
+[logproc6-ash] out:                      309637120  26173440 267735040   9% /var/home/appmgr
+[logproc6-ash] out: /dev/mapper/data-uploadTMP
+[logproc6-ash] out:                      1585341236    214720 1504595880   1% /var/home/appmgr/tfsm/zeus/lp/data/tmp
+[logproc6-ash] out: autofs-ash:/nethome/pkatsovich
+[logproc6-ash] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[logproc6-ash] run: /usr/bin/host autofs-ash
+[logproc6-ash] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[logproc6-ash] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[migrt5] Executing task 'checkHostname'
+[migrt5] run: /bin/hostname
+[migrt5] out: migrt5.dc.ash.247realmedia.com
+
+[migrt5] run: /bin/df
+[migrt5] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[migrt5] out: /dev/xvda3            38955020   9887268  27088948  27% /
+[migrt5] out: /dev/xvda1              256666     22037    221377  10% /boot
+[migrt5] out: none                   8388608         0   8388608   0% /dev/shm
+[migrt5] out: e6napp2:/vol/zapadm2  83886080     12160  83873920   1% /mnt/share
+[migrt5] out: autofs-ash:/nethome/pkatsovich
+[migrt5] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[migrt5] run: /usr/bin/host autofs-ash
+[migrt5] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[migrt5] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[coll-mapper] Executing task 'checkHostname'
+[coll-mapper] run: /bin/hostname
+[coll-mapper] out: coll-mapper.dc.ash.247realmedia.com
+
+[coll-mapper] run: /bin/df
+[coll-mapper] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[coll-mapper] out: /dev/cciss/c0d0p3    138757516   1583680 130125320   2% /
+[coll-mapper] out: /dev/cciss/c0d0p1       256666     25403    218011  11% /boot
+[coll-mapper] out: /dev/cciss/c0d1p1    1730496984 267352748 1375240028  17% /var/home/appmgr
+[coll-mapper] out: none                  32999808         0  32999808   0% /dev/shm
+[coll-mapper] out: autofs-ash:/nethome/pkatsovich
+[coll-mapper] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[coll-mapper] run: /usr/bin/host autofs-ash
+[coll-mapper] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[coll-mapper] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[migiris1us2] Executing task 'checkHostname'
+[migiris1us2] run: /bin/hostname
+[migiris1us2] out: migiris1us2.dc.ash.247realmedia.com
+
+[migiris1us2] run: /bin/df
+[migiris1us2] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[migiris1us2] out: /dev/xvda3            80242696   9994796  66171808  14% /
+[migiris1us2] out: /dev/xvda1              256666     24915    218499  11% /boot
+[migiris1us2] out: none                   8388608         0   8388608   0% /dev/shm
+[migiris1us2] out: autofs-ash:/nethome/pkatsovich
+[migiris1us2] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[migiris1us2] run: /usr/bin/host autofs-ash
+[migiris1us2] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[migiris1us2] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[migiris2us2] Executing task 'checkHostname'
+[migiris2us2] run: /bin/hostname
+[migiris2us2] out: migiris2us2.dc.ash.247realmedia.com
+
+[migiris2us2] run: /bin/df
+[migiris2us2] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[migiris2us2] out: /dev/xvda3            38955020   1570344  35405872   5% /
+[migiris2us2] out: /dev/xvda1              256666     24914    218500  11% /boot
+[migiris2us2] out: none                   4194304         0   4194304   0% /dev/shm
+[migiris2us2] out: /dev/xvdb            516061624 187037952 302809272  39% /atlas
+[migiris2us2] out: autofs-ash:/nethome/licai
+[migiris2us2] out:                      1056894144 270304672 732902400  27% /home/licai
+[migiris2us2] out: autofs-ash:/nethome/pkatsovich
+[migiris2us2] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[migiris2us2] run: /usr/bin/host autofs-ash
+[migiris2us2] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[migiris2us2] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[dart-oas] Executing task 'checkHostname'
+[dart-oas] run: /bin/hostname
+[dart-oas] out: dart-oas.dc.ash.247realmedia.com
+
+[dart-oas] run: /bin/df
+[dart-oas] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[dart-oas] out: /dev/xvda3            38955020   3696280  33279936  10% /
+[dart-oas] out: /dev/xvda1              256666     36372    207042  15% /boot
+[dart-oas] out: none                   4194304         0   4194304   0% /dev/shm
+[dart-oas] out: /dev/xvdb1           103210940  75942684  22025448  78% /var/home/appmgr
+[dart-oas] out: autofs-ash:/nethome/pkatsovich
+[dart-oas] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[dart-oas] run: /usr/bin/host autofs-ash
+[dart-oas] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[dart-oas] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[mediamind] Executing task 'checkHostname'
+[mediamind] run: /bin/hostname
+[mediamind] out: mediamind.dc.ash.247realmedia.com
+
+[mediamind] run: /bin/df
+[mediamind] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[mediamind] out: /dev/xvda3            38955020   1708916  35267300   5% /
+[mediamind] out: /dev/xvda1              256666     36372    207042  15% /boot
+[mediamind] out: none                   2097152         0   2097152   0% /dev/shm
+[mediamind] out: /dev/xvdb1           258027584  69688344 175232212  29% /var/home/appmgr
+[mediamind] out: autofs-ash:/nethome/pkatsovich
+[mediamind] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[mediamind] run: /usr/bin/host autofs-ash
+[mediamind] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[mediamind] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[zaptools1us1] Executing task 'checkHostname'
+[zaptools1us1] run: /bin/hostname
+[zaptools1us1] out: zaptools1us1.dc.ash.247realmedia.com
+
+[zaptools1us1] run: /bin/df
+[zaptools1us1] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[zaptools1us1] out: /dev/xvda3            18020368   3107176  13983032  19% /
+[zaptools1us1] out: /dev/xvda1              256666     32297    211117  14% /boot
+[zaptools1us1] out: tmpfs                  2097152         0   2097152   0% /dev/shm
+[zaptools1us1] out: 10.73.61.22:/nethome/pkatsovich
+[zaptools1us1] out:                      1056894976 270305280 732902400  27% /home/pkatsovich
+
+[zaptools1us1] run: /usr/bin/host autofs-ash
+[zaptools1us1] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[zaptools1us1] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[zapadmin1us1] Executing task 'checkHostname'
+[zapadmin1us1] run: /bin/hostname
+[zapadmin1us1] out: zapadmin1us1.dc.ash.247realmedia.com
+
+[zapadmin1us1] run: /bin/df
+[zapadmin1us1] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[zapadmin1us1] out: /dev/xvda3            18020368   4562388  12527820  27% /
+[zapadmin1us1] out: /dev/xvda1              256666     32297    211117  14% /boot
+[zapadmin1us1] out: tmpfs                  4194304         0   4194304   0% /dev/shm
+[zapadmin1us1] out: e6napp2:/vol/zapadm2  83886080     12160  83873920   1% /mnt/share
+[zapadmin1us1] out: 10.73.61.22:/nethome/pkatsovich
+[zapadmin1us1] out:                      1056894976 270305280 732902400  27% /home/pkatsovich
+
+[zapadmin1us1] run: /usr/bin/host autofs-ash
+[zapadmin1us1] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[zapadmin1us1] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[zapadmin2us1] Executing task 'checkHostname'
+[zapadmin2us1] run: /bin/hostname
+[zapadmin2us1] out: zapadmin2us1.dc.ash.247realmedia.com
+
+[zapadmin2us1] run: /bin/df
+[zapadmin2us1] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[zapadmin2us1] out: /dev/xvda3            18020368   3083320  14006888  19% /
+[zapadmin2us1] out: /dev/xvda1              256666     32297    211117  14% /boot
+[zapadmin2us1] out: tmpfs                  2097152         0   2097152   0% /dev/shm
+[zapadmin2us1] out: e6napp2:/vol/zapadm2  83886080     12160  83873920   1% /mnt/share
+[zapadmin2us1] out: 10.73.61.22:/nethome/pkatsovich
+[zapadmin2us1] out:                      1056894976 270305280 732902400  27% /home/pkatsovich
+
+[zapadmin2us1] run: /usr/bin/host autofs-ash
+[zapadmin2us1] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[zapadmin2us1] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[mig-zrpt1] Executing task 'checkHostname'
+[mig-zrpt1] run: /bin/hostname
+[mig-zrpt1] out: mig-zrpt1.dc.ash.247realmedia.com
+
+[mig-zrpt1] run: /bin/df
+[mig-zrpt1] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[mig-zrpt1] out: /dev/xvda3            18311184  10239720   7141304  59% /
+[mig-zrpt1] out: /dev/xvda1              256666     24886    218528  11% /boot
+[mig-zrpt1] out: none                   4194304         0   4194304   0% /dev/shm
+[mig-zrpt1] out: 10.73.61.252:/vol/zapadm
+[mig-zrpt1] out:                       29360128   8518208  20841920  30% /var/home/appmgr/tfsm/zeus/tmp/reportFolder
+[mig-zrpt1] out: 10.73.61.252:/vol/zapadm/reporting-ui
+[mig-zrpt1] out:                       29360128   8518208  20841920  30% /var/home/appmgr/tfsm/zeus/tmp/reporting-ui
+[mig-zrpt1] out: autofs-ash:/nethome/pkatsovich
+[mig-zrpt1] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[mig-zrpt1] run: /usr/bin/host autofs-ash
+[mig-zrpt1] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[mig-zrpt1] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[mig-zrpt2] Executing task 'checkHostname'
+[mig-zrpt2] run: /bin/hostname
+[mig-zrpt2] out: mig-zrpt2.dc.ash.247realmedia.com
+
+[mig-zrpt2] run: /bin/df
+[mig-zrpt2] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[mig-zrpt2] out: /dev/xvda3            18311184   2976400  14404624  18% /
+[mig-zrpt2] out: /dev/xvda1              256666     24886    218528  11% /boot
+[mig-zrpt2] out: none                   4194304         0   4194304   0% /dev/shm
+[mig-zrpt2] out: 10.73.61.252:/vol/zapadm
+[mig-zrpt2] out:                       29360128   8518208  20841920  30% /var/home/appmgr/tfsm/zeus/tmp/reportFolder
+[mig-zrpt2] out: 10.73.61.252:/vol/zapadm/reporting-ui
+[mig-zrpt2] out:                       29360128   8518208  20841920  30% /var/home/appmgr/tfsm/zeus/tmp/reporting-ui
+[mig-zrpt2] out: autofs-ash:/nethome/pkatsovich
+[mig-zrpt2] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[mig-zrpt2] run: /usr/bin/host autofs-ash
+[mig-zrpt2] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[mig-zrpt2] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[migrt3] Executing task 'checkHostname'
+[migrt3] run: /bin/hostname
+[migrt3] out: migrt3.dc.ash.247realmedia.com
+
+[migrt3] run: /bin/df
+[migrt3] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[migrt3] out: /dev/xvda3            80242696  17460096  58706508  23% /
+[migrt3] out: /dev/xvda1              256666     22034    221380  10% /boot
+[migrt3] out: none                   8388608         0   8388608   0% /dev/shm
+[migrt3] out: migui2.dc.ash.247realmedia.com:/apps/mig/b3reports
+[migrt3] out:                       78968864   9688416  65204384  13% /share_data
+[migrt3] out: autofs-ash:/nethome/pkatsovich
+[migrt3] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[migrt3] run: /usr/bin/host autofs-ash
+[migrt3] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[migrt3] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[migrt4] Executing task 'checkHostname'
+[migrt4] run: /bin/hostname
+[migrt4] out: migrt4.dc.ash.247realmedia.com
+
+[migrt4] run: /bin/df
+[migrt4] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[migrt4] out: /dev/xvda3            80242696  15162656  61003948  20% /
+[migrt4] out: /dev/xvda1              256666     22035    221379  10% /boot
+[migrt4] out: none                   8388608         0   8388608   0% /dev/shm
+[migrt4] out: migui2.dc.ash.247realmedia.com:/apps/mig/b3reports
+[migrt4] out:                       78968864   9688416  65204384  13% /share_data
+[migrt4] out: autofs-ash:/nethome/pkatsovich
+[migrt4] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[migrt4] run: /usr/bin/host autofs-ash
+[migrt4] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[migrt4] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[migutil2] Executing task 'checkHostname'
+[migutil2] run: /bin/hostname
+[migutil2] out: migutil2.dc.ash.247realmedia.com
+
+[migutil2] run: /bin/df
+[migutil2] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[migutil2] out: /dev/xvda3            80242696  52536244  23630360  69% /
+[migutil2] out: /dev/xvda1              256666     22038    221376  10% /boot
+[migutil2] out: none                   8388608         0   8388608   0% /dev/shm
+[migutil2] out: autofs-ash:/nethome/pkatsovich
+[migutil2] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[migutil2] run: /usr/bin/host autofs-ash
+[migutil2] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[migutil2] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[migui2] Executing task 'checkHostname'
+[migui2] run: /bin/hostname
+[migui2] out: migui2.dc.ash.247realmedia.com
+
+[migui2] run: /bin/df
+[migui2] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[migui2] out: /dev/xvda3            78968840   9688396  65204352  13% /
+[migui2] out: /dev/xvda1              256666     32226    211188  14% /boot
+[migui2] out: tmpfs                  8388608         0   8388608   0% /dev/shm
+[migui2] out: migui2.dc.ash.247realmedia.com:/apps/mig/b3reports
+[migui2] out:                       78968864   9688416  65204352  13% /share_data
+[migui2] out: 10.73.61.22:/nethome/pkatsovich
+[migui2] out:                      1056894976 270305280 732902400  27% /home/pkatsovich
+
+[migui2] run: /usr/bin/host autofs-ash
+[migui2] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[migui2] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[migui3] Executing task 'checkHostname'
+[migui3] run: /bin/hostname
+[migui3] out: migui3.dc.ash.247realmedia.com
+
+[migui3] run: /bin/df
+[migui3] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[migui3] out: /dev/xvda3            78968840   2680044  72212704   4% /
+[migui3] out: /dev/xvda1              256666     32226    211188  14% /boot
+[migui3] out: tmpfs                  8388608         0   8388608   0% /dev/shm
+[migui3] out: migui2.dc.ash.247realmedia.com:/apps/mig/b3reports
+[migui3] out:                       78968864   9688416  65204352  13% /share_data
+[migui3] out: 10.73.61.22:/nethome/pkatsovich
+[migui3] out:                      1056894976 270305280 732902400  27% /home/pkatsovich
+
+[migui3] run: /usr/bin/host autofs-ash
+[migui3] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[migui3] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+[zapwebsvc1us2] Executing task 'checkHostname'
+[zapwebsvc1us2] run: /bin/hostname
+[zapwebsvc1us2] out: zapwebsvc1us2.dc.ash.247realmedia.com
+
+[zapwebsvc1us2] run: /bin/df
+[zapwebsvc1us2] out: Filesystem           1K-blocks      Used Available Use% Mounted on
+[zapwebsvc1us2] out: /dev/xvda3            38955020   3050712  33925504   9% /
+[zapwebsvc1us2] out: /dev/xvda1              256666     22034    221380  10% /boot
+[zapwebsvc1us2] out: none                   2097152         0   2097152   0% /dev/shm
+[zapwebsvc1us2] out: autofs-ash:/nethome/pkatsovich
+[zapwebsvc1us2] out:                      1056894144 270304672 732902400  27% /home/pkatsovich
+
+[zapwebsvc1us2] run: /usr/bin/host autofs-ash
+[zapwebsvc1us2] out: autofs-ash.dc.ash.247realmedia.com is an alias for e6nas3-561.dc.ash.247realmedia.com.
+[zapwebsvc1us2] out: e6nas3-561.dc.ash.247realmedia.com has address 10.73.61.22
+
+
+Done.
+Disconnecting from migui3... done.
+Disconnecting from migrt5... done.
+Disconnecting from logproc2-ash... done.
+Disconnecting from migrt4... done.
+Disconnecting from migiris2us2... done.
+Disconnecting from zapwebsvc1us2... done.
+Disconnecting from migutil2... done.
+Disconnecting from migiris1us2... done.
+Disconnecting from migrt3... done.
+Disconnecting from logproc3-ash... done.
+Disconnecting from zapadmin1us1... done.
+Disconnecting from mig-zrpt2... done.
+Disconnecting from mig-zrpt1... done.
+Disconnecting from zapadmin2us1... done.
+Disconnecting from dart-oas... done.
+Disconnecting from coll-mapper... done.
+Disconnecting from zaptools1us1... done.
+Disconnecting from logproc4-ash... done.
+Disconnecting from mediamind... done.
+Disconnecting from migui2... done.
+Disconnecting from logproc6-ash... done.
+Disconnecting from logproc5-ash... done.
+Disconnecting from logproc1-ash... done.

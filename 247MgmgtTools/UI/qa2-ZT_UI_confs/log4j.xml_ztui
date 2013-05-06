@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+        <appender name="Logfile" class="org.apache.log4j.RollingFileAppender">
+                <param name="File" value="/opt/tomcat/logs/log4j.log" />
+                <param name="MaxFileSize" value="5MB" />
+                <param name="MaxBackupIndex" value="5" />
+                <layout class="org.apache.log4j.PatternLayout">
+                        <param name="ConversionPattern" value="%d [%t] %-5p - %m%n"/>
+                </layout>
+        </appender>
+        <appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+                <layout class="org.apache.log4j.PatternLayout">
+                        <param name="ConversionPattern" value="%d{ABSOLUTE} %5p %c{1}:%L - %m%n"/>
+                </layout>
+        </appender>
+
+        <appender name="SegmentBuilderfile" class="org.apache.log4j.DailyRollingFileAppender">
+                <param name="File" value="/opt/tomcat/logs/segmentbuilder.log" />
+                <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+                <layout class="org.apache.log4j.PatternLayout">
+                        <param name="ConversionPattern" value="%d [%t] %-5p - %m%n"/>
+                </layout>
+        </appender>
+
+
+        <appender name="RmxLogfile" class="org.apache.log4j.DailyRollingFileAppender">
+                <param name="File" value="/opt/tomcat/logs/rmx.log" />
+                <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+                <layout class="org.apache.log4j.PatternLayout">
+                        <param name="ConversionPattern" value="%d [%t] %-5p - %m%n"/>
+                </layout>
+        </appender>
+
+        <appender name="DnaLogfile" class="org.apache.log4j.DailyRollingFileAppender">
+                <param name="File" value="/opt/tomcat/logs/dna.log" />
+                <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+                <layout class="org.apache.log4j.PatternLayout">
+                        <param name="ConversionPattern" value="%d [%t] %-5p - %m%n"/>
+                </layout>
+        </appender>
+
+<!--added by Paul-->
+        
+        <appender name="ZapTraderUI" class="org.apache.log4j.DailyRollingFileAppender">
+                <param name="File" value="/opt/tomcat/logs/ZapTraderUi.log" />
+                <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+                <param name="MaxFileSize" value="5MB" />
+                <param name="MaxBackupIndex" value="5" />
+                <layout class="org.apache.log4j.PatternLayout">
+                        <param name="ConversionPattern" value="%d [%t] %-5p - %m%n"/>
+                </layout>
+        </appender>
+<!--DONE-->
+
+
+       <logger name="segmentbuilder">
+                <level value="debug"/>
+                <appender-ref ref="SegmentBuilderfile" />
+        </logger>
+
+       <logger name="rmx">
+                <level value="debug"/>
+                <appender-ref ref="RmxLogfile" />
+                <!--appender-ref ref="stdout" /-->
+        </logger>
+       <logger name="dna">
+                <level value="debug"/>
+                <appender-ref ref="DnaLogfile" />
+                <!--appender-ref ref="stdout" /-->
+        </logger>
+
+        <logger name="org.hibernate.SQL">
+                <level value="debug"/>
+                <appender-ref ref="ZapTraderUI" />
+        </logger>
+       
+        <logger name="org.springframework.web.servlet.DispatcherServlet">
+                <level value="info"/>
+                <appender-ref ref="ZapTraderUI" />
+       </logger>
+<root>
+        <priority value="error" /><!--  debug, error, warning, info -->
+        <!--appender-ref ref="Logfile"/-->
+        <appender-ref ref="stdout"/>
+</root>
+</log4j:configuration>
+

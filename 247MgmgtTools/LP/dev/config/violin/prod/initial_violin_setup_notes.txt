@@ -1,0 +1,167 @@
+0. Prerequisites
+    a. Create all usual users/home directories
+    b. Install Violin drivers and system utilities
+    c. Stop/disable(remove) all firewall services (iptables...) on Violin
+       gateways and test box
+    d. Add Violin Gateway boxes to Ganglia (same for "test" box)
+    e. Install 3rd party packages required by Violin services:
+        1) tfsm-corosync-gcc_4.1.2-1.3.1-1
+
+
+1. Configure system to "preserve" device names used for Violin arrays between
+   reboots
+2. Make Violin devices accessible by appmgr
+
+    To perfom items ##1-2:
+    a) modify the default Violin supplied udev rules:
+            /tmp/vtms-linux-driver-D4.5.4.1/60-vtms.rules
+
+        by inserting lines specified below immediately AFTER (!) the following directive:
+            KERNEL=="vtms*[!0-9]", IMPORT{program}="/lib/udev/ata_id --export $tempnode"
+
+        Lines to be added:
+            KERNEL=="vtms[a-d]*", ENV{ID_SERIAL}=="21111R00000508", NAME="vtmsa%n", OWNER="appmgr", GROUP="appmgr", MODE="0644"
+            KERNEL=="vtms[a-d]*", ENV{ID_SERIAL}=="2110AR00000496", NAME="vtmsb%n", OWNER="appmgr", GROUP="appmgr", MODE="0644"
+
+        NOTE !!!: use the proper value to match "ID_SERIAL" for arrays !!!
+            Serial ## could be obtained by the following command:
+                cat /proc/driver/vtms/strad[0-1]/info | egrep -i "index|serial"
+
+        NOTE !!!: currently (6/20/2012 11:17 EDT) rule files for existing 3
+            environments (US EC, US WC, EU AMS) could be found in SVN:
+                svn://ny-devlab-builder.realads.com/TFSM/zama_ops/main/dev/config/violin/prod/*.rules
+            Check rule files for correspondence with this description.
+            Versions of the rule files in the SVN could be younger.
+
+
+3. Partition Violin devices /dev/vtms[a-b].
+
+    Please use script snipets below.
+    All numbers there assume "big" Violin Arrays (2886GB or 2668GiB)
+     with 65% (default) VIMM formatting.
+    For development and staging Violin arrays (if any) sizes below
+     should be different.
+
+    All snipets below require root access:
+
+    a) Create GPT partition
+
+    ==================
+        for x in a b
+        do
+            /sbin/parted /dev/vtms${x} mklabel gpt
+        done
+    ==================
+
+    b)  Create all essential partitions
+
+    ==================
+        sz_upp=$((     (4 + 512) * 1024 * 1024 ))
+        sz_ump=$(( 4 * (2 +  32) * 1024 * 1024 ))
+        sz_tst=$(( ((2 * ${sz_upp}) + ${sz_ump}) / 1024 ))
+        for x in a b
+        do
+            # Create User Profile (UP) partitions
+            beg=40
+            for y in $(seq 1 1 8)
+            do
+                end=$(( ${beg} + ${sz_upp} - 1 ))
+                /sbin/parted /dev/vtms${x} -s u s mkpart primary ${beg} ${end} name ${y} UPP_$(printf "%02d" ${y})
+                beg=$(( ${end} + 1 ))
+            done
+            # Create User Mapping (UM) partitions
+            for z in $(seq 1 1 1)
+            do
+                end=$(( ${beg} + ${sz_ump} - 1 ))
+                /sbin/parted /dev/vtms${x} -s u s mkpart primary ${beg} ${end} name $((${z} + ${y})) UMP_$(printf "%02d" ${z})
+                beg=$(( ${end} + 1 ))
+            done
+            # Create Test (UM) partitions
+            for t in $(seq 1 1 1)
+            do
+                end=$(( ${beg} + ${sz_tst} - 1 ))
+                /sbin/parted /dev/vtms${x} -s u s mkpart primary ${beg} ${end} name $((${t} + ${z} + ${y})) TST_$(printf "%02d" ${t})
+                beg=$(( ${end} + 1 ))
+            done
+        done
+    ==================
+
+    Here is list of the partitions created by execution of the above snippets:
+
+    ==================
+        for x in a b ; do /sbin/parted /dev/vtms${x} -s u GiB print ; done
+
+        Model: Unknown (unknown)
+        Disk /dev/vtmsa: 2688GiB
+        Sector size (logical/physical): 512B/512B
+        Partition Table: gpt
+
+        Number  Start    End      Size     File system  Name    Flags
+        1      0.00GiB  258GiB   258GiB                UPP_01
+        2      258GiB   516GiB   258GiB                UPP_02
+        3      516GiB   774GiB   258GiB                UPP_03
+        4      774GiB   1032GiB  258GiB                UPP_04
+        5      1032GiB  1290GiB  258GiB                UPP_05
+        6      1290GiB  1548GiB  258GiB                UPP_06
+        7      1548GiB  1806GiB  258GiB                UPP_07
+        8      1806GiB  2064GiB  258GiB                UPP_08
+        9      2064GiB  2132GiB  68.0GiB               UMP_01
+        10     2132GiB  2133GiB  0.57GiB               TST_01
+
+
+        Model: Unknown (unknown)
+        Disk /dev/vtmsb: 2688GiB
+        Sector size (logical/physical): 512B/512B
+        Partition Table: gpt
+
+        Number  Start    End      Size     File system  Name    Flags
+        1      0.00GiB  258GiB   258GiB                UPP_01
+        2      258GiB   516GiB   258GiB                UPP_02
+        3      516GiB   774GiB   258GiB                UPP_03
+        4      774GiB   1032GiB  258GiB                UPP_04
+        5      1032GiB  1290GiB  258GiB                UPP_05
+        6      1290GiB  1548GiB  258GiB                UPP_06
+        7      1548GiB  1806GiB  258GiB                UPP_07
+        8      1806GiB  2064GiB  258GiB                UPP_08
+        9      2064GiB  2132GiB  68.0GiB               UMP_01
+        10     2132GiB  2133GiB  0.57GiB               TST_01
+    ==================
+
+4. Create VDB layout description
+    Obtain from SVN -
+    "svn://ny-devlab-builder.realads.com/TFSM/zama_ops/main/dev/config/violin"
+    or create (manually or using "generate_layout.py" script) VDB layout file
+    describing your VDB configuration.
+
+5. Format VDB shards
+    To do this use vadmin utility.
+
+    Below is a snippet showing formatting of the configuration created in #3
+    above and described by VDB layout file specified by "-c ./conf/ec_vdb_layout.xml"
+    parameter.
+
+    The snippet starts 4 instances of vadmin simultaneously. But it's not a
+    requirement - all shards could be formatted by a single instance using
+    "-s ALL" parameter. 4 instances just used to save some time, uncreasing
+    number of instances may not provide a positive results.
+
+    ==================
+        cd /var/home/appmgr/zama
+        dt=$(date -u +%Y%m%dT%H%M%SZ)
+        ./bin/vadmin.exe -c ./conf/ec_vdb_layout.xml -f -s UPPS_01,UPPS_02,UPPS_03,UPPS_04,UMPS_01 > fmt_shards.$(date -u +%Y%m%dT%H%M%SZ).1 2>&1 &
+        ./bin/vadmin.exe -c ./conf/ec_vdb_layout.xml -f -s UPPS_05,UPPS_06,UPPS_07,UPPS_08,UMPS_02 > fmt_shards.$(date -u +%Y%m%dT%H%M%SZ).2 2>&1 &
+        ./bin/vadmin.exe -c ./conf/ec_vdb_layout.xml -f -s UPPS_09,UPPS_10,UPPS_11,UPPS_12,UMPS_03 > fmt_shards.$(date -u +%Y%m%dT%H%M%SZ).3 2>&1 &
+        ./bin/vadmin.exe -c ./conf/ec_vdb_layout.xml -f -s UPPS_13,UPPS_14,UPPS_15,UPPS_16,UMPS_04 > fmt_shards.$(date -u +%Y%m%dT%H%M%SZ).4 2>&1 &
+    ==================
+
+6. Configure NW on VDB clients (bidders/sloop/etc...)
+    Add route to VDB mcast address on each box that will be hosting VDB client(s).
+
+    This is an example of how it is done on EC DCs:
+
+    ==================
+        route add -net 239.192.25.0 netmask 255.255.255.0 dev bond1
+    ==================
+
+
+7.

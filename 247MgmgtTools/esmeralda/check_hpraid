@@ -1,0 +1,32 @@
+#!/bin/bash
+
+VENDOR=$(/usr/sbin/dmidecode | grep Vendor: | cut -d" " -f2)
+HPACUCLI="/usr/sbin/hpacucli"
+CONTROLLERSN=$(echo $($HPACUCLI controller all show | awk -F"sn: " '{print $2}' | sed 's/)//;/^$/d'))
+if [ $VENDOR = "HP" ]
+        then
+		if [ -e $HPACUCLI ]
+			then 
+				for i in $CONTROLLERSN ; do 
+					$HPACUCLI controller serialnumber\=$i pd all show | grep -i Fail
+						if [ $? = "1" ]
+							then 
+								echo "OK: All Disks are operational"
+									exit 0;
+							else 
+								echo "CRITICAL: DISK FAILED" 
+									exit 2;
+						fi
+				done
+			else
+				echo "$HPACUCLI was not found, make sure \"hpacucli\" is installed"  
+					exit 2;
+		fi
+
+
+        else
+                echo "Vendor is $VENDOR, This check ONLY works on HP Hardware"
+                        exit 2;
+
+fi
+

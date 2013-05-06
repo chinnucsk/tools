@@ -1,0 +1,170 @@
+#========================================
+# Description of ZAMA East Coast production environment
+#========================================
+
+                 # 172.21.164.111 172.21.164.112 172.21.164.113 172.21.164.114
+  ZAMA_GRTB_HOSTS=(rtbbid1eu1     rtbbid2eu1     rtbbid3eu1     rtbbid4eu1)
+  ZAMA_GRTB_HOSTS_NUM=8
+  ZAMA_GRTB_PORT=11100
+
+                  # 172.21.164.121 172.21.164.122
+  ZAMA_STCOL_HOSTS=(rtbmem1eu1     rtbmem2eu1)
+  ZAMA_STCOL_PORT=11102
+  ZAMA_NEW_STCOL_PORT=11104
+  ZAMA_STCOL_PERF_PORT=8802
+
+  ZAMA_STCOL_POLL_PERIOD=1000
+
+                         #172.21.164.121
+  ZAMA_STCOL_ACCESS_POINT="rtbmem1eu1"
+  ZAMA_STCOL_ACCESS_POINT_PORT=${ZAMA_STCOL_PORT}
+  ZAMA_NEW_STCOL_ACCESS_POINT_PORT=${ZAMA_NEW_STCOL_PORT}
+
+# <<< ZAMA RTB DB configuration
+                            #172.21.164.133            172.21.164.133            172.21.164.134            172.21.164.134
+  ZAMA_UMDB_NODES=(0000_0000@rtbmdb3eu1      0001_0000@rtbmdb3eu1:6380 0002_0000@rtbmdb4eu1      0003_0000@rtbmdb4eu1:6380)
+
+                             #172.21.164.135           172.21.164.135            172.21.164.136            172.21.164.136
+  ZAMA_ASMDB_NODES=(0000_0000@rtbmdb5eu1     0001_0000@rtbmdb5eu1:6380 0002_0000@rtbmdb6eu1      0003_0000@rtbmdb6eu1:6380)
+
+                            #172.21.164.133            172.21.164.134            172.21.164.135            172.21.164.136
+  ZAMA_FCDB_NODES=(0000_0000@rtbmdb3eu1:6381 0001_0000@rtbmdb4eu1:6381 0002_0000@rtbmdb5eu1:6381 0003_0000@rtbmdb6eu1:6381)
+
+  ZAMA_RTBDB_GROUPS=(UMDB ASMDB FCDB)
+  # RTB DB config file names for "all separate" config...:
+  ZAMA_RTBDB_CONFIGS=(rsvc_umdb_config.xml rsvc_asmdb_config.xml rsvc_fcdb_config.xml)
+  ZAMA_RTBDB_CREATE_CONFIG=1
+# >>>
+  ZAMA_TRACKER_PHYS_HOSTS=("172.21.164.111" "172.21.164.112" "172.21.164.113" "172.21.164.114")
+
+  ZAMA_GPXY_PHYS_HOSTS=(${ZAMA_TRACKER_PHYS_HOSTS[@]})
+  ZAMA_GPXY_VIRT_HOSTS=(${ZAMA_GPXY_PHYS_HOSTS[@]})
+
+  ZAMA_APXY_PHYS_HOSTS=(${ZAMA_GPXY_PHYS_HOSTS[@]})
+  ZAMA_APXY_VIRT_HOSTS=("172.21.164.205" "172.21.164.206" "172.21.164.207" "172.21.164.208")
+
+  ZAMA_RPXY_PHYS_HOSTS=(${ZAMA_GPXY_PHYS_HOSTS[@]})
+  ZAMA_RPXY_VIRT_HOSTS=("172.21.164.241" "172.21.164.242" "172.21.164.243" "172.21.164.244")
+
+  ZAMA_EPXY_PHYS_HOSTS=(${ZAMA_GPXY_PHYS_HOSTS[@]})
+  ZAMA_EPXY_VIRT_HOSTS=("172.21.164.235" "172.21.164.236" "172.21.164.237" "172.21.164.238")
+
+  ZAMA_TRACKER_VIRT_HOSTS=("172.21.164.201" "172.21.164.202" "172.21.164.203" "172.21.164.204")
+
+  ZAMA_CLK_TRACKER_PHYS_HOSTS=(${ZAMA_TRACKER_PHYS_HOSTS[@]})
+  ZAMA_CLK_TRACKER_VIRT_HOSTS=("172.21.164.221" "172.21.164.222" "172.21.164.223" "172.21.164.224")
+
+  ZAMA_CNV_TRACKER_PHYS_HOSTS=(${ZAMA_TRACKER_PHYS_HOSTS[@]})
+  ZAMA_CNV_TRACKER_VIRT_HOSTS=("172.21.164.231" "172.21.164.232" "172.21.164.233" "172.21.164.234")
+
+  ZAMA_MATCHER_PHYS_HOSTS=(${ZAMA_TRACKER_PHYS_HOSTS[@]})
+  ZAMA_MATCHER_VIRT_HOSTS=("172.21.164.211" "172.21.164.212" "172.21.164.213" "172.21.164.214")
+
+  ZAMA_APIPXY_PHYS_HOSTS=(${ZAMA_TRACKER_PHYS_HOSTS[@]})
+  ZAMA_APIPXY_VIRT_HOSTS=("172.21.164.143" "172.21.164.144" "172.21.164.145" "172.21.164.146")
+
+
+  ZAMA_ARTB_URI_HOSTNAME="rtb-apx.bidder9.mookie1.com"
+  ZAMA_GRTB_URI_HOSTNAME="rtb-adx.bidder9.mookie1.com"
+  ZAMA_RRTB_URI_HOSTNAME="rtb-rbc.bidder9.mookie1.com"
+  ZAMA_ERTB_URI_HOSTNAME="rtb-esm.bidder9.mookie1.com"
+
+  ZAMA_API_URI_HOSTNAME="api.bidder9.mookie1.com"
+
+  ZAMA_GTRK_URI_HOSTNAME="tracker.bidder9.mookie1.com"
+  ZAMA_RTRK_URI_HOSTNAME=${ZAMA_GTRK_URI_HOSTNAME}
+  ZAMA_ETRK_URI_HOSTNAME=${ZAMA_GTRK_URI_HOSTNAME}
+
+  ZAMA_STRK_URI_HOSTNAME=${ZAMA_GTRK_URI_HOSTNAME}
+
+  ZAMA_CLTRK_URI_HOSTNAME="tracker-clk.bidder9.mookie1.com"
+  ZAMA_CVTRK_URI_HOSTNAME="tracker-cnv.bidder9.mookie1.com"
+
+  ZAMA_MATCHER_URI_HOSTNAME="matcher.bidder9.mookie1.com"
+
+
+  ZAMA_AMTCH_URI_HOSTNAME="matcher-apx.bidder9.mookie1.com"
+  ZAMA_RMTCH_URI_HOSTNAME="matcher-rbc.bidder9.mookie1.com"
+  ZAMA_GMTCH_URI_HOSTNAME=${ZAMA_MATCHER_URI_HOSTNAME}
+
+  ZWF_DEFAULT_PORT=11200
+
+                 # rtbsloop1eu1
+  ZWF_LGRDR_HOSTS=(172.21.164.125)
+  ZWF_LGRDR_PORT=${ZWF_DEFAULT_PORT}
+
+                 # rtbmem1eu1     rtbmem2eu1
+  ZWF_SCFDR_HOSTS=(172.21.164.121 172.21.164.122)
+  ZWF_SCFDR_PORT=${ZWF_DEFAULT_PORT}
+
+  ZWF_FCFDR_HOSTS=${ZWF_LGRDR_HOSTS}
+  ZWF_FCFDR_PORT=11202
+
+  ZWF_BID_FILTERING_TYPE="time_framed_with_resource_limiting:900:150000"
+
+# For both CM services - verify URI
+  ZAMA_MATCHER_APPNEXUS_CM_URI="{protocol}://ib.adnxs.com/getuid?{protocol}://${ZAMA_AMTCH_URI_HOSTNAME}${ZAMA_MATCHER_APPNEXUS_ENTRY_URI_PATH}?can={allowed_chain}%26adnxs_uid=\$UID"
+  ZAMA_MATCHER_GOOGLE_CM_URI="{protocol}://cm.g.doubleclick.net/pixel?nid=mig_emea_zap_trader\&can={allowed_chain}"
+  ZAMA_MATCHER_RUBICON_CM_URI="{protocol}://pixel.rubiconproject.com/tap.php?v=7259\&nid=2211\&put={mookie}\&expires={ttl_in_days}"
+  ZAMA_RTLG_PERIOD=10
+
+  ZAMA_LGC_EXTERN_IOBUFF_SIZE=16777216
+
+  ZAMA_OBE_FILE_SECTION_BEGIN="<!-- OBE file section begin"
+  ZAMA_OBE_FILE_SECTION_END=" OBE file section end -->"
+
+  ZWF_FCDB_CLEANUP_FREQ_SEC=3600
+
+  ZAMA_LGC_TOPOLOGY_TEMPLATE="template_lgc_zama_topology_multidc.xml"
+
+  ZAMA_VHOST_ERRORLOG_TEMPLATE='ErrorLog "|/usr/sbin/rotatelogs /var/home/httpd_logs/__ZAMA_VHOST_ERRORLOG_NAME__.%Y-%m-%d-%H_%M_%S 1024M"'
+  ZAMA_VHOST_ACCESSLOG_TEMPLATE='TransferLog "|/usr/sbin/rotatelogs /var/home/httpd_logs/__ZAMA_VHOST_ACCESSLOG_NAME__.%Y-%m-%d-%H_%M_%S 1024M"'
+  ZAMA_VHOST_KEEPALIVE_TEMPLATE="KeepAlive On\nMaxKeepAliveRequests 1000\nKeepAliveTimeout 1"
+
+  ZAMA_GRTB_TARGET_GGL_GEO="false"
+
+  ZAMA_GRTB_CFG_BID_THREADS=40
+
+  ZAMA_GRTB_CC_LOG_FILE="not_used"
+#  ZAMA_GRTB_PERF_COUNTERS_FILE="not_used"
+
+  ZAMA_GRTB_VENDOR_IDS_TO_MATCH="89"
+
+  ZAMA_GRTB_EXCLUDED_AGENT_STRINGS='<excluded_agent>\n    <substring>AppleWebKit</substring>\n    <substring>Safari</substring>\n    <substring negated="true">Chrome</substring>\n  </excluded_agent>'
+
+# ZAMA_VDB_CONFIG_FILE=""
+  #ZAMA_GRTB_VDB_CONFIGURATION="not_used"
+
+  ZAMA_UDS_SOCKETS_NUM=1
+
+  ZAMA_PXY_LOG_COUNTERS_PERIOD_SEC=0
+
+  ZAMA_UDP_PACING_CHK_PERIOD=50000
+  ZAMA_UDP_PACING_RCVQ_MIN=100
+  ZAMA_UDP_PACING_RCVQ_MAX=5000
+  ZAMA_UDP_PACING_RCVQ_PCT_CHANGE=110
+
+  ZAMA_TRK_CREATIVE_AUDIT_TIMEOUT=2000
+  ZAMA_TRK_GET_CREATIVE_TIMEOUT=2000
+
+  ZAMA_PRIMARY_DB_HOST="db-ams-scan.dc.ams.247realmedia.com"
+  ZAMA_PRIMARY_DB_SVCNAME="EUPZAPLP"
+  ZAMA_PRIMARY_DB_USER="ZAP_BIDDER_PRESSUSER"
+  ZAMA_PRIMARY_DB_PSWD="FRub57dePhuCab"
+
+# Violin Configs
+
+  ZAMA_VDB_READER_ACCESS_POINT=239.192.28.10
+  ZAMA_VDB_READER_ACCESS_POINT_PORT_MIN=30210
+  ZAMA_VDB_READER_ACCESS_POINT_PORT_MAX=30239
+
+  ZAMA_VDB_WRITER_ACCESS_POINT=${ZAMA_VDB_READER_ACCESS_POINT}
+  ZAMA_VDB_WRITER_ACCESS_POINT_PORT_MIN=${ZAMA_VDB_READER_ACCESS_POINT_PORT_MIN}
+  ZAMA_VDB_WRITER_ACCESS_POINT_PORT_MAX=${ZAMA_VDB_READER_ACCESS_POINT_PORT_MAX}
+
+# enable reading from Violinm for matcher/fc_feeder/bidder
+  ZAMA_VDB_CONFIG_READER_SECTION_BEGIN="<!-- reader section begin -->"
+  ZAMA_VDB_CONFIG_READER_SECTION_END="<!-- reader section end -->"
+
+  ZAMA_VDB_SVC_CONFIGS=(ams_vdb-1_svc_config.xml@rtbvln1eu1 ams_vdb-2_svc_config.xml@rtbvln2eu1)
+

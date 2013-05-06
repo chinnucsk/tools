@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfsp_configuration xmlns="http://schemas.tfsm.com/wf/wfsp"
+                  xmlns:wf="http://schemas.tfsm.com/wf/wfsp"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://schemas.tfsm.com/wf/wfsp wfsp.xsd"
+                  >
+  <settings
+    own_address="10.65.48.247"
+     ip_pool_threads="1"
+     net_pool_threads="1"
+     initial_threads="1"
+
+     monitoring_port="10031"
+     prf_counters_port="10032"
+
+     publisher_queue_lo_threshold="100"
+     publisher_queue_hi_threshold="110"
+     publisher_queue_buffer_size="20480"
+
+     subscriber_queue_lo_threshold="100"
+     subscriber_queue_hi_threshold="110"
+  >
+
+    <hibernation_path>/var/home/appmgr/zama/lp/hb/delayed_resolver</hibernation_path>
+
+  </settings>
+  <wf_bindings>
+
+     <wf_binding>
+       <wfd_binding location="/var/home/appmgr/zama/conf/lp/wfd.xml" >
+        <wfsp_step_bindings>
+          <wf_step_binding step_id="delayed_resolver" item_processor_id="delayed_resolver_proc" />
+        </wfsp_step_bindings>
+      </wfd_binding>
+      <wfc_binding location="/var/home/appmgr/zama/conf/lp/wfc.xml" />
+    </wf_binding>
+
+  </wf_bindings>
+
+  <item_processors>
+    <item_processor id="delayed_resolver_proc" so_path="/var/home/appmgr/zama/bin/delayed_resolver.so" so_cfg_path = "/var/home/appmgr/zama/conf/lp/appcfg.xml" />
+  </item_processors>
+
+
+</wfsp_configuration>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://schemas.tfsm.com/dpp/config/gen_dict"
+               xmlns:wf="http://schemas.tfsm.com/wf/wfc"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://schemas.tfsm.com/dpp/config/gen_dict gen_dict.xsd"
+                  >
+
+                  <entry name="working_directory">/var/home/appmgr/zama/lp/data</entry>  
+                  <entry name="db_username">zap_rtb_lp</entry>
+                  <entry name="db_password">zappw</entry>
+                  <entry name="db_dsn">ZAMA_REPORTING</entry>
+
+                  <entry name="parser.domain_config_file">/var/home/appmgr/zama/conf/lp/domains.xml</entry>
+                  <entry name="parser.invalid_url_str">malformed</entry>
+                  <entry name="parser.number_streamers">5</entry>
+                  <entry name="parser.number_queues">10</entry>
+                  <entry name="parser.max_queue_size">10000</entry>
+                  <entry name="parser.queue_index_sync_frequency">1000</entry>
+                  <entry name="parser.no_file_sleep_period">2000</entry>
+                  <entry name="parser.number_workers">4</entry>
+
+                  <entry name="aggregator.out_directory">/var/home/appmgr/zama/lp/data/db</entry>
+                  <entry name="aggregator.flushing_frequency">300</entry>
+
+                  <entry name="delayed_resolver.interval">5</entry>
+                  <entry name="delayed_resolver.timeout">600</entry>
+                  <entry name="delayed_resolver.crash_log_dir">/var/home/appmgr/zama/logs/lp/delayed_resolver/</entry>
+
+                  <entry name="conversion_flusher.out_directory">/var/home/appmgr/zama/lp/data/db</entry>
+                  <entry name="conversion_flusher.flushing_frequency">900</entry>
+
+                  <entry name="loader.frequency">30</entry>
+                  <entry name="loader.in_directory">/var/home/appmgr/zama/lp/data/db</entry>
+                  <entry name="pidfile">/var/home/appmgr/zama/lp/data/loader/loader.pid</entry>
+                  <entry name="logger.output">file</entry>
+                  <entry name="logger.logfile">/var/home/appmgr/zama/logs/lp/loader/.log</entry>
+                  <entry name="logger.level">INFO</entry>
+
+                  <entry name="memcached_server0">10.73.47.212</entry>
+		  <entry name="memcached_server0_portrange">11211-11212</entry>
+</configuration>

@@ -1,0 +1,53 @@
+# /etc/udev/rules.d/60-vtms.rules
+#
+# Copyright 2006-2011 Violin Memory, Inc.. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#
+# Redistributions of source code must retain the above copyright notice, this
+# list of conditions and the following disclaimer.
+# Redistributions in binary form must reproduce the above copyright notice, this
+# list of conditions and the following disclaimer in the documentation and/or
+# other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY VIOLIN MEMORY, INC  ``AS IS'' AND ANY EXPRESS OR
+# IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+# EVENT SHALL VIOLIN MEMORY, INC  OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
+# INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+# OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+# NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+# EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+# The views and conclusions contained in the software and documentation are
+# those of the authors and should not be interpreted as representing official
+# policies, either expressed or implied, of Violin Memory, Inc.
+#
+#KERNEL=="vtms*",             NAME="%k", GROUP="disk", MODE="0660"
+KERNEL=="vtmsa",             SYMLINK+="vtms-strad"
+KERNEL=="vtms-strad0",       SYMLINK+="vtms-strad"
+
+# Link each /dev/sd[a-z] device tied to a strad to a logical vtms-scsi[0-7]
+KERNEL=="sd*[!0-9]|sg*", BUS=="scsi", ID=="*:*:0:0", SYSFS{vendor}=="VIOLIN", SYSFS{model}=="MEMORY ARRAY", SYMLINK+="vtms-scsi0", RUN+="/bin/sh -c 'echo noop > /sys/$devpath/queue/scheduler'"
+KERNEL=="sd*[!0-9]|sg*", BUS=="scsi", ID=="*:*:1:0", SYSFS{vendor}=="VIOLIN", SYSFS{model}=="MEMORY ARRAY", SYMLINK+="vtms-scsi1", RUN+="/bin/sh -c 'echo noop > /sys/$devpath/queue/scheduler'"
+KERNEL=="sd*[!0-9]|sg*", BUS=="scsi", ID=="*:*:2:0", SYSFS{vendor}=="VIOLIN", SYSFS{model}=="MEMORY ARRAY", SYMLINK+="vtms-scsi2", RUN+="/bin/sh -c 'echo noop > /sys/$devpath/queue/scheduler'"
+KERNEL=="sd*[!0-9]|sg*", BUS=="scsi", ID=="*:*:3:0", SYSFS{vendor}=="VIOLIN", SYSFS{model}=="MEMORY ARRAY", SYMLINK+="vtms-scsi3", RUN+="/bin/sh -c 'echo noop > /sys/$devpath/queue/scheduler'"
+KERNEL=="sd*[!0-9]|sg*", BUS=="scsi", ID=="*:*:4:0", SYSFS{vendor}=="VIOLIN", SYSFS{model}=="MEMORY ARRAY", SYMLINK+="vtms-scsi4", RUN+="/bin/sh -c 'echo noop > /sys/$devpath/queue/scheduler'"
+KERNEL=="sd*[!0-9]|sg*", BUS=="scsi", ID=="*:*:5:0", SYSFS{vendor}=="VIOLIN", SYSFS{model}=="MEMORY ARRAY", SYMLINK+="vtms-scsi5", RUN+="/bin/sh -c 'echo noop > /sys/$devpath/queue/scheduler'"
+KERNEL=="sd*[!0-9]|sg*", BUS=="scsi", ID=="*:*:6:0", SYSFS{vendor}=="VIOLIN", SYSFS{model}=="MEMORY ARRAY", SYMLINK+="vtms-scsi6", RUN+="/bin/sh -c 'echo noop > /sys/$devpath/queue/scheduler'"
+KERNEL=="sd*[!0-9]|sg*", BUS=="scsi", ID=="*:*:7:0", SYSFS{vendor}=="VIOLIN", SYSFS{model}=="MEMORY ARRAY", SYMLINK+="vtms-scsi7", RUN+="/bin/sh -c 'echo noop > /sys/$devpath/queue/scheduler'"
+
+# For SCSI, match instance 0, which is target 0, and symlink to vtms-strad
+# This rules works for the /dev/sd or in the case of sg
+KERNEL=="sd*[!0-9]|sg*", BUS=="scsi", ID=="*:*:0:0", SYSFS{vendor}=="VIOLIN", SYSFS{model}=="MEMORY ARRAY", SYMLINK+="vtms-strad"
+
+# by-id links
+KERNEL=="vtms*[!0-9]", IMPORT{program}="/lib/udev/ata_id --export $tempnode"
+KERNEL=="vtms*[!0-9]", ENV{ID_SERIAL}=="?*", SYMLINK+="disk/by-id/ata-$env{ID_MODEL}_$env{ID_SERIAL}"
+KERNEL=="vtms[a-d]*", ENV{ID_SERIAL}=="21111R00000508",    NAME="vtmsa%n", OWNER="appmgr", GROUP="appmgr", MODE="0644"
+KERNEL=="vtms[a-d]*", ENV{ID_SERIAL}=="2110AR00000496",    NAME="vtmsb%n", OWNER="appmgr", GROUP="appmgr", MODE="0644"
+KERNEL=="vtms*[0-9]", IMPORT{parent}=="ID_*", SYMLINK+="disk/by-id/ata-$env{ID_MODEL}_$env{ID_SERIAL}-part%n"
+
